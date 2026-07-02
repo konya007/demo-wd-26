@@ -1,0 +1,379 @@
+{
+  "theme": {
+    "colors": {
+      "primary": "#059669",
+      "primary-light": "#10B981",
+      "primary-dark": "#047857"
+    }
+  },
+  "seo": {
+    "title": "TOEIC Master — Trung tâm luyện thi TOEIC hàng đầu Việt Nam",
+    "description": "TOEIC Master cam kết đầu ra TOEIC 650+ chỉ sau 3 tháng. Lộ trình cá nhân hóa, giáo viên bản ngữ, phòng lab chuẩn quốc tế.",
+    "keywords": [
+      "TOEIC",
+      "luyện thi TOEIC",
+      "tiếng Anh",
+      "trung tâm Anh ngữ",
+      "TOEIC Master"
+    ],
+    "thumbnail": "https://picsum.photos/seed/toeicmaster-seo/1200/630",
+    "favicon": "https://placehold.co/64x64/059669/FFFFFF?text=T",
+    "canonicalUrl": "https://example-toeicmaster.github.io/",
+    "locale": "vi_VN",
+    "themeColor": "#059669"
+  },
+  "organization": {
+    "name": "TOEIC Master Academy",
+    "shortName": "TOEIC Master",
+    "tagline": "Chinh phục TOEIC — Mở cổng tương lai",
+    "logoLight": "https://placehold.co/200x60/FFFFFF/111827?text=TOEIC+Master",
+    "logoDark": "https://placehold.co/200x60/111827/FFFFFF?text=TOEIC+Master",
+    "foundedYear": 2017,
+    "industry": "Education / Language Training"
+  },
+  "hero": {
+    "eyebrow": "Hơn 15,000 học viên đã đạt mục tiêu TOEIC",
+    "title": "Đạt 650+ TOEIC chỉ sau 3 tháng — Cam kết bằng văn bản",
+    "subtitle": "TOEIC Master mang đến lộ trình học cá nhân hóa, giảng viên đạt 900+ TOEIC, phòng lab 4.0 và kho đề 10,000+ câu sát thật — giúp bạn tiết kiệm thời gian và đạt điểm cao ngay lần thi đầu.",
+    "ctaPrimary": {
+      "text": "Kiểm tra trình độ miễn phí",
+      "link": "#projects"
+    },
+    "ctaSecondary": {
+      "text": "Tư vấn lộ trình",
+      "link": "#contact"
+    },
+    "backgroundImage": "https://picsum.photos/seed/toeicmaster-hero/1600/900",
+    "stats": [
+      {
+        "label": "Học viên đã đào tạo",
+        "value": "15000+"
+      },
+      {
+        "label": "Điểm đầu ra trung bình",
+        "value": "720"
+      },
+      {
+        "label": "Giảng viên 900+ TOEIC",
+        "value": "45"
+      },
+      {
+        "label": "Cơ sở toàn quốc",
+        "value": "12"
+      }
+    ]
+  },
+  "mission": {
+    "title": "Sứ mệnh của TOEIC Master",
+    "description": "TOEIC Master tin rằng rào cản tiếng Anh không nên là trở ngại cho sự nghiệp của người Việt. Chúng tôi cam kết giúp mọi học viên — từ sinh viên đến người đi làm — đạt chứng chỉ TOEIC một cách nhanh nhất với phương pháp học tập khoa học và truyền cảm hứng.",
+    "vision": "Trở thành hệ thống luyện thi TOEIC số 1 Việt Nam với 50 cơ sở vào năm 2030.",
+    "values": [
+      {
+        "title": "Cam kết đầu ra",
+        "description": "Ký hợp đồng cam kết điểm số, học lại miễn phí nếu không đạt mục tiêu."
+      },
+      {
+        "title": "Cá nhân hóa lộ trình",
+        "description": "Mỗi học viên có Learning Path riêng dựa trên bài test đầu vào và mục tiêu."
+      },
+      {
+        "title": "Thực chiến — Không lý thuyết suông",
+        "description": "80% thời lượng là làm đề, phân tích lỗi sai và mẹo làm bài từ giảng viên."
+      }
+    ]
+  },
+  "services": [
+    {
+      "icon": "target",
+      "title": "TOEIC Cấp tốc 450+",
+      "description": "Khóa 2 tháng cho người mất gốc, tập trung ngữ pháp nền và từ vựng TOEIC cốt lõi."
+    },
+    {
+      "icon": "rocket",
+      "title": "TOEIC Đột phá 650+",
+      "description": "Khóa 3 tháng phổ biến nhất — cam kết đầu ra, luyện 7 phần thi theo format mới nhất."
+    },
+    {
+      "icon": "shield-check",
+      "title": "TOEIC Chuyên sâu 800+",
+      "description": "Khóa nâng cao cho người muốn đạt điểm cao, luyện đề nâng cao và chiến thuật làm bài."
+    },
+    {
+      "icon": "smartphone",
+      "title": "TOEIC Online 1 kèm 1",
+      "description": "Học trực tuyến qua Zoom với giảng viên riêng, lịch học linh hoạt, phù hợp người bận rộn."
+    },
+    {
+      "icon": "layout-template",
+      "title": "Mock Test & Chấm điểm",
+      "description": "Thi thử TOEIC chuẩn format IIG, chấm điểm tự động, phân tích điểm mạnh/yếu chi tiết."
+    }
+  ],
+  "partners": [
+    {
+      "name": "IIG Vietnam",
+      "logo": "https://placehold.co/160x60/E5E7EB/111827?text=IIG+VN"
+    },
+    {
+      "name": "Oxford Press",
+      "logo": "https://placehold.co/160x60/E5E7EB/111827?text=Oxford"
+    },
+    {
+      "name": "ĐH Ngoại Thương",
+      "logo": "https://placehold.co/160x60/E5E7EB/111827?text=FTU"
+    },
+    {
+      "name": "ĐH Kinh Tế",
+      "logo": "https://placehold.co/160x60/E5E7EB/111827?text=UEH"
+    },
+    {
+      "name": "Vietcombank",
+      "logo": "https://placehold.co/160x60/E5E7EB/111827?text=VCB"
+    },
+    {
+      "name": "VNPT",
+      "logo": "https://placehold.co/160x60/E5E7EB/111827?text=VNPT"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "Đối tác Ủy quyền Thi TOEIC",
+      "value": "2024",
+      "description": "Được IIG Vietnam ủy quyền tổ chức thi thử TOEIC chính thức."
+    },
+    {
+      "title": "Top 10 Trung tâm Anh ngữ",
+      "value": "2023",
+      "description": "Bình chọn bởi tạp chí Giáo dục Việt Nam."
+    },
+    {
+      "title": "Học viên đạt 900+",
+      "value": "320+",
+      "description": "Số học viên đạt trên 900 điểm TOEIC tính đến năm 2024."
+    },
+    {
+      "title": "Hài lòng học viên",
+      "value": "96%",
+      "description": "Khảo sát định kỳ sau mỗi khóa học năm 2024."
+    }
+  ],
+  "contact": {
+    "address": "789 Lý Thường Kiệt, Quận 10, TP. Hồ Chí Minh",
+    "email": "info@toeicmaster.example",
+    "phone": "+84 28 5555 6789",
+    "workingHours": "Thứ 2 - Chủ Nhật, 8:00 - 21:00",
+    "mapEmbed": "https://www.google.com/maps/embed?pb=PLACEHOLDER",
+    "socials": {
+      "facebook": "https://facebook.com/toeicmaster.placeholder",
+      "instagram": "https://instagram.com/toeicmaster.placeholder",
+      "youtube": "https://youtube.com/@toeicmaster-placeholder",
+      "linkedin": "https://linkedin.com/company/toeicmaster-placeholder"
+    }
+  },
+  "projects": [
+    {
+      "id": "tm-01",
+      "title": "Khóa TOEIC 650+ — Chương trình Flagship",
+      "category": "TOEIC 650+",
+      "client": "Học viên đại trà",
+      "year": 2025,
+      "thumbnail": "https://picsum.photos/seed/toeicmaster-1/640/480",
+      "description": "Khóa học chủ lực giúp 80% học viên đạt 650+ TOEIC sau 3 tháng. Giáo trình độc quyền kết hợp ETS & Oxford, luyện đề hàng tuần và thi thử cuối khóa.",
+      "tags": [
+        "toeic-650",
+        "cam-kết",
+        "3-tháng",
+        "offline"
+      ],
+      "link": "https://example.org/projects/tm-01",
+      "featured": true
+    },
+    {
+      "id": "tm-02",
+      "title": "TOEIC Cấp tốc 450+ — Dành cho người mất gốc",
+      "category": "TOEIC 450+",
+      "client": "Sinh viên năm 1-2",
+      "year": 2024,
+      "thumbnail": "https://picsum.photos/seed/toeicmaster-2/640/480",
+      "description": "Khóa 2 tháng xây nền tảng vững chắc cho người mới bắt đầu. Tập trung 2000 từ vựng TOEIC cốt lõi và ngữ pháp trọng tâm.",
+      "tags": [
+        "toeic-450",
+        "mất-gốc",
+        "cấp-tốc",
+        "nền-tảng"
+      ],
+      "link": "https://example.org/projects/tm-02",
+      "featured": true
+    },
+    {
+      "id": "tm-03",
+      "title": "TOEIC Online 1 kèm 1 — Linh hoạt mọi lúc",
+      "category": "Online",
+      "client": "Người đi làm",
+      "year": 2025,
+      "thumbnail": "https://picsum.photos/seed/toeicmaster-3/640/480",
+      "description": "Khóa học trực tuyến 1-1 với giảng viên qua Zoom, lịch học linh hoạt theo giờ của học viên. Tài liệu số hóa 100%, học mọi lúc mọi nơi.",
+      "tags": [
+        "online",
+        "1-kèm-1",
+        "zoom",
+        "linh-hoạt"
+      ],
+      "link": "https://example.org/projects/tm-03",
+      "featured": true
+    },
+    {
+      "id": "tm-04",
+      "title": "TOEIC Chuyên sâu 800+ — Dành cho người bứt phá",
+      "category": "TOEIC 800+",
+      "client": "Sinh viên năm cuối",
+      "year": 2024,
+      "thumbnail": "https://picsum.photos/seed/toeicmaster-4/640/480",
+      "description": "Khóa nâng cao luyện đề khó, chiến thuật làm Part 7 và mẹo xử lý bẫy trong TOEIC. Dành cho học viên đã có nền tảng 500+.",
+      "tags": [
+        "toeic-800",
+        "nâng-cao",
+        "chiến-thuật",
+        "chuyên-sâu"
+      ],
+      "link": "https://example.org/projects/tm-04",
+      "featured": true
+    },
+    {
+      "id": "tm-05",
+      "title": "Thi Thử TOEIC Chuẩn IIG",
+      "category": "Mock Test",
+      "client": "Tất cả học viên",
+      "year": 2025,
+      "thumbnail": "https://picsum.photos/seed/toeicmaster-5/640/480",
+      "description": "Kỳ thi thử TOEIC mỗi tháng, format chuẩn IIG 100%, chấm điểm tự động, nhận báo cáo phân tích chi tiết Listening & Reading.",
+      "tags": [
+        "mock-test",
+        "iig",
+        "chấm-điểm",
+        "hàng-tháng"
+      ],
+      "link": "https://example.org/projects/tm-05",
+      "featured": false
+    },
+    {
+      "id": "tm-06",
+      "title": "TOEIC for Business — Đào tạo doanh nghiệp",
+      "category": "Doanh nghiệp",
+      "client": "Vietcombank",
+      "year": 2023,
+      "thumbnail": "https://picsum.photos/seed/toeicmaster-6/640/480",
+      "description": "Chương trình đào tạo TOEIC cho 200+ nhân viên Vietcombank, học tại văn phòng, báo cáo tiến độ định kỳ cho HR.",
+      "tags": [
+        "doanh-nghiệp",
+        "b2b",
+        "in-house",
+        "số-lượng-lớn"
+      ],
+      "link": "https://example.org/projects/tm-06",
+      "featured": false
+    },
+    {
+      "id": "tm-07",
+      "title": "TOEIC Kids — Tiếng Anh cho thiếu nhi",
+      "category": "Thiếu nhi",
+      "client": "Phụ huynh học sinh",
+      "year": 2024,
+      "thumbnail": "https://picsum.photos/seed/toeicmaster-7/640/480",
+      "description": "Chương trình tiếng Anh thiếu nhi 8-12 tuổi, phương pháp học qua trò chơi, bài hát và storytelling. Chuẩn bị nền tảng cho TOEIC Junior.",
+      "tags": [
+        "thiếu-nhi",
+        "kids",
+        "trò-chơi",
+        "nền-tảng"
+      ],
+      "link": "https://example.org/projects/tm-07",
+      "featured": false
+    },
+    {
+      "id": "tm-08",
+      "title": "TOEIC Speaking & Writing",
+      "category": "Speaking",
+      "client": "Người đi làm",
+      "year": 2024,
+      "thumbnail": "https://picsum.photos/seed/toeicmaster-8/640/480",
+      "description": "Khóa luyện TOEIC Speaking & Writing với giáo viên bản ngữ, phòng lab riêng, luyện phát âm và viết email chuyên nghiệp.",
+      "tags": [
+        "speaking",
+        "writing",
+        "bản-ngữ",
+        "phòng-lab"
+      ],
+      "link": "https://example.org/projects/tm-08",
+      "featured": false
+    },
+    {
+      "id": "tm-09",
+      "title": "App Luyện TOEIC Trên Điện Thoại",
+      "category": "Online",
+      "client": "Tất cả học viên",
+      "year": 2025,
+      "thumbnail": "https://picsum.photos/seed/toeicmaster-9/640/480",
+      "description": "Mobile app luyện TOEIC với 5000+ câu hỏi, AI chấm điểm speaking, flashcard từ vựng, thông báo nhắc học hàng ngày.",
+      "tags": [
+        "mobile-app",
+        "ai",
+        "flashcard",
+        "tự-học"
+      ],
+      "link": "https://example.org/projects/tm-09",
+      "featured": false
+    },
+    {
+      "id": "tm-10",
+      "title": "Hội Thảo TOEIC — Bí Quyết Đạt 800+",
+      "category": "Sự kiện",
+      "client": "Cộng đồng",
+      "year": 2024,
+      "thumbnail": "https://picsum.photos/seed/toeicmaster-10/640/480",
+      "description": "Chuỗi hội thảo miễn phí hàng tháng với chuyên gia TOEIC, chia sẻ tips làm bài, phân tích xu hướng đề thi mới nhất.",
+      "tags": [
+        "hội-thảo",
+        "miễn-phí",
+        "tips",
+        "cộng-đồng"
+      ],
+      "link": "https://example.org/projects/tm-10",
+      "featured": false
+    },
+    {
+      "id": "tm-11",
+      "title": "TOEIC Cấp tốc Mùa Hè",
+      "category": "TOEIC 650+",
+      "client": "Sinh viên",
+      "year": 2024,
+      "thumbnail": "https://picsum.photos/seed/toeicmaster-11/640/480",
+      "description": "Khóa hè 2 tháng cấp tốc dành cho sinh viên, học 5 buổi/tuần, cam kết tăng 150+ điểm so với đầu vào.",
+      "tags": [
+        "mùa-hè",
+        "cấp-tốc",
+        "sinh-viên",
+        "2-tháng"
+      ],
+      "link": "https://example.org/projects/tm-11",
+      "featured": false
+    },
+    {
+      "id": "tm-12",
+      "title": "Tủ Sách TOEIC Online",
+      "category": "Tài liệu",
+      "client": "Tất cả học viên",
+      "year": 2025,
+      "thumbnail": "https://picsum.photos/seed/toeicmaster-12/640/480",
+      "description": "Thư viện số với 500+ tài liệu TOEIC: ETS, Economy, Hackers — được số hóa và phân loại theo từng Part.",
+      "tags": [
+        "tài-liệu",
+        "ets",
+        "thư-viện",
+        "số-hóa"
+      ],
+      "link": "https://example.org/projects/tm-12",
+      "featured": false
+    }
+  ]
+}
