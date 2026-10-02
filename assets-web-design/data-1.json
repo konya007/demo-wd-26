@@ -1,677 +1,647 @@
 {
   "seo": {
-    "title": "Aurora Studio — Sáng tạo số cho thương hiệu hiện đại",
-    "description": "Aurora Studio là agency thiết kế & phát triển web, đồng hành cùng thương hiệu từ ý tưởng đến sản phẩm số hoàn chỉnh.",
-    "keywords": [
-      "web design",
-      "branding",
-      "ui ux",
-      "agency",
-      "aurora studio"
-    ],
-    "thumbnail": "https://picsum.photos/seed/wd2026-seo-1/1200/630",
-    "favicon": "https://placehold.co/64x64/2563EB/FFFFFF?text=A",
-    "canonicalUrl": "https://example-aurora-studio.github.io/",
+    "title": "YPhone 17 — Chụp đêm như ban ngày",
+    "description": "YPhone 17 series: camera 48MP chụp đêm, pin hai ngày, khung titan. Đặt trước ngay hôm nay.",
     "locale": "vi_VN",
-    "themeColor": "#2563EB"
+    "thumbnail": "assets-web-design/img/yphone/hero.jpg",
+    "favicon": "",
+    "themeColor": "#1F5BFF"
   },
   "organization": {
-    "name": "Aurora Studio",
-    "shortName": "Aurora",
-    "tagline": "Thiết kế số cho thương hiệu dám khác biệt",
-    "logoLight": "https://placehold.co/200x60/FFFFFF/111827?text=Aurora+Studio",
-    "logoDark": "https://placehold.co/200x60/111827/FFFFFF?text=Aurora+Studio",
-    "foundedYear": 2019,
-    "industry": "Digital Agency"
+    "name": "YPhone Việt Nam",
+    "shortName": "YPhone",
+    "tagline": "Điện thoại cho người thích kể chuyện bằng hình ảnh.",
+    "logo": "",
+    "foundedYear": 2016,
+    "industry": "Điện thoại thông minh"
+  },
+  "theme": {
+    "note": "Nguồn duy nhất cho màu, font, bo góc. Đổi ở đây, mọi trang cùng đổi.",
+    "colors": {
+      "primary": "#1F5BFF",
+      "onPrimary": "#FFFFFF",
+      "accent": "#FF7A45",
+      "background": "#F5F6F8",
+      "surface": "#FFFFFF",
+      "text": "#0F1216",
+      "muted": "#5B626E",
+      "border": "#E1E4E9"
+    },
+    "darkColors": {
+      "primary": "#6E95FF",
+      "onPrimary": "#0B0D10",
+      "accent": "#FF9468",
+      "background": "#0B0D10",
+      "surface": "#15181D",
+      "text": "#F1F3F6",
+      "muted": "#9AA3B0",
+      "border": "#262B33"
+    },
+    "font": {
+      "heading": "'Manrope', sans-serif",
+      "body": "'Manrope', sans-serif",
+      "googleFonts": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    },
+    "radius": {
+      "sm": "12px",
+      "md": "22px",
+      "lg": "36px"
+    }
+  },
+  "nav": [
+    {
+      "label": "Trang chủ",
+      "href": "index.html"
+    },
+    {
+      "label": "Tính năng",
+      "href": "features.html"
+    },
+    {
+      "label": "Sản phẩm",
+      "href": "products.html"
+    },
+    {
+      "label": "Câu chuyện",
+      "href": "about.html"
+    },
+    {
+      "label": "Liên hệ",
+      "href": "contact.html"
+    }
+  ],
+  "cta": {
+    "text": "Đặt trước YPhone 17",
+    "href": "contact.html",
+    "note": "Cọc 500.000đ, hoàn lại 100% nếu đổi ý"
   },
   "hero": {
-    "eyebrow": "Chào mừng đến với Aurora Studio",
-    "title": "Chúng tôi biến ý tưởng thành trải nghiệm số đáng nhớ",
-    "subtitle": "Aurora Studio kết hợp thiết kế, công nghệ và chiến lược thương hiệu để tạo ra những sản phẩm web có hồn, có chiến lược và có kết quả đo lường được.",
-    "ctaPrimary": {
-      "text": "Xem dự án",
-      "link": "#projects"
-    },
+    "image": "assets-web-design/img/yphone/hero.jpg",
+    "variant": "split",
+    "eyebrow": "Mới · YPhone 17 series",
+    "title": "Chụp đêm như ban ngày.",
+    "subtitle": "Cảm biến 48MP lớn hơn 60%, chip Y7 và pin dùng trọn hai ngày. Đẹp từ khung titan đến từng bức ảnh.",
     "ctaSecondary": {
-      "text": "Liên hệ tư vấn",
-      "link": "#contact"
+      "text": "Xem 6 phiên bản",
+      "link": "products.html"
     },
-    "backgroundImage": "https://picsum.photos/seed/wd2026-hero/1600/900",
     "stats": [
       {
-        "label": "Dự án đã triển khai",
-        "value": "120+"
+        "label": "Cảm biến chính",
+        "value": "48MP"
       },
       {
-        "label": "Khách hàng tin dùng",
-        "value": "45"
+        "label": "Pin tối đa",
+        "value": "48 giờ"
       },
       {
-        "label": "Năm kinh nghiệm",
-        "value": "6"
+        "label": "Nặng chỉ từ",
+        "value": "158g"
       }
     ]
   },
-  "mission": {
-    "title": "Sứ mệnh của chúng tôi",
-    "description": "Aurora Studio tin rằng mỗi thương hiệu đều xứng đáng có một tiếng nói số riêng biệt. Chúng tôi không tạo ra những website rập khuôn — chúng tôi xây dựng trải nghiệm phản ánh đúng giá trị cốt lõi của từng tổ chức.",
-    "vision": "Trở thành studio thiết kế số được tin tưởng hàng đầu Đông Nam Á vào năm 2030.",
-    "values": [
-      {
-        "title": "Sáng tạo có chiến lược",
-        "description": "Mỗi thiết kế đều bắt đầu từ bài toán kinh doanh thực tế."
-      },
-      {
-        "title": "Minh bạch",
-        "description": "Quy trình làm việc rõ ràng, báo cáo tiến độ liên tục."
-      },
-      {
-        "title": "Chất lượng bền vững",
-        "description": "Code sạch, tài liệu đầy đủ, dễ bảo trì lâu dài."
-      }
-    ]
+  "sections": {
+    "partners": {
+      "title": "Được nhắc đến trên"
+    },
+    "features": {
+      "title": "Nhỏ trong tay, lớn trong từng khung hình",
+      "text": "Bốn lý do khiến người dùng đổi sang YPhone.",
+      "more": "Xem tất cả tính năng"
+    },
+    "products": {
+      "title": "Chọn YPhone của bạn",
+      "text": "Sáu phiên bản, một trải nghiệm.",
+      "more": "So sánh các phiên bản"
+    },
+    "process": {
+      "title": "Sở hữu YPhone trong 4 bước",
+      "text": "Đặt trước online, nhận máy tại nhà."
+    },
+    "testimonials": {
+      "title": "Người dùng nói gì"
+    },
+    "faq": {
+      "title": "Câu hỏi thường gặp"
+    },
+    "stats": {
+      "title": "YPhone qua những con số"
+    },
+    "mission": {
+      "title": "Vì sao có YPhone"
+    },
+    "achievements": {
+      "title": "Giải thưởng"
+    },
+    "contact": {
+      "title": "Đặt trước YPhone 17",
+      "text": "Để lại thông tin, chúng tôi giữ máy và gọi xác nhận trong 2 giờ.",
+      "submit": "Đặt trước ngay",
+      "success": "Đã nhận đơn đặt trước. Chúng tôi sẽ gọi xác nhận trong 2 giờ."
+    },
+    "ctaBand": {
+      "title": "Khung hình tiếp theo của bạn bắt đầu từ đây.",
+      "text": "Đặt trước hôm nay, nhận máy trước ngày mở bán 3 ngày."
+    },
+    "related": {
+      "title": "Có thể bạn cũng thích"
+    },
+    "advisor": {
+      "title": "Chưa biết chọn bản nào?",
+      "text": "Trả lời 3 câu, trợ lý AI chọn giúp bạn và soạn sẵn đơn đặt trước."
+    }
   },
-  "services": [
+  "pages": {
+    "home": {
+      "title": "YPhone 17"
+    },
+    "features": {
+      "title": "Tính năng",
+      "image": "assets-web-design/img/yphone/features_page.jpg",
+      "heading": "Từng chi tiết đều có lý do",
+      "text": "Camera, hiệu năng, pin và thiết kế, mỗi thứ được làm lại từ đầu."
+    },
+    "products": {
+      "title": "Sản phẩm",
+      "heading": "Sáu phiên bản. Một điểm chung: rất đẹp.",
+      "text": "Lọc theo dòng máy hoặc tìm theo nhu cầu."
+    },
+    "product": {
+      "title": "Chi tiết",
+      "back": "Tất cả sản phẩm",
+      "category": "Dòng",
+      "price": "Giá",
+      "specs": "Thông số"
+    },
+    "about": {
+      "title": "Câu chuyện",
+      "image": "assets-web-design/img/yphone/about.jpg",
+      "heading": "Điện thoại làm ra để kể chuyện",
+      "text": "Từ 2016, YPhone làm điện thoại cho những người coi mỗi bức ảnh là một kỷ niệm."
+    },
+    "contact": {
+      "title": "Liên hệ",
+      "heading": "Ghé cửa hàng hoặc đặt online",
+      "text": "Đội tư vấn trực từ 8:00 đến 22:00 mỗi ngày."
+    }
+  },
+  "catalog": {
+    "all": "Tất cả",
+    "search": "Tìm theo tên hoặc nhu cầu",
+    "empty": "Chưa có phiên bản nào khớp. Thử bỏ bớt bộ lọc."
+  },
+  "features": [
     {
-      "icon": "layout-template",
-      "title": "Thiết kế giao diện Web",
-      "description": "Thiết kế UI/UX hiện đại, tối ưu trải nghiệm người dùng trên mọi thiết bị."
+      "image": "assets-web-design/img/yphone/f1.jpg",
+      "icon": "aperture",
+      "title": "Camera 48MP, chụp đêm rõ nét",
+      "description": "Cảm biến lớn hơn 60% gom nhiều ánh sáng, ảnh đêm sáng mà không nhiễu."
     },
     {
-      "icon": "code-2",
-      "title": "Phát triển Front-end",
-      "description": "Xây dựng website bằng HTML/CSS/JS chuẩn, tối ưu hiệu năng và SEO."
+      "image": "assets-web-design/img/yphone/f2.jpg",
+      "icon": "moon-star",
+      "title": "Chế độ Đêm tự bật",
+      "description": "Máy tự nhận biết thiếu sáng và ghép 9 khung hình chỉ trong một lần bấm."
     },
     {
-      "icon": "palette",
-      "title": "Xây dựng bộ nhận diện",
-      "description": "Thiết kế logo, bảng màu, hệ thống nhận diện thương hiệu nhất quán."
+      "image": "assets-web-design/img/yphone/f3.jpg",
+      "icon": "clapperboard",
+      "title": "Quay 4K chống rung như gimbal",
+      "description": "Vừa chạy vừa quay, video vẫn mượt, không cần thêm phụ kiện."
     },
     {
-      "icon": "smartphone",
-      "title": "Responsive & Mobile-first",
-      "description": "Đảm bảo trải nghiệm mượt mà từ mobile đến desktop."
+      "image": "assets-web-design/img/yphone/f4.jpg",
+      "icon": "cpu",
+      "title": "Chip Y7 mát và bền pin",
+      "description": "Nhanh hơn 30%, tiết kiệm điện hơn 20%. Chơi game hai tiếng máy vẫn mát."
+    }
+  ],
+  "items": [
+    {
+      "image": "assets-web-design/img/yphone/i1.jpg",
+      "id": "y17-pro-max",
+      "name": "YPhone 17 Pro Max",
+      "category": "Pro",
+      "tagline": "Màn 6,9 inch, zoom quang 5x, pin 48 giờ.",
+      "price": "Từ 34.990.000đ",
+      "featured": true,
+      "description": "Phiên bản lớn nhất và mạnh nhất. Ống kính tele 5x chụp chân dung từ xa, khung titan nhẹ hơn thép 40%.",
+      "specs": [
+        {
+          "label": "Màn hình",
+          "value": "6,9 inch, 120Hz"
+        },
+        {
+          "label": "Camera",
+          "value": "48MP + 48MP + tele 5x"
+        },
+        {
+          "label": "Pin",
+          "value": "Đến 48 giờ"
+        },
+        {
+          "label": "Trọng lượng",
+          "value": "221g"
+        }
+      ],
+      "tags": [
+        "camera",
+        "video",
+        "game",
+        "big",
+        "premium",
+        "battery"
+      ]
     },
     {
-      "icon": "rocket",
-      "title": "Tối ưu & Triển khai",
-      "description": "Tối ưu tốc độ tải trang, SEO kỹ thuật và triển khai lên hosting/GitHub Pages."
+      "image": "assets-web-design/img/yphone/i2.jpg",
+      "id": "y17-pro",
+      "name": "YPhone 17 Pro",
+      "category": "Pro",
+      "tagline": "Sức mạnh Pro trong thân máy vừa tay.",
+      "price": "Từ 28.990.000đ",
+      "featured": true,
+      "description": "Toàn bộ camera Pro trong kích thước 6,3 inch, dễ cầm một tay.",
+      "specs": [
+        {
+          "label": "Màn hình",
+          "value": "6,3 inch, 120Hz"
+        },
+        {
+          "label": "Camera",
+          "value": "48MP + 48MP + tele 5x"
+        },
+        {
+          "label": "Pin",
+          "value": "Đến 33 giờ"
+        },
+        {
+          "label": "Trọng lượng",
+          "value": "199g"
+        }
+      ],
+      "tags": [
+        "camera",
+        "video",
+        "game",
+        "compact",
+        "premium"
+      ]
+    },
+    {
+      "image": "assets-web-design/img/yphone/i3.jpg",
+      "id": "y17-air",
+      "name": "YPhone Air",
+      "category": "Air",
+      "tagline": "Mỏng 5,6mm. Nhẹ như một cuốn sổ tay.",
+      "price": "Từ 26.990.000đ",
+      "featured": true,
+      "description": "Chiếc YPhone mỏng nhất từng có, vẫn đủ camera 48MP và pin cả ngày.",
+      "specs": [
+        {
+          "label": "Màn hình",
+          "value": "6,5 inch, 120Hz"
+        },
+        {
+          "label": "Camera",
+          "value": "48MP"
+        },
+        {
+          "label": "Độ mỏng",
+          "value": "5,6mm"
+        },
+        {
+          "label": "Trọng lượng",
+          "value": "158g"
+        }
+      ],
+      "tags": [
+        "light",
+        "premium",
+        "social"
+      ]
+    },
+    {
+      "image": "assets-web-design/img/yphone/i4.jpg",
+      "id": "y17",
+      "name": "YPhone 17",
+      "category": "Tiêu chuẩn",
+      "tagline": "Mọi thứ bạn cần, giá dễ chịu.",
+      "price": "Từ 22.990.000đ",
+      "featured": true,
+      "description": "Camera kép 48MP, chip Y7 và màn hình 120Hz lần đầu có trên bản tiêu chuẩn.",
+      "specs": [
+        {
+          "label": "Màn hình",
+          "value": "6,3 inch, 120Hz"
+        },
+        {
+          "label": "Camera",
+          "value": "48MP + 48MP"
+        },
+        {
+          "label": "Pin",
+          "value": "Đến 30 giờ"
+        },
+        {
+          "label": "Trọng lượng",
+          "value": "177g"
+        }
+      ],
+      "tags": [
+        "camera",
+        "compact",
+        "mid",
+        "social"
+      ]
+    },
+    {
+      "image": "assets-web-design/img/yphone/i5.jpg",
+      "id": "y17-plus",
+      "name": "YPhone 17 Plus",
+      "category": "Tiêu chuẩn",
+      "tagline": "Màn hình lớn, pin lớn.",
+      "price": "Từ 25.490.000đ",
+      "featured": false,
+      "description": "Dành cho người xem phim, đọc báo, làm việc nhiều trên điện thoại.",
+      "specs": [
+        {
+          "label": "Màn hình",
+          "value": "6,7 inch, 120Hz"
+        },
+        {
+          "label": "Camera",
+          "value": "48MP + 48MP"
+        },
+        {
+          "label": "Pin",
+          "value": "Đến 40 giờ"
+        },
+        {
+          "label": "Trọng lượng",
+          "value": "199g"
+        }
+      ],
+      "tags": [
+        "big",
+        "battery",
+        "mid",
+        "work"
+      ]
+    },
+    {
+      "image": "assets-web-design/img/yphone/i6.jpg",
+      "id": "y-e",
+      "name": "YPhone e",
+      "category": "e",
+      "tagline": "Chiếc YPhone đầu tiên của bạn.",
+      "price": "Từ 14.990.000đ",
+      "featured": false,
+      "description": "Nhỏ gọn, bền bỉ, đủ mạnh cho mạng xã hội và học tập.",
+      "specs": [
+        {
+          "label": "Màn hình",
+          "value": "6,1 inch"
+        },
+        {
+          "label": "Camera",
+          "value": "48MP"
+        },
+        {
+          "label": "Pin",
+          "value": "Đến 26 giờ"
+        },
+        {
+          "label": "Trọng lượng",
+          "value": "165g"
+        }
+      ],
+      "tags": [
+        "budget",
+        "compact",
+        "social",
+        "battery"
+      ]
+    }
+  ],
+  "process": [
+    {
+      "title": "Chọn phiên bản",
+      "description": "So sánh 6 bản hoặc để trợ lý AI chọn giúp."
+    },
+    {
+      "title": "Đặt cọc 500.000đ",
+      "description": "Hoàn lại 100% nếu bạn đổi ý trước ngày giao."
+    },
+    {
+      "title": "Nhận máy tại nhà",
+      "description": "Giao trong 2 giờ ở nội thành, có kỹ thuật viên chuyển dữ liệu."
+    },
+    {
+      "title": "Đổi cũ lấy mới",
+      "description": "Thu máy cũ tại chỗ, trừ thẳng vào giá."
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Ảnh chụp phố đêm Hội An sáng và rõ đến từng chiếc đèn lồng. Tôi đã cất máy ảnh vào tủ.",
+      "name": "Minh Châu",
+      "role": "Nhiếp ảnh gia đường phố"
+    },
+    {
+      "quote": "Ra sân bóng quay con chạy, video vẫn mượt như có gimbal.",
+      "name": "Anh Quốc Bảo",
+      "role": "Bố của hai bé"
+    },
+    {
+      "quote": "Cả ngày họp và gọi video, tối về pin vẫn còn 40%.",
+      "name": "Thu Hằng",
+      "role": "Quản lý dự án"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Khi nào YPhone 17 được giao?",
+      "a": "Đơn đặt trước được giao từ ngày 20/10, sớm hơn ngày mở bán 3 ngày."
+    },
+    {
+      "q": "Tôi đổi ý thì có mất cọc không?",
+      "a": "Không. Bạn được hoàn 100% tiền cọc nếu huỷ trước ngày giao."
+    },
+    {
+      "q": "Có trả góp 0% không?",
+      "a": "Có, trả góp 0% trong 12 tháng qua thẻ tín dụng hoặc công ty tài chính."
+    },
+    {
+      "q": "Bảo hành bao lâu?",
+      "a": "12 tháng chính hãng, 1 đổi 1 trong 30 ngày đầu nếu lỗi phần cứng."
     }
   ],
   "partners": [
     {
-      "name": "Nimbus Tech",
-      "logo": "https://placehold.co/160x60/E5E7EB/111827?text=Nimbus"
+      "name": "Tạp chí Số"
     },
     {
-      "name": "Orbit Finance",
-      "logo": "https://placehold.co/160x60/E5E7EB/111827?text=Orbit"
+      "name": "Kênh Công Nghệ Mới"
     },
     {
-      "name": "Lumen Retail",
-      "logo": "https://placehold.co/160x60/E5E7EB/111827?text=Lumen"
+      "name": "Tech Sài Gòn"
     },
     {
-      "name": "Vertex Edu",
-      "logo": "https://placehold.co/160x60/E5E7EB/111827?text=Vertex"
+      "name": "Báo Điện Tử Ngày Nay"
     },
     {
-      "name": "Solace Health",
-      "logo": "https://placehold.co/160x60/E5E7EB/111827?text=Solace"
+      "name": "Chuyện Thiết Bị"
     },
     {
-      "name": "Marble Estate",
-      "logo": "https://placehold.co/160x60/E5E7EB/111827?text=Marble"
+      "name": "Review Nhanh"
     }
   ],
+  "mission": {
+    "description": "Chúng tôi tin rằng chiếc máy ảnh tốt nhất là chiếc luôn ở trong túi bạn. YPhone làm ra để mỗi khoảnh khắc đều đáng được giữ lại.",
+    "vision": "Mỗi chiếc YPhone dùng tốt ít nhất 6 năm nhờ cập nhật phần mềm và pin thay được.",
+    "values": [
+      {
+        "title": "Ảnh đẹp không cần chỉnh",
+        "description": "Màu thật, da thật, không làm mịn quá tay."
+      },
+      {
+        "title": "Bền để dùng lâu",
+        "description": "6 năm cập nhật phần mềm, pin thay tại cửa hàng trong 30 phút."
+      },
+      {
+        "title": "Riêng tư mặc định",
+        "description": "Ảnh và dữ liệu xử lý ngay trên máy."
+      }
+    ]
+  },
   "achievements": [
     {
-      "title": "Giải Nhất Vietnam Web Awards",
-      "value": "2023",
-      "description": "Hạng mục Best Corporate Website."
+      "title": "Điện thoại của năm",
+      "value": "2025",
+      "description": "Bình chọn của độc giả Tạp chí Số."
     },
     {
-      "title": "Đối tác Google chứng nhận",
-      "value": "2022",
-      "description": "Google Partner cho mảng thiết kế số."
-    },
-    {
-      "title": "Top 10 Agency trẻ",
-      "value": "2021",
-      "description": "Bình chọn bởi cộng đồng Designer Việt Nam."
+      "title": "Camera chụp đêm tốt nhất",
+      "value": "2024",
+      "description": "Giải thưởng Kênh Công Nghệ Mới."
     },
     {
       "title": "Khách hàng hài lòng",
-      "value": "98%",
-      "description": "Khảo sát nội bộ sau dự án, năm 2023."
+      "value": "97%",
+      "description": "Khảo sát sau 6 tháng sử dụng."
     }
   ],
   "contact": {
-    "address": "123 Đường Sáng Tạo, Quận 1, TP. Hồ Chí Minh",
-    "email": "hello@aurora-studio.example",
-    "phone": "+84 28 1234 5678",
-    "workingHours": "Thứ 2 - Thứ 6, 9:00 - 18:00",
-    "mapEmbed": "https://www.google.com/maps/embed?pb=PLACEHOLDER",
+    "address": "68 Đồng Khởi, Quận 1, TP. Hồ Chí Minh",
+    "email": "hello@yphone.example",
+    "phone": "1900 6868",
+    "workingHours": "8:00 - 22:00 mỗi ngày",
     "socials": {
-      "facebook": "https://facebook.com/aurora.studio.placeholder",
-      "instagram": "https://instagram.com/aurora.studio.placeholder",
-      "linkedin": "https://linkedin.com/company/aurora-studio-placeholder",
-      "github": "https://github.com/aurora-studio-placeholder"
+      "facebook": "#",
+      "instagram": "#",
+      "youtube": "#"
     }
   },
-  "projects": [
-    {
-      "id": "proj-01",
-      "title": "Dự án Sáng Tạo Số 1",
-      "category": "Thương hiệu",
-      "client": "Khách hàng A",
-      "year": 2023,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-1/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 1, thuộc nhóm Thương hiệu. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "thương-hiệu",
-        "placeholder",
-        "case-1"
-      ],
-      "link": "https://example.org/projects/proj-01",
-      "featured": true
-    },
-    {
-      "id": "proj-02",
-      "title": "Dự án Sáng Tạo Số 2",
-      "category": "Web App",
-      "client": "Khách hàng B",
-      "year": 2024,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-2/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 2, thuộc nhóm Web App. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "web-app",
-        "placeholder",
-        "case-2"
-      ],
-      "link": "https://example.org/projects/proj-02",
-      "featured": true
-    },
-    {
-      "id": "proj-03",
-      "title": "Dự án Sáng Tạo Số 3",
-      "category": "Mobile App",
-      "client": "Khách hàng C",
-      "year": 2025,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-3/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 3, thuộc nhóm Mobile App. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "mobile-app",
-        "placeholder",
-        "case-3"
-      ],
-      "link": "https://example.org/projects/proj-03",
-      "featured": true
-    },
-    {
-      "id": "proj-04",
-      "title": "Dự án Sáng Tạo Số 4",
-      "category": "Marketing",
-      "client": "Khách hàng D",
-      "year": 2022,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-4/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 4, thuộc nhóm Marketing. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "marketing",
-        "placeholder",
-        "case-4"
-      ],
-      "link": "https://example.org/projects/proj-04",
-      "featured": true
-    },
-    {
-      "id": "proj-05",
-      "title": "Dự án Sáng Tạo Số 5",
-      "category": "UI/UX",
-      "client": "Khách hàng E",
-      "year": 2023,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-5/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 5, thuộc nhóm UI/UX. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "ui-ux",
-        "placeholder",
-        "case-5"
-      ],
-      "link": "https://example.org/projects/proj-05",
-      "featured": true
-    },
-    {
-      "id": "proj-06",
-      "title": "Dự án Sáng Tạo Số 6",
-      "category": "Nội bộ",
-      "client": "Khách hàng F",
-      "year": 2024,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-6/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 6, thuộc nhóm Nội bộ. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "nội-bộ",
-        "placeholder",
-        "case-6"
-      ],
-      "link": "https://example.org/projects/proj-06",
-      "featured": true
-    },
-    {
-      "id": "proj-07",
-      "title": "Dự án Sáng Tạo Số 7",
-      "category": "Thương hiệu",
-      "client": "Khách hàng G",
-      "year": 2025,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-7/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 7, thuộc nhóm Thương hiệu. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "thương-hiệu",
-        "placeholder",
-        "case-7"
-      ],
-      "link": "https://example.org/projects/proj-07",
-      "featured": false
-    },
-    {
-      "id": "proj-08",
-      "title": "Dự án Sáng Tạo Số 8",
-      "category": "Web App",
-      "client": "Khách hàng H",
-      "year": 2022,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-8/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 8, thuộc nhóm Web App. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "web-app",
-        "placeholder",
-        "case-8"
-      ],
-      "link": "https://example.org/projects/proj-08",
-      "featured": false
-    },
-    {
-      "id": "proj-09",
-      "title": "Dự án Sáng Tạo Số 9",
-      "category": "Mobile App",
-      "client": "Khách hàng I",
-      "year": 2023,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-9/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 9, thuộc nhóm Mobile App. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "mobile-app",
-        "placeholder",
-        "case-9"
-      ],
-      "link": "https://example.org/projects/proj-09",
-      "featured": false
-    },
-    {
-      "id": "proj-10",
-      "title": "Dự án Sáng Tạo Số 10",
-      "category": "Marketing",
-      "client": "Khách hàng J",
-      "year": 2024,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-10/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 10, thuộc nhóm Marketing. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "marketing",
-        "placeholder",
-        "case-10"
-      ],
-      "link": "https://example.org/projects/proj-10",
-      "featured": false
-    },
-    {
-      "id": "proj-11",
-      "title": "Dự án Sáng Tạo Số 11",
-      "category": "UI/UX",
-      "client": "Khách hàng K",
-      "year": 2025,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-11/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 11, thuộc nhóm UI/UX. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "ui-ux",
-        "placeholder",
-        "case-11"
-      ],
-      "link": "https://example.org/projects/proj-11",
-      "featured": false
-    },
-    {
-      "id": "proj-12",
-      "title": "Dự án Sáng Tạo Số 12",
-      "category": "Nội bộ",
-      "client": "Khách hàng L",
-      "year": 2022,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-12/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 12, thuộc nhóm Nội bộ. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "nội-bộ",
-        "placeholder",
-        "case-12"
-      ],
-      "link": "https://example.org/projects/proj-12",
-      "featured": false
-    },
-    {
-      "id": "proj-13",
-      "title": "Dự án Sáng Tạo Số 13",
-      "category": "Thương hiệu",
-      "client": "Khách hàng M",
-      "year": 2023,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-13/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 13, thuộc nhóm Thương hiệu. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "thương-hiệu",
-        "placeholder",
-        "case-13"
-      ],
-      "link": "https://example.org/projects/proj-13",
-      "featured": false
-    },
-    {
-      "id": "proj-14",
-      "title": "Dự án Sáng Tạo Số 14",
-      "category": "Web App",
-      "client": "Khách hàng N",
-      "year": 2024,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-14/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 14, thuộc nhóm Web App. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "web-app",
-        "placeholder",
-        "case-14"
-      ],
-      "link": "https://example.org/projects/proj-14",
-      "featured": false
-    },
-    {
-      "id": "proj-15",
-      "title": "Dự án Sáng Tạo Số 15",
-      "category": "Mobile App",
-      "client": "Khách hàng O",
-      "year": 2025,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-15/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 15, thuộc nhóm Mobile App. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "mobile-app",
-        "placeholder",
-        "case-15"
-      ],
-      "link": "https://example.org/projects/proj-15",
-      "featured": false
-    },
-    {
-      "id": "proj-16",
-      "title": "Dự án Sáng Tạo Số 16",
-      "category": "Marketing",
-      "client": "Khách hàng P",
-      "year": 2022,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-16/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 16, thuộc nhóm Marketing. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "marketing",
-        "placeholder",
-        "case-16"
-      ],
-      "link": "https://example.org/projects/proj-16",
-      "featured": false
-    },
-    {
-      "id": "proj-17",
-      "title": "Dự án Sáng Tạo Số 17",
-      "category": "UI/UX",
-      "client": "Khách hàng Q",
-      "year": 2023,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-17/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 17, thuộc nhóm UI/UX. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "ui-ux",
-        "placeholder",
-        "case-17"
-      ],
-      "link": "https://example.org/projects/proj-17",
-      "featured": false
-    },
-    {
-      "id": "proj-18",
-      "title": "Dự án Sáng Tạo Số 18",
-      "category": "Nội bộ",
-      "client": "Khách hàng R",
-      "year": 2024,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-18/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 18, thuộc nhóm Nội bộ. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "nội-bộ",
-        "placeholder",
-        "case-18"
-      ],
-      "link": "https://example.org/projects/proj-18",
-      "featured": false
-    },
-    {
-      "id": "proj-19",
-      "title": "Dự án Sáng Tạo Số 19",
-      "category": "Thương hiệu",
-      "client": "Khách hàng S",
-      "year": 2025,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-19/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 19, thuộc nhóm Thương hiệu. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "thương-hiệu",
-        "placeholder",
-        "case-19"
-      ],
-      "link": "https://example.org/projects/proj-19",
-      "featured": false
-    },
-    {
-      "id": "proj-20",
-      "title": "Dự án Sáng Tạo Số 20",
-      "category": "Web App",
-      "client": "Khách hàng T",
-      "year": 2022,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-20/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 20, thuộc nhóm Web App. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "web-app",
-        "placeholder",
-        "case-20"
-      ],
-      "link": "https://example.org/projects/proj-20",
-      "featured": false
-    },
-    {
-      "id": "proj-21",
-      "title": "Dự án Sáng Tạo Số 21",
-      "category": "Mobile App",
-      "client": "Khách hàng U",
-      "year": 2023,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-21/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 21, thuộc nhóm Mobile App. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "mobile-app",
-        "placeholder",
-        "case-21"
-      ],
-      "link": "https://example.org/projects/proj-21",
-      "featured": false
-    },
-    {
-      "id": "proj-22",
-      "title": "Dự án Sáng Tạo Số 22",
-      "category": "Marketing",
-      "client": "Khách hàng V",
-      "year": 2024,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-22/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 22, thuộc nhóm Marketing. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "marketing",
-        "placeholder",
-        "case-22"
-      ],
-      "link": "https://example.org/projects/proj-22",
-      "featured": false
-    },
-    {
-      "id": "proj-23",
-      "title": "Dự án Sáng Tạo Số 23",
-      "category": "UI/UX",
-      "client": "Khách hàng W",
-      "year": 2025,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-23/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 23, thuộc nhóm UI/UX. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "ui-ux",
-        "placeholder",
-        "case-23"
-      ],
-      "link": "https://example.org/projects/proj-23",
-      "featured": false
-    },
-    {
-      "id": "proj-24",
-      "title": "Dự án Sáng Tạo Số 24",
-      "category": "Nội bộ",
-      "client": "Khách hàng X",
-      "year": 2022,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-24/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 24, thuộc nhóm Nội bộ. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "nội-bộ",
-        "placeholder",
-        "case-24"
-      ],
-      "link": "https://example.org/projects/proj-24",
-      "featured": false
-    },
-    {
-      "id": "proj-25",
-      "title": "Dự án Sáng Tạo Số 25",
-      "category": "Thương hiệu",
-      "client": "Khách hàng Y",
-      "year": 2023,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-25/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 25, thuộc nhóm Thương hiệu. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "thương-hiệu",
-        "placeholder",
-        "case-25"
-      ],
-      "link": "https://example.org/projects/proj-25",
-      "featured": false
-    },
-    {
-      "id": "proj-26",
-      "title": "Dự án Sáng Tạo Số 26",
-      "category": "Web App",
-      "client": "Khách hàng Z",
-      "year": 2024,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-26/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 26, thuộc nhóm Web App. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "web-app",
-        "placeholder",
-        "case-26"
-      ],
-      "link": "https://example.org/projects/proj-26",
-      "featured": false
-    },
-    {
-      "id": "proj-27",
-      "title": "Dự án Sáng Tạo Số 27",
-      "category": "Mobile App",
-      "client": "Khách hàng A",
-      "year": 2025,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-27/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 27, thuộc nhóm Mobile App. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "mobile-app",
-        "placeholder",
-        "case-27"
-      ],
-      "link": "https://example.org/projects/proj-27",
-      "featured": false
-    },
-    {
-      "id": "proj-28",
-      "title": "Dự án Sáng Tạo Số 28",
-      "category": "Marketing",
-      "client": "Khách hàng B",
-      "year": 2022,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-28/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 28, thuộc nhóm Marketing. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "marketing",
-        "placeholder",
-        "case-28"
-      ],
-      "link": "https://example.org/projects/proj-28",
-      "featured": false
-    },
-    {
-      "id": "proj-29",
-      "title": "Dự án Sáng Tạo Số 29",
-      "category": "UI/UX",
-      "client": "Khách hàng C",
-      "year": 2023,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-29/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 29, thuộc nhóm UI/UX. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "ui-ux",
-        "placeholder",
-        "case-29"
-      ],
-      "link": "https://example.org/projects/proj-29",
-      "featured": false
-    },
-    {
-      "id": "proj-30",
-      "title": "Dự án Sáng Tạo Số 30",
-      "category": "Nội bộ",
-      "client": "Khách hàng D",
-      "year": 2024,
-      "thumbnail": "https://picsum.photos/seed/wd2026-proj-30/640/480",
-      "description": "Mô tả ngắn gọn cho dự án số 30, thuộc nhóm Nội bộ. Nội dung này là placeholder, thí sinh/BTC sẽ thay bằng nội dung thật.",
-      "tags": [
-        "nội-bộ",
-        "placeholder",
-        "case-30"
-      ],
-      "link": "https://example.org/projects/proj-30",
-      "featured": false
-    }
-  ],
-  "theme": {
-    "note": "Các mã màu dưới đây là nguồn chân lý duy nhất (single source of truth). JS đọc object này và set thành CSS custom properties trên :root (vd: --wd-color-primary). Tailwind: khai báo trong tailwind.config.js dạng colors.primary = 'var(--wd-color-primary)'. Bootstrap 5.3+: override trực tiếp qua CSS variables cùng tên ($primary map sang var(--bs-primary), có thể gán lại = var(--wd-color-primary) trong file scss/css tuỳ biến.",
-    "colors": {
-      "primary": "#2563EB",
-      "secondary": "#7C3AED",
-      "accent": "#F59E0B",
-      "background": "#FFFFFF",
-      "surface": "#F9FAFB",
-      "textPrimary": "#111827",
-      "textSecondary": "#6B7280",
-      "border": "#E5E7EB",
-      "success": "#16A34A",
-      "warning": "#F59E0B",
-      "danger": "#DC2626",
-      "info": "#0EA5E9"
-    },
-    "darkColors": {
-      "background": "#0B0F19",
-      "surface": "#111827",
-      "textPrimary": "#F9FAFB",
-      "textSecondary": "#9CA3AF",
-      "border": "#1F2937"
-    },
-    "font": {
-      "heading": "'Plus Jakarta Sans', sans-serif",
-      "body": "'Inter', sans-serif"
-    },
-    "radius": {
-      "sm": "6px",
-      "md": "12px",
-      "lg": "20px"
-    }
+  "assistant": {
+    "keyLabel": "Khóa API Claude (tuỳ chọn)",
+    "keyHelp": "Có khóa: gợi ý do Claude viết. Không có: dùng bộ lọc theo tiêu chí. Khóa chỉ lưu trong trình duyệt này.",
+    "submit": "Xem gợi ý",
+    "loading": "Đang chọn sản phẩm hợp với bạn…",
+    "apply": "Điền sẵn vào form liên hệ",
+    "again": "Chọn lại",
+    "needAll": "Chọn một đáp án cho mỗi câu để nhận gợi ý.",
+    "aiBadge": "Gợi ý bởi Claude",
+    "ruleBadge": "Gợi ý theo tiêu chí",
+    "error": "Không gọi được Claude, đã chuyển sang gợi ý theo tiêu chí.",
+    "alsoLabel": "Cũng hợp với bạn",
+    "notePlaceholder": "Muốn nói thêm điều gì? (không bắt buộc)",
+    "title": "Trợ lý chọn máy",
+    "text": "Ba câu hỏi, chưa đến 30 giây.",
+    "questions": [
+      {
+        "id": "use",
+        "label": "Bạn dùng điện thoại nhiều nhất để…",
+        "options": [
+          {
+            "label": "Chụp ảnh, quay phim",
+            "tags": [
+              "camera",
+              "video"
+            ]
+          },
+          {
+            "label": "Chơi game",
+            "tags": [
+              "game"
+            ]
+          },
+          {
+            "label": "Làm việc, đọc",
+            "tags": [
+              "work",
+              "battery",
+              "big"
+            ]
+          },
+          {
+            "label": "Mạng xã hội",
+            "tags": [
+              "social",
+              "light"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "size",
+        "label": "Bạn thích máy…",
+        "options": [
+          {
+            "label": "Nhỏ gọn, cầm một tay",
+            "tags": [
+              "compact"
+            ]
+          },
+          {
+            "label": "Màn hình lớn",
+            "tags": [
+              "big"
+            ]
+          },
+          {
+            "label": "Mỏng nhẹ nhất có thể",
+            "tags": [
+              "light"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "budget",
+        "label": "Ngân sách của bạn",
+        "options": [
+          {
+            "label": "Dưới 20 triệu",
+            "tags": [
+              "budget"
+            ]
+          },
+          {
+            "label": "20–27 triệu",
+            "tags": [
+              "mid"
+            ]
+          },
+          {
+            "label": "Trên 27 triệu",
+            "tags": [
+              "premium"
+            ]
+          }
+        ]
+      }
+    ],
+    "template": "Tôi muốn đặt trước {item}. Nhu cầu của tôi: {answers}. Nhờ tư vấn thêm màu và dung lượng phù hợp."
   }
 }

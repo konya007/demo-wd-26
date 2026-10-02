@@ -1,0 +1,646 @@
+{
+  "seo": {
+    "title": "Mộc Nhan — Mỹ phẩm thuần chay từ thảo mộc Việt",
+    "description": "Serum, kem dưỡng, chống nắng từ trà xanh, rau má, nghệ. Thuần chay, không thử nghiệm trên động vật.",
+    "locale": "vi_VN",
+    "thumbnail": "assets-web-design/img/beauty/hero.jpg",
+    "favicon": "",
+    "themeColor": "#9C3D57"
+  },
+  "organization": {
+    "name": "Mộc Nhan Botanics",
+    "shortName": "Mộc Nhan",
+    "tagline": "Da khoẻ từ thảo mộc Việt.",
+    "logo": "",
+    "foundedYear": 2020,
+    "industry": "Mỹ phẩm thuần chay"
+  },
+  "theme": {
+    "note": "Nguồn duy nhất cho màu, font, bo góc. Đổi ở đây, mọi trang cùng đổi.",
+    "colors": {
+      "primary": "#9C3D57",
+      "onPrimary": "#FFFFFF",
+      "accent": "#6E8B5E",
+      "background": "#FAF6F5",
+      "surface": "#FFFFFF",
+      "text": "#2A1E22",
+      "muted": "#6F5F64",
+      "border": "#EBDFE0"
+    },
+    "darkColors": {
+      "primary": "#E48BA4",
+      "onPrimary": "#1B1215",
+      "accent": "#9DBB8C",
+      "background": "#1B1215",
+      "surface": "#251A1E",
+      "text": "#F7EEF0",
+      "muted": "#BCA9AF",
+      "border": "#3A2B31"
+    },
+    "font": {
+      "heading": "'Playfair Display', serif",
+      "body": "'Be Vietnam Pro', sans-serif",
+      "googleFonts": "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Be+Vietnam+Pro:wght@400;500;600&display=swap"
+    },
+    "radius": {
+      "sm": "999px",
+      "md": "20px",
+      "lg": "32px"
+    }
+  },
+  "nav": [
+    {
+      "label": "Trang chủ",
+      "href": "index.html"
+    },
+    {
+      "label": "Thành phần",
+      "href": "features.html"
+    },
+    {
+      "label": "Sản phẩm",
+      "href": "products.html"
+    },
+    {
+      "label": "Câu chuyện",
+      "href": "about.html"
+    },
+    {
+      "label": "Liên hệ",
+      "href": "contact.html"
+    }
+  ],
+  "cta": {
+    "text": "Nhận bộ dùng thử",
+    "href": "contact.html",
+    "note": "Miễn phí 3 mẫu 5ml, bạn chỉ trả phí ship"
+  },
+  "hero": {
+    "image": "assets-web-design/img/beauty/hero.jpg",
+    "variant": "split",
+    "eyebrow": "Thuần chay · Không cồn · Không hương liệu",
+    "title": "Da khoẻ từ thảo mộc Việt.",
+    "subtitle": "Rau má, trà xanh, nghệ vàng chiết xuất lạnh, giữ nguyên dưỡng chất. Dịu nhẹ đến mức da nhạy cảm cũng dùng được.",
+    "ctaSecondary": {
+      "text": "Xem bộ sản phẩm",
+      "link": "products.html"
+    },
+    "stats": [
+      {
+        "label": "Thành phần tự nhiên",
+        "value": "98%"
+      },
+      {
+        "label": "Khách hàng tin dùng",
+        "value": "60.000+"
+      },
+      {
+        "label": "Thấy da đổi khác sau",
+        "value": "14 ngày"
+      }
+    ]
+  },
+  "sections": {
+    "partners": {
+      "title": "Có mặt tại"
+    },
+    "features": {
+      "title": "Từ vườn thảo mộc đến làn da",
+      "text": "Bốn điều chúng tôi không bao giờ thoả hiệp.",
+      "more": "Tìm hiểu thành phần"
+    },
+    "products": {
+      "title": "Chu trình dưỡng da 4 bước",
+      "text": "Dùng riêng từng món hay trọn bộ đều được.",
+      "more": "Xem tất cả sản phẩm"
+    },
+    "process": {
+      "title": "Chu trình buổi tối",
+      "text": "Năm phút trước khi ngủ."
+    },
+    "testimonials": {
+      "title": "Làn da của họ kể lại"
+    },
+    "faq": {
+      "title": "Câu hỏi thường gặp"
+    },
+    "stats": {
+      "title": "Mộc Nhan qua những con số"
+    },
+    "mission": {
+      "title": "Vì sao có Mộc Nhan"
+    },
+    "achievements": {
+      "title": "Chứng nhận"
+    },
+    "contact": {
+      "title": "Nhận bộ dùng thử miễn phí",
+      "text": "Kể cho chúng tôi về làn da của bạn, chuyên viên sẽ chọn 3 mẫu phù hợp.",
+      "submit": "Nhận bộ dùng thử",
+      "success": "Đã nhận yêu cầu. Bộ dùng thử sẽ được gửi trong 2 ngày."
+    },
+    "ctaBand": {
+      "title": "Làn da của bạn xứng đáng được dịu dàng.",
+      "text": "Thử 3 sản phẩm miễn phí trong 7 ngày."
+    },
+    "related": {
+      "title": "Dùng cùng sẽ tốt hơn"
+    },
+    "advisor": {
+      "title": "Da bạn cần gì?",
+      "text": "Ba câu hỏi về làn da, trợ lý AI chọn sản phẩm và gửi yêu cầu dùng thử giúp bạn."
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "Mỹ phẩm thuần chay"
+    },
+    "features": {
+      "title": "Thành phần",
+      "image": "assets-web-design/img/beauty/features_page.jpg",
+      "heading": "Ít thành phần. Đúng thành phần.",
+      "text": "Mỗi sản phẩm dưới 15 thành phần, ghi rõ nguồn gốc từng loại."
+    },
+    "products": {
+      "title": "Sản phẩm",
+      "heading": "Sáu sản phẩm cho một làn da khoẻ",
+      "text": "Lọc theo bước dưỡng hoặc tìm theo vấn đề da."
+    },
+    "product": {
+      "title": "Chi tiết",
+      "back": "Tất cả sản phẩm",
+      "category": "Bước",
+      "price": "Giá",
+      "specs": "Thông số"
+    },
+    "about": {
+      "title": "Câu chuyện",
+      "image": "assets-web-design/img/beauty/about.jpg",
+      "heading": "Bắt đầu từ căn bếp của bà",
+      "text": "Công thức đầu tiên của Mộc Nhan là nước rau má bà ngoại vẫn đắp cho mẹ."
+    },
+    "contact": {
+      "title": "Liên hệ",
+      "heading": "Hỏi chuyên viên về làn da của bạn",
+      "text": "Tư vấn miễn phí qua điện thoại hoặc tại cửa hàng."
+    }
+  },
+  "catalog": {
+    "all": "Tất cả",
+    "search": "Tìm theo tên hoặc vấn đề da",
+    "empty": "Chưa có sản phẩm nào khớp. Thử bỏ bớt bộ lọc."
+  },
+  "features": [
+    {
+      "image": "assets-web-design/img/beauty/f1.jpg",
+      "icon": "leaf",
+      "title": "Thảo mộc Việt trồng hữu cơ",
+      "description": "Rau má Hội An, trà xanh Thái Nguyên, nghệ Hưng Yên, thu hái tận vườn."
+    },
+    {
+      "image": "assets-web-design/img/beauty/f2.jpg",
+      "icon": "droplets",
+      "title": "Chiết xuất lạnh",
+      "description": "Không đun nóng, giữ nguyên hoạt chất, mùi thảo mộc tự nhiên."
+    },
+    {
+      "image": "assets-web-design/img/beauty/f3.jpg",
+      "icon": "heart-handshake",
+      "title": "Dịu nhẹ cho da nhạy cảm",
+      "description": "Không cồn, không hương liệu, đã thử kích ứng trên 200 người."
+    },
+    {
+      "image": "assets-web-design/img/beauty/f4.jpg",
+      "icon": "recycle",
+      "title": "Chai thuỷ tinh, đổi vỏ lấy quà",
+      "description": "Mang 5 vỏ chai cũ đến cửa hàng, nhận một chai mới cỡ nhỏ."
+    }
+  ],
+  "items": [
+    {
+      "image": "assets-web-design/img/beauty/i1.jpg",
+      "id": "serum-rau-ma",
+      "name": "Serum rau má B5",
+      "category": "Đặc trị",
+      "tagline": "Làm dịu mụn, phục hồi da sau 14 ngày.",
+      "price": "395.000đ / 30ml",
+      "featured": true,
+      "description": "Chiết xuất rau má 72% và B5 làm dịu vùng da đỏ, giảm sưng mụn.",
+      "specs": [
+        {
+          "label": "Dung tích",
+          "value": "30ml"
+        },
+        {
+          "label": "Thành phần chính",
+          "value": "Rau má 72%, B5 2%"
+        },
+        {
+          "label": "Loại da",
+          "value": "Da mụn, nhạy cảm"
+        },
+        {
+          "label": "Dùng",
+          "value": "Sáng và tối"
+        }
+      ],
+      "tags": [
+        "acne",
+        "sensitive",
+        "repair",
+        "mid"
+      ]
+    },
+    {
+      "image": "assets-web-design/img/beauty/i2.jpg",
+      "id": "kem-tra-xanh",
+      "name": "Kem dưỡng trà xanh",
+      "category": "Dưỡng ẩm",
+      "tagline": "Ẩm mượt mà không bết dính.",
+      "price": "345.000đ / 50ml",
+      "featured": true,
+      "description": "Kết cấu gel-cream thấm nhanh, kiểm soát dầu cho da hỗn hợp.",
+      "specs": [
+        {
+          "label": "Dung tích",
+          "value": "50ml"
+        },
+        {
+          "label": "Thành phần chính",
+          "value": "Trà xanh, squalane"
+        },
+        {
+          "label": "Loại da",
+          "value": "Da dầu, hỗn hợp"
+        },
+        {
+          "label": "Dùng",
+          "value": "Sáng và tối"
+        }
+      ],
+      "tags": [
+        "oily",
+        "hydrate",
+        "budget"
+      ]
+    },
+    {
+      "image": "assets-web-design/img/beauty/i3.jpg",
+      "id": "son-duong",
+      "name": "Son dưỡng sáp ong",
+      "category": "Môi",
+      "tagline": "Môi mềm cả ngày, có màu hồng nhẹ.",
+      "price": "149.000đ / 4g",
+      "featured": false,
+      "description": "Sáp ong, dầu dừa, chiết xuất củ dền cho màu hồng tự nhiên.",
+      "specs": [
+        {
+          "label": "Khối lượng",
+          "value": "4g"
+        },
+        {
+          "label": "Thành phần chính",
+          "value": "Sáp ong, dầu dừa"
+        },
+        {
+          "label": "Màu",
+          "value": "Hồng củ dền"
+        },
+        {
+          "label": "Dùng",
+          "value": "Khi cần"
+        }
+      ],
+      "tags": [
+        "dry",
+        "budget",
+        "gift"
+      ]
+    },
+    {
+      "image": "assets-web-design/img/beauty/i4.jpg",
+      "id": "tinh-chat-nghe",
+      "name": "Tinh chất nghệ sáng da",
+      "category": "Đặc trị",
+      "tagline": "Mờ thâm, đều màu sau 4 tuần.",
+      "price": "445.000đ / 30ml",
+      "featured": true,
+      "description": "Curcumin từ nghệ vàng và vitamin C ổn định giúp da sáng đều màu.",
+      "specs": [
+        {
+          "label": "Dung tích",
+          "value": "30ml"
+        },
+        {
+          "label": "Thành phần chính",
+          "value": "Nghệ vàng, vitamin C 10%"
+        },
+        {
+          "label": "Loại da",
+          "value": "Da xỉn màu, thâm mụn"
+        },
+        {
+          "label": "Dùng",
+          "value": "Buổi tối"
+        }
+      ],
+      "tags": [
+        "bright",
+        "acne",
+        "premium"
+      ]
+    },
+    {
+      "image": "assets-web-design/img/beauty/i5.jpg",
+      "id": "mat-na-ngu",
+      "name": "Mặt nạ ngủ hoa sen",
+      "category": "Dưỡng ẩm",
+      "tagline": "Ngủ một đêm, sáng dậy da căng mọng.",
+      "price": "325.000đ / 80ml",
+      "featured": true,
+      "description": "Chiết xuất hoa sen và hyaluronic acid khoá ẩm suốt đêm.",
+      "specs": [
+        {
+          "label": "Dung tích",
+          "value": "80ml"
+        },
+        {
+          "label": "Thành phần chính",
+          "value": "Hoa sen, HA"
+        },
+        {
+          "label": "Loại da",
+          "value": "Da khô, thiếu nước"
+        },
+        {
+          "label": "Dùng",
+          "value": "2–3 tối mỗi tuần"
+        }
+      ],
+      "tags": [
+        "dry",
+        "hydrate",
+        "mid"
+      ]
+    },
+    {
+      "image": "assets-web-design/img/beauty/i6.jpg",
+      "id": "chong-nang",
+      "name": "Kem chống nắng bí đao",
+      "category": "Bảo vệ",
+      "tagline": "SPF 50+, không vệt trắng, không bết.",
+      "price": "299.000đ / 50ml",
+      "featured": false,
+      "description": "Màng lọc khoáng thế hệ mới, bí đao kiểm soát dầu cả ngày.",
+      "specs": [
+        {
+          "label": "Dung tích",
+          "value": "50ml"
+        },
+        {
+          "label": "Chỉ số",
+          "value": "SPF 50+ PA++++"
+        },
+        {
+          "label": "Loại da",
+          "value": "Mọi loại da"
+        },
+        {
+          "label": "Dùng",
+          "value": "Mỗi sáng"
+        }
+      ],
+      "tags": [
+        "oily",
+        "sensitive",
+        "protect",
+        "budget"
+      ]
+    }
+  ],
+  "process": [
+    {
+      "title": "Làm sạch",
+      "description": "Rửa mặt bằng nước ấm và sữa rửa mặt dịu nhẹ."
+    },
+    {
+      "title": "Đặc trị",
+      "description": "3 giọt serum rau má hoặc tinh chất nghệ."
+    },
+    {
+      "title": "Dưỡng ẩm",
+      "description": "Kem trà xanh, hoặc mặt nạ ngủ cho da khô."
+    },
+    {
+      "title": "Ngủ ngon",
+      "description": "Da tự phục hồi trong 7 tiếng ngủ."
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Da tôi rất dễ kích ứng, dùng serum rau má hai tuần thì hết đỏ hai bên má.",
+      "name": "Khánh Vy",
+      "role": "Da nhạy cảm, 26 tuổi"
+    },
+    {
+      "quote": "Kem trà xanh thấm nhanh, trưa không còn đổ dầu. Chai thuỷ tinh rất đẹp.",
+      "name": "Thảo My",
+      "role": "Da dầu, 22 tuổi"
+    },
+    {
+      "quote": "Thâm mụn mờ thấy rõ sau một tháng. Mùi nghệ nhẹ, dễ chịu.",
+      "name": "Gia Hân",
+      "role": "Da thâm mụn, 29 tuổi"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Bầu bí có dùng được không?",
+      "a": "Serum rau má, kem trà xanh, son dưỡng và kem chống nắng an toàn cho mẹ bầu. Tinh chất nghệ nên hỏi bác sĩ."
+    },
+    {
+      "q": "Hạn dùng bao lâu?",
+      "a": "12 tháng khi chưa mở, 6 tháng sau khi mở nắp."
+    },
+    {
+      "q": "Có thử nghiệm trên động vật không?",
+      "a": "Không. Mộc Nhan thuần chay và không thử nghiệm trên động vật."
+    },
+    {
+      "q": "Bộ dùng thử gồm gì?",
+      "a": "3 mẫu 5ml do chuyên viên chọn theo loại da bạn mô tả."
+    }
+  ],
+  "partners": [
+    {
+      "name": "Chuỗi Nhà Thuốc An Tâm"
+    },
+    {
+      "name": "Siêu thị Xanh"
+    },
+    {
+      "name": "Sàn Mỹ Phẩm Việt"
+    },
+    {
+      "name": "Tạp chí Đẹp Mỗi Ngày"
+    },
+    {
+      "name": "Hội Da Nhạy Cảm"
+    },
+    {
+      "name": "Spa Lá Sen"
+    }
+  ],
+  "mission": {
+    "description": "Chúng tôi tin rằng chăm da không cần hàng chục bước hay thành phần khó đọc. Thảo mộc Việt đủ dịu dàng và đủ hiệu quả.",
+    "vision": "Mỗi sản phẩm mua về là một mét vuông vườn thảo mộc hữu cơ được trồng thêm.",
+    "values": [
+      {
+        "title": "Minh bạch",
+        "description": "Ghi rõ nguồn gốc và tỉ lệ từng thành phần."
+      },
+      {
+        "title": "Dịu dàng",
+        "description": "Với làn da, với động vật, với đất."
+      },
+      {
+        "title": "Ít mà đủ",
+        "description": "Chu trình 4 bước là đủ cho da khoẻ."
+      }
+    ]
+  },
+  "achievements": [
+    {
+      "title": "Chứng nhận thuần chay",
+      "value": "2024",
+      "description": "Không nguyên liệu nguồn gốc động vật."
+    },
+    {
+      "title": "Vỏ chai đã tái chế",
+      "value": "48.000",
+      "description": "Từ chương trình đổi vỏ lấy quà."
+    },
+    {
+      "title": "Khách mua lại",
+      "value": "72%",
+      "description": "Trong 6 tháng."
+    }
+  ],
+  "contact": {
+    "address": "45 Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh",
+    "email": "xinchao@mocnhan.example",
+    "phone": "1900 2468",
+    "workingHours": "9:00 - 21:00 mỗi ngày",
+    "socials": {
+      "facebook": "#",
+      "instagram": "#",
+      "tiktok": "#"
+    }
+  },
+  "assistant": {
+    "keyLabel": "Khóa API Claude (tuỳ chọn)",
+    "keyHelp": "Có khóa: gợi ý do Claude viết. Không có: dùng bộ lọc theo tiêu chí. Khóa chỉ lưu trong trình duyệt này.",
+    "submit": "Xem gợi ý",
+    "loading": "Đang chọn sản phẩm hợp với bạn…",
+    "apply": "Điền sẵn vào form liên hệ",
+    "again": "Chọn lại",
+    "needAll": "Chọn một đáp án cho mỗi câu để nhận gợi ý.",
+    "aiBadge": "Gợi ý bởi Claude",
+    "ruleBadge": "Gợi ý theo tiêu chí",
+    "error": "Không gọi được Claude, đã chuyển sang gợi ý theo tiêu chí.",
+    "alsoLabel": "Cũng hợp với bạn",
+    "notePlaceholder": "Muốn nói thêm điều gì? (không bắt buộc)",
+    "title": "Trợ lý soi da",
+    "text": "Ba câu về làn da, trợ lý AI chọn sản phẩm và gửi yêu cầu dùng thử giúp bạn.",
+    "questions": [
+      {
+        "id": "skin",
+        "label": "Da bạn thuộc loại nào?",
+        "options": [
+          {
+            "label": "Da dầu",
+            "tags": [
+              "oily"
+            ]
+          },
+          {
+            "label": "Da khô",
+            "tags": [
+              "dry"
+            ]
+          },
+          {
+            "label": "Da hỗn hợp",
+            "tags": [
+              "oily",
+              "hydrate"
+            ]
+          },
+          {
+            "label": "Da nhạy cảm",
+            "tags": [
+              "sensitive"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "concern",
+        "label": "Bạn lo lắng điều gì nhất?",
+        "options": [
+          {
+            "label": "Mụn, sưng đỏ",
+            "tags": [
+              "acne",
+              "repair"
+            ]
+          },
+          {
+            "label": "Thâm, xỉn màu",
+            "tags": [
+              "bright"
+            ]
+          },
+          {
+            "label": "Thiếu ẩm, bong tróc",
+            "tags": [
+              "hydrate",
+              "dry"
+            ]
+          },
+          {
+            "label": "Bảo vệ khỏi nắng",
+            "tags": [
+              "protect"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "budget",
+        "label": "Ngân sách cho một sản phẩm",
+        "options": [
+          {
+            "label": "Dưới 300.000đ",
+            "tags": [
+              "budget"
+            ]
+          },
+          {
+            "label": "300 – 400.000đ",
+            "tags": [
+              "mid"
+            ]
+          },
+          {
+            "label": "Trên 400.000đ",
+            "tags": [
+              "premium"
+            ]
+          }
+        ]
+      }
+    ],
+    "template": "Tôi muốn nhận bộ dùng thử có {item}. Làn da của tôi: {answers}. Nhờ chuyên viên tư vấn thêm."
+  }
+}

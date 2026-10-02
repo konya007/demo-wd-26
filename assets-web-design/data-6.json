@@ -1,0 +1,653 @@
+{
+  "seo": {
+    "title": "Nhịp Phố — Thời trang linen may tại Việt Nam",
+    "description": "Áo sơ mi, váy, quần linen may tại xưởng Hội An. Đổi size miễn phí, may đo theo số đo của bạn.",
+    "locale": "vi_VN",
+    "thumbnail": "assets-web-design/img/fashion/hero.jpg",
+    "favicon": "",
+    "themeColor": "#1E1E1E"
+  },
+  "organization": {
+    "name": "Nhịp Phố Studio",
+    "shortName": "Nhịp Phố",
+    "tagline": "Mặc thoải mái, đi cả ngày.",
+    "logo": "",
+    "foundedYear": 2017,
+    "industry": "Thời trang"
+  },
+  "theme": {
+    "note": "Nguồn duy nhất cho màu, font, bo góc. Đổi ở đây, mọi trang cùng đổi.",
+    "colors": {
+      "primary": "#1E1E1E",
+      "onPrimary": "#FFFFFF",
+      "accent": "#D9A441",
+      "background": "#F2F1EF",
+      "surface": "#FFFFFF",
+      "text": "#1E1E1E",
+      "muted": "#66625C",
+      "border": "#DAD7D2"
+    },
+    "darkColors": {
+      "primary": "#F2F1EF",
+      "onPrimary": "#151515",
+      "accent": "#E7BA5E",
+      "background": "#151515",
+      "surface": "#1F1F1F",
+      "text": "#F2F1EF",
+      "muted": "#A7A29A",
+      "border": "#333230"
+    },
+    "font": {
+      "heading": "'Unbounded', sans-serif",
+      "body": "'Be Vietnam Pro', sans-serif",
+      "googleFonts": "https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700&family=Be+Vietnam+Pro:wght@400;500;600&display=swap"
+    },
+    "radius": {
+      "sm": "0px",
+      "md": "0px",
+      "lg": "0px"
+    }
+  },
+  "nav": [
+    {
+      "label": "Trang chủ",
+      "href": "index.html"
+    },
+    {
+      "label": "Chất liệu",
+      "href": "features.html"
+    },
+    {
+      "label": "Bộ sưu tập",
+      "href": "products.html"
+    },
+    {
+      "label": "Câu chuyện",
+      "href": "about.html"
+    },
+    {
+      "label": "Liên hệ",
+      "href": "contact.html"
+    }
+  ],
+  "cta": {
+    "text": "Đặt may theo số đo",
+    "href": "contact.html",
+    "note": "Miễn phí chỉnh sửa trong 30 ngày"
+  },
+  "hero": {
+    "image": "assets-web-design/img/fashion/hero.jpg",
+    "variant": "split",
+    "eyebrow": "Bộ sưu tập Thu 2026",
+    "title": "Mặc nhẹ. Đi xa.",
+    "subtitle": "Linen và lụa tơ tằm may tại xưởng Hội An. Thoáng mát cả ngày dài, càng giặt càng mềm.",
+    "ctaSecondary": {
+      "text": "Xem bộ sưu tập",
+      "link": "products.html"
+    },
+    "stats": [
+      {
+        "label": "Chất liệu tự nhiên",
+        "value": "100%"
+      },
+      {
+        "label": "Thợ may lành nghề",
+        "value": "32"
+      },
+      {
+        "label": "Ngày may xong",
+        "value": "7"
+      }
+    ]
+  },
+  "sections": {
+    "partners": {
+      "title": "Xuất hiện trên"
+    },
+    "features": {
+      "title": "Đẹp vì làm chậm",
+      "text": "Mỗi chiếc áo qua tay 6 người thợ.",
+      "more": "Về chất liệu"
+    },
+    "products": {
+      "title": "Bộ sưu tập Thu",
+      "text": "Sáu thiết kế, phối được với nhau.",
+      "more": "Xem tất cả"
+    },
+    "process": {
+      "title": "Đặt may trong 4 bước",
+      "text": "Chiếc áo vừa với chính bạn."
+    },
+    "testimonials": {
+      "title": "Người mặc Nhịp Phố"
+    },
+    "faq": {
+      "title": "Câu hỏi thường gặp"
+    },
+    "stats": {
+      "title": "Nhịp Phố qua những con số"
+    },
+    "mission": {
+      "title": "Vì sao có Nhịp Phố"
+    },
+    "achievements": {
+      "title": "Ghi nhận"
+    },
+    "contact": {
+      "title": "Đặt may theo số đo",
+      "text": "Chọn mẫu, để lại số điện thoại, thợ may gọi hướng dẫn đo.",
+      "submit": "Đặt may",
+      "success": "Đã nhận yêu cầu. Thợ may sẽ gọi hướng dẫn bạn lấy số đo."
+    },
+    "ctaBand": {
+      "title": "Một chiếc áo vừa vặn thay đổi cả ngày dài.",
+      "text": "Đặt may theo số đo, giao trong 7 ngày."
+    },
+    "related": {
+      "title": "Phối cùng"
+    },
+    "advisor": {
+      "title": "Tủ đồ của bạn thiếu gì?",
+      "text": "Ba câu, trợ lý AI gợi ý thiết kế và đặt may giúp bạn."
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "Thời trang linen"
+    },
+    "features": {
+      "title": "Chất liệu",
+      "image": "assets-web-design/img/fashion/features_page.jpg",
+      "heading": "Từ sợi lanh đến đường may cuối",
+      "text": "Chúng tôi chọn chất liệu tự nhiên và may chậm để áo bền lâu."
+    },
+    "products": {
+      "title": "Bộ sưu tập",
+      "heading": "Bộ sưu tập Thu 2026",
+      "text": "Lọc theo loại hoặc tìm theo dịp mặc."
+    },
+    "product": {
+      "title": "Chi tiết",
+      "back": "Tất cả thiết kế",
+      "category": "Loại",
+      "price": "Giá",
+      "specs": "Thông số"
+    },
+    "about": {
+      "title": "Câu chuyện",
+      "image": "assets-web-design/img/fashion/about.jpg",
+      "heading": "Một xưởng may nhỏ ở phố cổ",
+      "text": "Nhịp Phố bắt đầu năm 2017 với 3 thợ may và một chiếc máy khâu cũ ở Hội An."
+    },
+    "contact": {
+      "title": "Liên hệ",
+      "heading": "Ghé xưởng hoặc đo tại nhà",
+      "text": "Thợ may hướng dẫn bạn tự đo qua video call."
+    }
+  },
+  "catalog": {
+    "all": "Tất cả",
+    "search": "Tìm theo tên hoặc dịp mặc",
+    "empty": "Chưa có thiết kế nào khớp. Thử bỏ bớt bộ lọc."
+  },
+  "features": [
+    {
+      "image": "assets-web-design/img/fashion/f1.jpg",
+      "icon": "scissors",
+      "title": "May tay tại Hội An",
+      "description": "32 thợ may lành nghề, mỗi người phụ trách trọn một chiếc áo."
+    },
+    {
+      "image": "assets-web-design/img/fashion/f2.jpg",
+      "icon": "wind",
+      "title": "Linen thoáng như không mặc",
+      "description": "Sợi lanh tự nhiên hút ẩm tốt, mát trong ngày 35°C."
+    },
+    {
+      "image": "assets-web-design/img/fashion/f3.jpg",
+      "icon": "pen-tool",
+      "title": "Thiết kế để phối với nhau",
+      "description": "Bảng màu trung tính, 6 món ra hơn 20 bộ đồ."
+    },
+    {
+      "image": "assets-web-design/img/fashion/f4.jpg",
+      "icon": "ruler",
+      "title": "May theo số đo",
+      "description": "Gửi 8 số đo, nhận áo vừa vặn sau 7 ngày."
+    }
+  ],
+  "items": [
+    {
+      "image": "assets-web-design/img/fashion/i1.jpg",
+      "id": "vay-hoa",
+      "name": "Váy lụa hoa nhí",
+      "category": "Váy",
+      "tagline": "Bay nhẹ theo từng bước chân.",
+      "price": "1.290.000đ",
+      "featured": true,
+      "description": "Lụa tơ tằm Bảo Lộc in hoa nhí, dáng suông qua gối.",
+      "specs": [
+        {
+          "label": "Chất liệu",
+          "value": "Lụa tơ tằm 100%"
+        },
+        {
+          "label": "Dáng",
+          "value": "Suông, qua gối"
+        },
+        {
+          "label": "Màu",
+          "value": "Xanh đêm hoa nhí"
+        },
+        {
+          "label": "Giặt",
+          "value": "Giặt tay nước lạnh"
+        }
+      ],
+      "tags": [
+        "dress",
+        "party",
+        "travel",
+        "premium",
+        "women"
+      ]
+    },
+    {
+      "image": "assets-web-design/img/fashion/i2.jpg",
+      "id": "jacket-reu",
+      "name": "Áo khoác kaki rêu",
+      "category": "Áo khoác",
+      "tagline": "Khoác lên là thấy mùa thu.",
+      "price": "1.490.000đ",
+      "featured": true,
+      "description": "Kaki cotton dày dặn, cổ đứng, nhiều túi tiện dụng.",
+      "specs": [
+        {
+          "label": "Chất liệu",
+          "value": "Kaki cotton 100%"
+        },
+        {
+          "label": "Dáng",
+          "value": "Suông vừa"
+        },
+        {
+          "label": "Màu",
+          "value": "Xanh rêu"
+        },
+        {
+          "label": "Giặt",
+          "value": "Giặt máy chế độ nhẹ"
+        }
+      ],
+      "tags": [
+        "outer",
+        "street",
+        "travel",
+        "premium",
+        "unisex"
+      ]
+    },
+    {
+      "image": "assets-web-design/img/fashion/i3.jpg",
+      "id": "so-mi-linen",
+      "name": "Sơ mi linen trắng",
+      "category": "Áo",
+      "tagline": "Món đồ cơ bản không bao giờ lỗi mốt.",
+      "price": "690.000đ",
+      "featured": true,
+      "description": "Linen Pháp dệt thưa, càng giặt càng mềm.",
+      "specs": [
+        {
+          "label": "Chất liệu",
+          "value": "Linen 100%"
+        },
+        {
+          "label": "Dáng",
+          "value": "Suông"
+        },
+        {
+          "label": "Màu",
+          "value": "Trắng ngà"
+        },
+        {
+          "label": "Giặt",
+          "value": "Giặt máy, không sấy"
+        }
+      ],
+      "tags": [
+        "work",
+        "basic",
+        "travel",
+        "budget",
+        "unisex"
+      ]
+    },
+    {
+      "image": "assets-web-design/img/fashion/i4.jpg",
+      "id": "blazer",
+      "name": "Blazer linen xanh than",
+      "category": "Áo khoác",
+      "tagline": "Đi làm chỉn chu, vẫn mát.",
+      "price": "1.690.000đ",
+      "featured": true,
+      "description": "Blazer không lót, vai mềm, mặc được cả mùa hè.",
+      "specs": [
+        {
+          "label": "Chất liệu",
+          "value": "Linen pha cotton"
+        },
+        {
+          "label": "Dáng",
+          "value": "Ôm vừa"
+        },
+        {
+          "label": "Màu",
+          "value": "Xanh than"
+        },
+        {
+          "label": "Giặt",
+          "value": "Giặt khô"
+        }
+      ],
+      "tags": [
+        "work",
+        "party",
+        "outer",
+        "premium",
+        "unisex"
+      ]
+    },
+    {
+      "image": "assets-web-design/img/fashion/i5.jpg",
+      "id": "ao-thun-ke",
+      "name": "Áo thun kẻ sọc",
+      "category": "Áo",
+      "tagline": "Thoải mái từ phố đến biển.",
+      "price": "390.000đ",
+      "featured": false,
+      "description": "Cotton hữu cơ dệt sọc, cổ tròn, vai rớt nhẹ.",
+      "specs": [
+        {
+          "label": "Chất liệu",
+          "value": "Cotton hữu cơ"
+        },
+        {
+          "label": "Dáng",
+          "value": "Suông rộng"
+        },
+        {
+          "label": "Màu",
+          "value": "Trắng sọc đen"
+        },
+        {
+          "label": "Giặt",
+          "value": "Giặt máy"
+        }
+      ],
+      "tags": [
+        "basic",
+        "street",
+        "travel",
+        "budget",
+        "unisex"
+      ]
+    },
+    {
+      "image": "assets-web-design/img/fashion/i6.jpg",
+      "id": "quan-ong-rong",
+      "name": "Quần linen ống rộng",
+      "category": "Quần",
+      "tagline": "Đi bộ cả ngày không vướng víu.",
+      "price": "790.000đ",
+      "featured": false,
+      "description": "Lưng chun sau, ống rộng đứng phom, có túi sâu.",
+      "specs": [
+        {
+          "label": "Chất liệu",
+          "value": "Linen 100%"
+        },
+        {
+          "label": "Dáng",
+          "value": "Ống rộng"
+        },
+        {
+          "label": "Màu",
+          "value": "Be cát"
+        },
+        {
+          "label": "Giặt",
+          "value": "Giặt máy, không sấy"
+        }
+      ],
+      "tags": [
+        "basic",
+        "work",
+        "travel",
+        "mid",
+        "unisex"
+      ]
+    }
+  ],
+  "process": [
+    {
+      "title": "Chọn mẫu",
+      "description": "Từ bộ sưu tập hoặc gửi ảnh mẫu bạn thích."
+    },
+    {
+      "title": "Gửi số đo",
+      "description": "8 số đo, thợ may hướng dẫn qua video 10 phút."
+    },
+    {
+      "title": "May trong 7 ngày",
+      "description": "Gửi ảnh tiến độ, bạn góp ý giữa chừng."
+    },
+    {
+      "title": "Nhận và chỉnh sửa",
+      "description": "Chưa vừa? Sửa miễn phí trong 30 ngày."
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Lần đầu tôi có chiếc blazer vừa như đo cho mình, vì đúng là đo cho mình thật.",
+      "name": "Chị Hà Phương",
+      "role": "Kiến trúc sư"
+    },
+    {
+      "quote": "Mặc sơ mi linen đi Hội An giữa trưa vẫn mát. Giặt ba tháng càng mềm.",
+      "name": "Anh Quang Huy",
+      "role": "Hướng dẫn viên du lịch"
+    },
+    {
+      "quote": "Váy lụa hoa nhí được khen suốt buổi tiệc. Đường may rất kỹ.",
+      "name": "Mai Anh",
+      "role": "Giáo viên"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Linen có dễ nhăn không?",
+      "a": "Có nhăn nhẹ, đó là nét đặc trưng. Phơi khi còn ẩm và vuốt phẳng là đủ."
+    },
+    {
+      "q": "Đặt may có đắt hơn mua sẵn không?",
+      "a": "Chỉ thêm 15% so với giá niêm yết."
+    },
+    {
+      "q": "Không vừa thì sao?",
+      "a": "Chỉnh sửa miễn phí trong 30 ngày, hoặc đổi size với hàng may sẵn."
+    },
+    {
+      "q": "Có giao toàn quốc không?",
+      "a": "Có, miễn phí cho đơn từ 1.000.000đ."
+    }
+  ],
+  "partners": [
+    {
+      "name": "Tạp chí Mặc Đẹp"
+    },
+    {
+      "name": "Tuần lễ Thời trang Bền vững"
+    },
+    {
+      "name": "Chợ Đồ Thủ Công"
+    },
+    {
+      "name": "Blog Tủ Đồ Tối Giản"
+    },
+    {
+      "name": "Kênh Phong Cách Sống"
+    },
+    {
+      "name": "Báo Hội An Hôm Nay"
+    }
+  ],
+  "mission": {
+    "description": "Chúng tôi may ít hơn để may tốt hơn. Mỗi thiết kế được làm để mặc nhiều năm, không chỉ một mùa.",
+    "vision": "Một tủ đồ 15 món, mặc được quanh năm.",
+    "values": [
+      {
+        "title": "May chậm",
+        "description": "Không chạy theo xu hướng mỗi tuần."
+      },
+      {
+        "title": "Chất liệu thật",
+        "description": "Linen, lụa, cotton hữu cơ."
+      },
+      {
+        "title": "Trả công tử tế",
+        "description": "Thợ may được trả cao hơn 40% mặt bằng."
+      }
+    ]
+  },
+  "achievements": [
+    {
+      "title": "Thương hiệu thời trang bền vững",
+      "value": "2025",
+      "description": "Tuần lễ Thời trang Bền vững trao tặng."
+    },
+    {
+      "title": "Áo được sửa miễn phí",
+      "value": "11.000",
+      "description": "Để mặc lâu hơn."
+    },
+    {
+      "title": "Khách đặt may lần hai",
+      "value": "68%",
+      "description": "Số liệu 2025."
+    }
+  ],
+  "contact": {
+    "address": "102 Trần Phú, phường Minh An, Hội An",
+    "email": "hello@nhippho.example",
+    "phone": "0235 3910 102",
+    "workingHours": "9:00 - 21:30 mỗi ngày",
+    "socials": {
+      "instagram": "#",
+      "facebook": "#",
+      "pinterest": "#"
+    }
+  },
+  "assistant": {
+    "keyLabel": "Khóa API Claude (tuỳ chọn)",
+    "keyHelp": "Có khóa: gợi ý do Claude viết. Không có: dùng bộ lọc theo tiêu chí. Khóa chỉ lưu trong trình duyệt này.",
+    "submit": "Xem gợi ý",
+    "loading": "Đang chọn sản phẩm hợp với bạn…",
+    "apply": "Điền sẵn vào form liên hệ",
+    "again": "Chọn lại",
+    "needAll": "Chọn một đáp án cho mỗi câu để nhận gợi ý.",
+    "aiBadge": "Gợi ý bởi Claude",
+    "ruleBadge": "Gợi ý theo tiêu chí",
+    "error": "Không gọi được Claude, đã chuyển sang gợi ý theo tiêu chí.",
+    "alsoLabel": "Cũng hợp với bạn",
+    "notePlaceholder": "Muốn nói thêm điều gì? (không bắt buộc)",
+    "title": "Trợ lý phối đồ",
+    "text": "Ba câu, trợ lý AI chọn thiết kế và đặt may giúp bạn.",
+    "questions": [
+      {
+        "id": "occasion",
+        "label": "Bạn cần đồ cho dịp nào?",
+        "options": [
+          {
+            "label": "Đi làm",
+            "tags": [
+              "work"
+            ]
+          },
+          {
+            "label": "Dạo phố, cà phê",
+            "tags": [
+              "street",
+              "basic"
+            ]
+          },
+          {
+            "label": "Du lịch",
+            "tags": [
+              "travel"
+            ]
+          },
+          {
+            "label": "Tiệc, hẹn hò",
+            "tags": [
+              "party",
+              "dress"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "piece",
+        "label": "Bạn đang thiếu món gì?",
+        "options": [
+          {
+            "label": "Áo",
+            "tags": [
+              "basic"
+            ]
+          },
+          {
+            "label": "Váy",
+            "tags": [
+              "dress"
+            ]
+          },
+          {
+            "label": "Áo khoác",
+            "tags": [
+              "outer"
+            ]
+          },
+          {
+            "label": "Chưa biết, gợi ý giúp",
+            "tags": []
+          }
+        ]
+      },
+      {
+        "id": "budget",
+        "label": "Ngân sách",
+        "options": [
+          {
+            "label": "Dưới 700.000đ",
+            "tags": [
+              "budget"
+            ]
+          },
+          {
+            "label": "700.000 – 1,3 triệu",
+            "tags": [
+              "mid"
+            ]
+          },
+          {
+            "label": "Trên 1,3 triệu",
+            "tags": [
+              "premium"
+            ]
+          }
+        ]
+      }
+    ],
+    "template": "Tôi muốn đặt may {item}. Nhu cầu: {answers}. Nhờ thợ may gọi hướng dẫn lấy số đo."
+  }
+}

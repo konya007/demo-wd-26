@@ -1,136 +1,177 @@
-# 🎨 Web Design 2026 — White-Label Landing Page
+# Web Design 2026 — Website White Label
 
-Dự án tham gia cuộc thi **Web Design 2026**. Landing page SPA thuần HTML/CSS/JS, hỗ trợ **3 bộ dữ liệu** khác nhau, **Dark/Light mode**, **count-up animation**, và **horizontal scroll** casual UI.
+Website nhiều trang, trình bày theo phong cách landing page, chạy **6 thương hiệu giả tưởng trên cùng một mã nguồn**.
+HTML, CSS, JavaScript thuần, không framework. Toàn bộ tên, màu, font, menu, nội dung, câu hỏi của trợ lý AI nằm trong một file JSON cho mỗi thương hiệu.
 
----
+| File | Thương hiệu | Chủ đề | Màu · font · bố cục hero |
+|---|---|---|---|
+| `data-1.json` | YPhone | Công nghệ · điện thoại | Xanh dương · Manrope · ảnh bên phải |
+| `data-2.json` | Meow | Công nghệ · laptop | Tím · Baloo 2 · ảnh bên phải |
+| `data-3.json` | Đỉnh Gió | Du lịch · leo núi mạo hiểm | Cam đất · Barlow Condensed · ảnh phủ màn hình |
+| `data-4.json` | Mơ Sương | Du lịch · qua đêm Đà Lạt | Xanh sương · Fraunces · ảnh phủ màn hình |
+| `data-5.json` | Mộc Nhan | Thời trang · mỹ phẩm | Hồng mận · Playfair Display · ảnh bên phải |
+| `data-6.json` | Nhịp Phố | Thời trang · quần áo | Đen · Unbounded · góc vuông |
 
-## 🚀 Demo trực tiếp
+## Chạy thử
 
-Mở file `index.html` bằng Live Server hoặc trình duyệt.
+Mở bằng **Live Server** (VS Code) hoặc `python3 -m http.server`. Mở bằng nhấp đúp sẽ không đọc được JSON; trang hiện thông báo hướng dẫn.
 
-3 bộ dữ liệu tích hợp sẵn — bấm nút **"Đổi dữ liệu demo"** góc phải dưới màn hình:
+Đổi thương hiệu: nút **Đổi thương hiệu** góc dưới bên trái (xem trước màu, font, ảnh của cả 6), hoặc logo tròn góc dưới bên phải của `wd2026.js` (BTC). Lựa chọn được nhớ nên mọi trang đều đổi theo.
 
-| Data | Thương hiệu | Màu chủ đạo |
+## Cấu trúc
+
+```
+index.html  features.html  products.html  product.html  about.html  contact.html
+_template.html            # khung để tạo trang mới
+assets-web-design/
+  data-1.json … data-6.json   # bộ dữ liệu cấu hình: nơi DUY NHẤT cần sửa khi đổi thương hiệu
+  img/<thương hiệu>/          # ảnh thật CC0, nén sẵn, chạy được khi mất mạng
+  img/CREDITS.md              # nguồn và giấy phép từng ảnh
+css/
+  base.css                # token mặc định, reset, kiểu chữ, nút
+  components.css          # kiểu của từng thành phần
+  effects.css             # chuyển động
+js/
+  core.js                 # lõi: áp theme, SEO, đăng ký thành phần
+  app.js                  # điểm vào: danh sách thương hiệu, nạp thành phần, khởi tạo wd2026.js
+  effects.js              # hiệu ứng cuộn, 3D, hiện dần (GSAP ScrollTrigger)
+  components/
+    layout.js             # header, footer, thanh tiến độ, đổi thương hiệu, lên đầu trang, CTA di động
+    hero.js               # màn hình đầu, đầu trang con
+    sections.js           # đối tác, tính năng, sản phẩm, quy trình, đánh giá, hỏi đáp, CTA
+    about.js              # sứ mệnh, con số, ghi nhận
+    product-detail.js     # chi tiết một sản phẩm / tour
+    advisor.js            # trợ lý AI chọn sản phẩm
+    contact.js            # thông tin liên hệ + biểu mẫu (nhận dữ liệu điền sẵn)
+tools/find-images.py      # tìm ảnh thật CC0 theo chủ đề (Openverse API)
+wd2026.js                 # thư viện chuyển dữ liệu của BTC (không sửa)
+```
+
+## Mỗi trang chỉ là danh sách thẻ
+
+File HTML không chứa nội dung, chỉ có thẻ thành phần và tham số bố cục. Ví dụ `index.html`:
+
+```html
+<body data-page="home">
+  <wl-header></wl-header>
+  <main id="main">
+    <wl-hero variant="split"></wl-hero>
+    <wl-partners></wl-partners>
+    <wl-features layout="story" limit="4" more></wl-features>
+    <wl-products layout="rail" more></wl-products>
+    <wl-process></wl-process>
+    <wl-testimonials></wl-testimonials>
+    <wl-advisor></wl-advisor>
+    <wl-faq limit="4"></wl-faq>
+    <wl-cta-band></wl-cta-band>
+  </main>
+  <wl-footer></wl-footer>
+  …
+</body>
+```
+
+Thứ tự khối trên trang chủ là một hành trình: thông điệp và nút hành động → ai đã tin dùng → vì sao nên chọn → chọn sản phẩm nào → làm thế nào để có → người khác nói gì → chưa chắc thì hỏi trợ lý → giải đáp thắc mắc → nhắc lại lời kêu gọi.
+
+### Thứ tự chạy khi mở một trang
+
+1. `core.js` đặt chế độ sáng/tối đã lưu, trước khi trang hiện ra.
+2. `app.js` đăng ký các thẻ `<wl-*>` rồi gọi `WebDesign2026.init()`.
+3. `wd2026.js` tải bộ JSON đang chọn, phát sự kiện `webdesign2026:datachange`.
+4. `WL.boot(data)`: áp `theme` thành biến CSS, nạp font, đặt tiêu đề, mô tả, favicon.
+5. Từng thẻ render lại từ dữ liệu, gắn sự kiện (menu, lọc, biểu mẫu…).
+6. `effects.js` gắn chuyển động cho phần vừa render.
+
+### Thành phần và tham số
+
+| Thẻ | Tham số | Dữ liệu dùng |
 |---|---|---|
-| Data 1 | Aurora Studio (Digital Agency) | 🔵 Xanh dương `#2563EB` |
-| Data 2 | Codevify (IT Outsourcing) | 🟠 Cam `#EA580C` |
-| Data 3 | TOEIC Master (Trung tâm Anh ngữ) | 🟢 Xanh lá `#059669` |
+| `<wl-header>` / `<wl-footer>` | — | `organization`, `nav`, `cta`, `contact` |
+| `<wl-hero>` | `variant="split\|full"` (JSON `hero.variant` ghi đè) | `hero`, `cta` |
+| `<wl-page-head>` | `page="…"`, `image="false"` | `pages[page]` |
+| `<wl-partners>` | — | `partners` |
+| `<wl-features>` | `layout="story\|rows"`, `limit`, `more` | `features` |
+| `<wl-products>` | `layout="rail\|grid"`, `limit`, `featured`, `filter`, `related`, `more` | `items`, `catalog` |
+| `<wl-product-detail>` | đọc `?id=` trên URL | `items`, `pages.product` |
+| `<wl-process>` / `<wl-testimonials>` / `<wl-faq limit>` | — | `process` / `testimonials` / `faq` |
+| `<wl-advisor>` | `compact` | `assistant`, `items` |
+| `<wl-contact>` | đọc `?item=` hoặc dữ liệu từ trợ lý | `contact`, `items`, `sections.contact` |
+| `<wl-cta-band>` | `copy="…"` | `sections.ctaBand`, `cta` |
+| `<wl-mission>` / `<wl-stats>` / `<wl-achievements>` | — | `mission` / `hero.stats` / `achievements` |
+| `<wl-scroll-progress>`, `<wl-brand-switcher>`, `<wl-back-to-top>`, `<wl-sticky-cta>` | — | `cta`, danh sách thương hiệu |
 
----
+Khối nào có tiêu đề đều đọc `sections.<tên khối>`; thêm `copy="tênKhác"` để dùng bộ chữ khác.
 
-## 📁 Cấu trúc dự án
+## Trợ lý AI: chọn đáp án → tự điền form liên hệ
 
-```
-wd-demo/
-├── index.html              # SPA shell (navbar, footer, #app viewport)
-├── style.css               # Custom styles, dark mode, animations
-├── main.js                 # Router, render engine, theme injection
-├── wd2026.js               # Multi-tenant data switcher (do BTC cấp)
-├── README.md               # Tài liệu này
-└── assets-web-design/
-    ├── data-1.json         # Aurora Studio (Agency)
-    ├── data-2.json         # Codevify (IT Outsource)
-    └── data-3.json         # TOEIC Master (Giáo dục)
-```
+`<wl-advisor>` hỏi 3 câu (câu hỏi và đáp án nằm trong `assistant.questions` của từng JSON), rồi:
 
----
+- **Có khóa API Claude** (người dùng tự dán, chỉ lưu trong trình duyệt): gọi `claude-opus-5-5` qua SDK chính thức `@anthropic-ai/sdk` (nạp từ jsDelivr). Claude đọc danh mục `items` và trả về JSON đúng schema `{itemId, alternativeId, reason, message}`. `itemId` bị ràng buộc bằng `enum` nên không thể gợi ý sản phẩm không có thật.
+- **Không có khóa hoặc lỗi mạng**: chấm điểm theo nhãn, tức số `tags` của đáp án trùng với `tags` của sản phẩm, và ghép lời nhắn từ `assistant.template`.
 
-## 🧩 Các trang (SPA Hash Router)
+Bấm **Điền sẵn vào form liên hệ**: trang liên hệ tự chọn sản phẩm, điền lời nhắn và đặt con trỏ vào ô họ tên. Nút hành động ở trang chi tiết cũng mang sẵn `?item=` sang form.
 
-| Route | Trang |
+> Gọi API trực tiếp từ trình duyệt chỉ phù hợp cho demo: khóa nằm ở máy người dùng. Bản thật cần một máy chủ trung gian giữ khóa.
+
+## Hiệu ứng
+
+| Hiệu ứng | Ở đâu | Cách làm |
+|---|---|---|
+| Chữ tiêu đề trồi lên từng từ | Hero, đầu trang con, chi tiết | CSS, `splitWords()` |
+| Sân khấu 3D nghiêng theo con trỏ, các lớp lệch độ sâu | Hero, ảnh chi tiết | CSS `perspective` + biến `--rx/--ry` |
+| Ảnh lùi xa và mờ dần khi cuộn qua hero | Hero | GSAP ScrollTrigger |
+| Ảnh dính, đổi theo đoạn đang đọc | Tính năng (trang chủ) | `position: sticky` + IntersectionObserver |
+| Dãy sản phẩm trượt ngang khi cuộn dọc | Trang chủ (desktop) | ScrollTrigger `pin` + `scrub` |
+| Thẻ nghiêng 3D có vệt sáng | Thẻ sản phẩm | pointermove → biến CSS |
+| Dải đối tác chạy vô hạn | Đối tác | CSS keyframes |
+| Đường nối các bước dài dần | Quy trình | ScrollTrigger `scrub` |
+| CTA nở từ thẻ bo góc ra toàn màn hình | Cuối trang | `clip-path` + ScrollTrigger |
+| Ảnh trôi lệch tốc độ cuộn, mở như rèm | Ảnh lớn | `data-parallax`, `data-reveal="clip"` |
+| Chuyển trang mượt | Giữa các file HTML | View Transitions (`@view-transition`) |
+
+Tất cả tắt khi hệ điều hành bật **giảm chuyển động**. Không tải được GSAP thì trang vẫn đủ nội dung, chỉ bớt hiệu ứng cuộn.
+
+## Đổi thương hiệu: chỉ sửa JSON
+
+| Muốn đổi | Sửa trong JSON |
 |---|---|
-| `#/` | **Landing** — Hero, Services (cuộn ngang), 3 dự án nổi bật, Partners, Contact |
-| `#/projects` | **Tất cả dự án** — Grid + search + filter category + sort |
-| `#/projects/:id` | **Chi tiết dự án** — Ảnh lớn, info, tags, dự án liên quan |
-| `#/about` | **Về chúng tôi** — Mission, Vision, Values, thống kê, Services |
-| `#/achievements` | **Thành tích** — Grid thành tựu với count-up animation |
-| `#/contact` | **Liên hệ** — Contact info + form |
+| Tên, khẩu hiệu, logo | `organization` (`logo` để trống thì dùng chữ cái đầu của `shortName`) |
+| Màu sáng / tối | `theme.colors`, `theme.darkColors` |
+| Font | `theme.font.heading`, `theme.font.body`, `theme.font.googleFonts` |
+| Độ bo góc | `theme.radius.sm/md/lg` |
+| Menu | `nav` |
+| Lời kêu gọi hành động (header, hero, chi tiết, cuối trang, di động) | `cta` |
+| Bố cục hero | `hero.variant` |
+| Sản phẩm / tour | `items` |
+| Câu hỏi của trợ lý AI | `assistant.questions`, `assistant.template` |
+| Tiêu đề từng khối, từng trang | `sections`, `pages` |
 
----
+**Thêm thương hiệu:** sao chép một `data-N.json`, sửa nội dung, đặt ảnh vào `assets-web-design/img/<tên>/`, thêm một dòng vào `BRANDS` trong `js/app.js`.
 
-## ⚙️ Công nghệ sử dụng
+**Thêm trang:** sao chép `_template.html`, đổi `data-page`, thêm `pages.<tên>` trong mỗi JSON và một mục trong `nav` nếu cần.
 
-| Công nghệ | Mục đích | Link |
-|---|---|---|
-| **HTML5 + CSS3 + Vanilla JS** | Nền tảng chính | — |
-| **Tailwind CSS** (CDN) | Utility-first CSS framework | [tailwindcss.com](https://tailwindcss.com) |
-| **Lucide Icons** | Icon set miễn phí | [lucide.dev](https://lucide.dev) |
-| **Google Fonts** | Be Vietnam Pro + Inter | [fonts.google.com](https://fonts.google.com) |
-| **Intersection Observer** | Scroll reveal, count-up trigger | Native API |
-| **Hash-based Router** | SPA navigation | Tự viết |
+## Ảnh thật, miễn phí
 
----
+Ảnh lấy từ **StockSnap** (giấy phép CC0) qua **[Openverse API](https://api.openverse.org)**. API này miễn phí, không cần khóa, kết quả có kèm giấy phép. Ảnh được duyệt tay để loại logo thương hiệu thật, rồi nén và lưu trong dự án.
 
-## 🔑 Cách dùng
-
-### 1. Mở trang
 ```bash
-# Dùng Live Server (VS Code) hoặc mở trực tiếp
-open index.html
+python3 tools/find-images.py "mountain camping" "pine forest" --n 12
 ```
 
-### 2. Đổi bộ dữ liệu
-- Bấm logo tròn góc phải dưới → **"Đổi dữ liệu demo"**
-- Chọn Data 1 / 2 / 3
-- Toàn bộ nội dung + màu sắc tự động cập nhật
+Muốn thêm nguồn khác, có thể dùng các API sau (cần đăng ký khóa miễn phí):
 
-### 3. Thêm bộ dữ liệu mới
-1. Tạo file `assets-web-design/data-4.json` theo cấu trúc mẫu
-2. Sửa `<script>` cuối `index.html`:
-```js
-WebDesign2026.init({
-    folder: 'assets-web-design',
-    files: ['data-1.json', 'data-2.json', 'data-3.json', 'data-4.json'],
-    labels: ['Aurora', 'Codevify', 'TOEIC Master', 'Tên mới'],
-    defaultIndex: 0,
-    overrideCss: true,
-});
-```
+- [Unsplash API](https://unsplash.com/developers): ảnh đẹp nhất, 50 lượt/giờ ở chế độ demo.
+- [Pexels API](https://www.pexels.com/api/): có cả video, 200 lượt/giờ.
+- [Pixabay API](https://pixabay.com/api/docs/): có ảnh vector, minh họa.
 
-### 4. Cấu trúc data-N.json
+## Thư viện
 
-```json
-{
-  "theme": {
-    "colors": {
-      "primary": "#EA580C",
-      "primary-light": "#F97316",
-      "primary-dark": "#C2410C"
-    }
-  },
-  "seo": { "title": "...", "description": "...", "favicon": "...", "themeColor": "..." },
-  "organization": { "name": "...", "shortName": "...", "tagline": "...", "foundedYear": 2020 },
-  "hero": { "eyebrow": "...", "title": "...", "subtitle": "...", "stats": [...] },
-  "mission": { "title": "...", "description": "...", "vision": "...", "values": [...] },
-  "services": [{ "icon": "code-2", "title": "...", "description": "..." }],
-  "projects": [{ "id": "...", "title": "...", "category": "...", "client": "...", "year": 2025, "thumbnail": "...", "description": "...", "tags": [...], "link": "...", "featured": true }],
-  "partners": [{ "name": "...", "logo": "..." }],
-  "achievements": [{ "title": "...", "value": "...", "description": "..." }],
-  "contact": { "address": "...", "email": "...", "phone": "...", "socials": {...} }
-}
-```
+| Tài nguyên | Dùng để | Giấy phép |
+|---|---|---|
+| [GSAP](https://gsap.com) 3.13 + ScrollTrigger | Hiệu ứng theo thanh cuộn | Miễn phí (GSAP Standard License) |
+| [Lucide](https://lucide.dev) 0.460.0 | Icon | ISC |
+| [@anthropic-ai/sdk](https://github.com/anthropics/anthropic-sdk-typescript) 0.131.0 | Gọi Claude cho trợ lý AI | MIT |
+| [Google Fonts](https://fonts.google.com) | Manrope, Baloo 2, Nunito, Barlow, Fraunces, Playfair Display, Unbounded, Be Vietnam Pro | SIL OFL |
+| StockSnap qua Openverse | Ảnh | CC0 (`assets-web-design/img/CREDITS.md`) |
+| `wd2026.js` | Chuyển bộ dữ liệu demo | Do BTC cấp |
 
----
-
-## 🎯 Tính năng nổi bật
-
-- ✅ **White-Label**: Một codebase, nhiều bộ dữ liệu — đổi data là đổi toàn bộ thương hiệu
-- ✅ **Dark/Light mode**: Toggle + tự động detect `prefers-color-scheme`, lưu localStorage
-- ✅ **Count-up animation**: Số liệu tự chạy khi scroll đến (hero stats, achievements)
-- ✅ **Horizontal scroll**: Services & Projects dạng cuộn ngang casual, có nút điều hướng
-- ✅ **Search + Filter + Sort**: Trang Projects có tìm kiếm, lọc danh mục, sắp xếp
-- ✅ **Project Detail + Related**: Xem chi tiết dự án + gợi ý dự án cùng danh mục
-- ✅ **Responsive**: Mobile-first, tương thích mọi kích thước màn hình
-- ✅ **Không backend**: Tất cả render phía client, deploy tĩnh trên GitHub Pages
-
----
-
-## 📜 License
-
-Dự án phục vụ cuộc thi Web Design 2026. Mã nguồn sử dụng các thư viện miễn phí, hợp pháp.
-
----
-
-## 👥 Tác giả
-
-Sinh viên tham dự — Cuộc thi Web Design 2026
+Mọi thương hiệu, khách hàng, đối tác trong dữ liệu đều là giả tưởng.

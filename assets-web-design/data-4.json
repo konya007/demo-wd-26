@@ -1,0 +1,636 @@
+{
+  "seo": {
+    "title": "Mơ Sương — Tour qua đêm Đà Lạt",
+    "description": "Ngủ nhà gỗ giữa rừng thông, đốt lửa trại, sáng săn mây Cầu Đất. Tour qua đêm Đà Lạt trọn gói.",
+    "locale": "vi_VN",
+    "thumbnail": "assets-web-design/img/dalat/hero.jpg",
+    "favicon": "",
+    "themeColor": "#3F5AA8"
+  },
+  "organization": {
+    "name": "Mơ Sương Đà Lạt",
+    "shortName": "Mơ Sương",
+    "tagline": "Một đêm ở Đà Lạt, nhớ cả một năm.",
+    "logo": "",
+    "foundedYear": 2018,
+    "industry": "Du lịch nghỉ dưỡng"
+  },
+  "theme": {
+    "note": "Nguồn duy nhất cho màu, font, bo góc. Đổi ở đây, mọi trang cùng đổi.",
+    "colors": {
+      "primary": "#3F5AA8",
+      "onPrimary": "#FFFFFF",
+      "accent": "#E59A6B",
+      "background": "#F3F4F7",
+      "surface": "#FFFFFF",
+      "text": "#171B2B",
+      "muted": "#596079",
+      "border": "#DCDFE8"
+    },
+    "darkColors": {
+      "primary": "#8EA5F0",
+      "onPrimary": "#0E1220",
+      "accent": "#F0B58E",
+      "background": "#0E1220",
+      "surface": "#171C2E",
+      "text": "#ECEEF6",
+      "muted": "#A3AAC4",
+      "border": "#29304A"
+    },
+    "font": {
+      "heading": "'Fraunces', serif",
+      "body": "'Be Vietnam Pro', sans-serif",
+      "googleFonts": "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Be+Vietnam+Pro:wght@400;500;600&display=swap"
+    },
+    "radius": {
+      "sm": "10px",
+      "md": "18px",
+      "lg": "30px"
+    }
+  },
+  "nav": [
+    {
+      "label": "Trang chủ",
+      "href": "index.html"
+    },
+    {
+      "label": "Một đêm có gì",
+      "href": "features.html"
+    },
+    {
+      "label": "Tour qua đêm",
+      "href": "products.html"
+    },
+    {
+      "label": "Câu chuyện",
+      "href": "about.html"
+    },
+    {
+      "label": "Liên hệ",
+      "href": "contact.html"
+    }
+  ],
+  "cta": {
+    "text": "Đặt chỗ đêm nay",
+    "href": "contact.html",
+    "note": "Thanh toán khi nhận phòng, huỷ miễn phí trước 48 giờ"
+  },
+  "hero": {
+    "image": "assets-web-design/img/dalat/hero.jpg",
+    "variant": "full",
+    "eyebrow": "Mùa sương đẹp nhất: tháng 11 – 3",
+    "title": "Ngủ giữa rừng thông. Thức dậy trên mây.",
+    "subtitle": "Nhà gỗ ấm, lửa trại, bữa tối nướng và 5 giờ sáng săn mây Cầu Đất. Một đêm trọn gói, bạn chỉ cần mang áo khoác.",
+    "ctaSecondary": {
+      "text": "Xem các gói qua đêm",
+      "link": "products.html"
+    },
+    "stats": [
+      {
+        "label": "Độ cao rừng thông",
+        "value": "1.650m"
+      },
+      {
+        "label": "Khách đã nghỉ đêm",
+        "value": "9.000+"
+      },
+      {
+        "label": "Điểm đánh giá",
+        "value": "4,9/5"
+      }
+    ]
+  },
+  "sections": {
+    "partners": {
+      "title": "Được giới thiệu trên"
+    },
+    "features": {
+      "title": "Một đêm, bốn khoảnh khắc",
+      "text": "Từ hoàng hôn đến bình minh, mỗi giờ đều được sắp đặt.",
+      "more": "Xem lịch trình một đêm"
+    },
+    "products": {
+      "title": "Chọn đêm của bạn",
+      "text": "Cho cặp đôi, nhóm bạn hay cả gia đình.",
+      "more": "Xem tất cả gói"
+    },
+    "process": {
+      "title": "Lịch trình một đêm",
+      "text": "Đón bạn lúc 15:00, tạm biệt lúc 10:00 hôm sau."
+    },
+    "testimonials": {
+      "title": "Những đêm đáng nhớ"
+    },
+    "faq": {
+      "title": "Câu hỏi thường gặp"
+    },
+    "stats": {
+      "title": "Mơ Sương qua những con số"
+    },
+    "mission": {
+      "title": "Vì sao có Mơ Sương"
+    },
+    "achievements": {
+      "title": "Ghi nhận"
+    },
+    "contact": {
+      "title": "Đặt chỗ đêm nay",
+      "text": "Chọn gói và ngày, chúng tôi giữ phòng ngay.",
+      "submit": "Đặt chỗ",
+      "success": "Đã giữ chỗ. Mơ Sương sẽ nhắn xác nhận qua điện thoại."
+    },
+    "ctaBand": {
+      "title": "Đà Lạt đang chờ bạn đến ngủ một đêm.",
+      "text": "Cuối tuần này còn 4 căn nhà gỗ trống."
+    },
+    "related": {
+      "title": "Gói khác"
+    },
+    "advisor": {
+      "title": "Đêm nào hợp với bạn?",
+      "text": "Trả lời 3 câu, trợ lý AI chọn gói và đặt chỗ giúp bạn."
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "Tour qua đêm Đà Lạt"
+    },
+    "features": {
+      "title": "Một đêm có gì",
+      "image": "assets-web-design/img/dalat/features_page.jpg",
+      "heading": "Từ 15:00 chiều đến 10:00 sáng",
+      "text": "Bạn chỉ cần có mặt. Lửa, chăn ấm và bữa tối đã sẵn sàng."
+    },
+    "products": {
+      "title": "Tour qua đêm",
+      "heading": "Sáu kiểu ngủ giữa Đà Lạt",
+      "text": "Lọc theo kiểu phòng hoặc tìm theo trải nghiệm."
+    },
+    "product": {
+      "title": "Chi tiết",
+      "back": "Tất cả gói",
+      "category": "Kiểu phòng",
+      "price": "Giá",
+      "specs": "Thông số"
+    },
+    "about": {
+      "title": "Câu chuyện",
+      "image": "assets-web-design/img/dalat/about.jpg",
+      "heading": "Chúng tôi yêu Đà Lạt lúc 5 giờ sáng",
+      "text": "Mơ Sương bắt đầu từ ba căn nhà gỗ ở đồi Cầu Đất năm 2018."
+    },
+    "contact": {
+      "title": "Liên hệ",
+      "heading": "Nhắn cho Mơ Sương",
+      "text": "Trả lời trong 15 phút, từ 7:00 đến 23:00."
+    }
+  },
+  "catalog": {
+    "all": "Tất cả",
+    "search": "Tìm gói qua đêm",
+    "empty": "Chưa có gói nào khớp. Thử bỏ bớt bộ lọc."
+  },
+  "features": [
+    {
+      "image": "assets-web-design/img/dalat/f1.jpg",
+      "icon": "coffee",
+      "title": "Cà phê sáng trên đồi chè",
+      "description": "Pha phin bằng hạt Cầu Đất, uống khi mây còn chưa tan."
+    },
+    {
+      "image": "assets-web-design/img/dalat/f2.jpg",
+      "icon": "flame",
+      "title": "Lửa trại và bữa tối nướng",
+      "description": "Gà nướng mắc khén, rau rừng, khoai lang nướng than hồng."
+    },
+    {
+      "image": "assets-web-design/img/dalat/f3.jpg",
+      "icon": "trees",
+      "title": "Dạo rừng thông lúc hoàng hôn",
+      "description": "Hướng dẫn viên dẫn đường qua lối mòn ít người biết."
+    },
+    {
+      "image": "assets-web-design/img/dalat/f4.jpg",
+      "icon": "sparkles",
+      "title": "Ngắm sao ở 1.650m",
+      "description": "Không đèn đường, trời quang là thấy dải Ngân Hà."
+    }
+  ],
+  "items": [
+    {
+      "image": "assets-web-design/img/dalat/i1.jpg",
+      "id": "san-may",
+      "name": "Săn mây Cầu Đất",
+      "category": "Nhà gỗ",
+      "tagline": "5 giờ sáng, biển mây ngay dưới chân.",
+      "price": "1.290.000đ/người",
+      "featured": true,
+      "description": "Ngủ nhà gỗ trên đồi chè, xe đón ra điểm săn mây lúc 4:45.",
+      "specs": [
+        {
+          "label": "Thời gian",
+          "value": "15:00 – 10:00 hôm sau"
+        },
+        {
+          "label": "Số người",
+          "value": "2 – 4"
+        },
+        {
+          "label": "Bao gồm",
+          "value": "Bữa tối, bữa sáng, xe săn mây"
+        },
+        {
+          "label": "Phù hợp",
+          "value": "Cặp đôi, nhóm bạn"
+        }
+      ],
+      "tags": [
+        "cloud",
+        "couple",
+        "friends",
+        "mid"
+      ]
+    },
+    {
+      "image": "assets-web-design/img/dalat/i2.jpg",
+      "id": "cam-trai-doi",
+      "name": "Cắm trại đồi thông",
+      "category": "Lều trại",
+      "tagline": "Lều ấm, lửa trại, trời đầy sao.",
+      "price": "790.000đ/người",
+      "featured": true,
+      "description": "Lều hai lớp có đệm hơi và túi ngủ, nhóm lửa giữa rừng thông.",
+      "specs": [
+        {
+          "label": "Thời gian",
+          "value": "15:00 – 9:00 hôm sau"
+        },
+        {
+          "label": "Số người",
+          "value": "2 – 10"
+        },
+        {
+          "label": "Bao gồm",
+          "value": "Lều, túi ngủ, BBQ, bữa sáng"
+        },
+        {
+          "label": "Phù hợp",
+          "value": "Nhóm bạn, người thích phiêu lưu"
+        }
+      ],
+      "tags": [
+        "camp",
+        "friends",
+        "budget",
+        "stars"
+      ]
+    },
+    {
+      "image": "assets-web-design/img/dalat/i3.jpg",
+      "id": "nha-go",
+      "name": "Nhà gỗ rừng thông",
+      "category": "Nhà gỗ",
+      "tagline": "Riêng tư, lò sưởi, cửa kính nhìn ra rừng.",
+      "price": "1.590.000đ/người",
+      "featured": true,
+      "description": "Căn nhà gỗ riêng có lò sưởi và bồn tắm, cách khu trung tâm 20 phút.",
+      "specs": [
+        {
+          "label": "Thời gian",
+          "value": "14:00 – 11:00 hôm sau"
+        },
+        {
+          "label": "Số người",
+          "value": "2"
+        },
+        {
+          "label": "Bao gồm",
+          "value": "Bữa tối riêng, bữa sáng"
+        },
+        {
+          "label": "Phù hợp",
+          "value": "Cặp đôi, kỷ niệm"
+        }
+      ],
+      "tags": [
+        "couple",
+        "cozy",
+        "premium"
+      ]
+    },
+    {
+      "image": "assets-web-design/img/dalat/i4.jpg",
+      "id": "lua-trai",
+      "name": "Đêm lửa trại cồng chiêng",
+      "category": "Lều trại",
+      "tagline": "Nghe cồng chiêng, uống rượu cần bên lửa.",
+      "price": "990.000đ/người",
+      "featured": true,
+      "description": "Giao lưu với nghệ nhân K'Ho, nghe kể chuyện núi Langbiang.",
+      "specs": [
+        {
+          "label": "Thời gian",
+          "value": "16:00 – 9:00 hôm sau"
+        },
+        {
+          "label": "Số người",
+          "value": "6 – 30"
+        },
+        {
+          "label": "Bao gồm",
+          "value": "Lều, tiệc nướng, biểu diễn"
+        },
+        {
+          "label": "Phù hợp",
+          "value": "Nhóm đông, công ty"
+        }
+      ],
+      "tags": [
+        "friends",
+        "culture",
+        "group",
+        "mid"
+      ]
+    },
+    {
+      "image": "assets-web-design/img/dalat/i5.jpg",
+      "id": "glamping",
+      "name": "Glamping bên hồ",
+      "category": "Glamping",
+      "tagline": "Tiện nghi khách sạn, cảm giác cắm trại.",
+      "price": "1.890.000đ/người",
+      "featured": false,
+      "description": "Lều lớn có giường thật, đèn vàng, sàn gỗ nhìn ra hồ Tuyền Lâm.",
+      "specs": [
+        {
+          "label": "Thời gian",
+          "value": "14:00 – 11:00 hôm sau"
+        },
+        {
+          "label": "Số người",
+          "value": "2 – 4"
+        },
+        {
+          "label": "Bao gồm",
+          "value": "Bữa tối, bữa sáng, chèo SUP"
+        },
+        {
+          "label": "Phù hợp",
+          "value": "Gia đình, cặp đôi"
+        }
+      ],
+      "tags": [
+        "family",
+        "couple",
+        "premium",
+        "cozy"
+      ]
+    },
+    {
+      "image": "assets-web-design/img/dalat/i6.jpg",
+      "id": "ho-suong",
+      "name": "Bình minh hồ sương",
+      "category": "Glamping",
+      "tagline": "Chèo thuyền khi mặt hồ còn phủ sương.",
+      "price": "1.390.000đ/người",
+      "featured": false,
+      "description": "Nghỉ đêm bên hồ, 5:30 chèo thuyền kayak giữa làn sương.",
+      "specs": [
+        {
+          "label": "Thời gian",
+          "value": "15:00 – 10:00 hôm sau"
+        },
+        {
+          "label": "Số người",
+          "value": "2 – 6"
+        },
+        {
+          "label": "Bao gồm",
+          "value": "Phòng, bữa sáng, kayak"
+        },
+        {
+          "label": "Phù hợp",
+          "value": "Gia đình, người thích yên tĩnh"
+        }
+      ],
+      "tags": [
+        "family",
+        "cloud",
+        "mid",
+        "cozy"
+      ]
+    }
+  ],
+  "process": [
+    {
+      "title": "15:00 – Đón tại trung tâm",
+      "description": "Xe đón ở Hồ Xuân Hương, 20 phút đến đồi."
+    },
+    {
+      "title": "17:30 – Hoàng hôn rừng thông",
+      "description": "Đi bộ nhẹ, chụp ảnh lúc nắng vàng."
+    },
+    {
+      "title": "19:00 – Lửa trại, bữa tối",
+      "description": "Tiệc nướng, nhạc acoustic, ngắm sao."
+    },
+    {
+      "title": "5:00 – Săn mây, cà phê",
+      "description": "Ngắm mây cuộn, ăn sáng, trả khách lúc 10:00."
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Tôi cầu hôn bạn gái bên lò sưởi nhà gỗ. Đội Mơ Sương chuẩn bị hoa và nến mà không để lộ chút nào.",
+      "name": "Anh Tuấn Kiệt",
+      "role": "Gói Nhà gỗ rừng thông"
+    },
+    {
+      "quote": "5 giờ sáng lạnh run nhưng nhìn biển mây thì quên hết. Cà phê ngon tuyệt.",
+      "name": "Phương Linh",
+      "role": "Gói Săn mây Cầu Đất"
+    },
+    {
+      "quote": "Bọn trẻ mê nhất đoạn chèo kayak trong sương. Cả nhà sẽ quay lại.",
+      "name": "Chị Hồng Nhung",
+      "role": "Gói Bình minh hồ sương"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Đà Lạt ban đêm lạnh cỡ nào?",
+      "a": "Từ 12 đến 16°C. Chúng tôi có sẵn chăn dày và túi ngủ, bạn mang thêm một áo khoác."
+    },
+    {
+      "q": "Trời mưa có huỷ tour không?",
+      "a": "Lửa trại chuyển vào nhà sàn có mái. Nếu mưa lớn, bạn được dời lịch miễn phí."
+    },
+    {
+      "q": "Có chỗ cho trẻ nhỏ không?",
+      "a": "Có. Trẻ dưới 6 tuổi miễn phí, gói Glamping và Hồ sương phù hợp nhất cho gia đình."
+    },
+    {
+      "q": "Có thể tổ chức sự kiện riêng?",
+      "a": "Có, cầu hôn, sinh nhật, team building. Nhắn trước 5 ngày để chúng tôi chuẩn bị."
+    }
+  ],
+  "partners": [
+    {
+      "name": "Tạp chí Xê Dịch"
+    },
+    {
+      "name": "Kênh Đi Đâu Cuối Tuần"
+    },
+    {
+      "name": "Cộng đồng Phượt Cao Nguyên"
+    },
+    {
+      "name": "Báo Du Lịch Mới"
+    },
+    {
+      "name": "Podcast Đường Xa"
+    },
+    {
+      "name": "Blog Sống Chậm"
+    }
+  ],
+  "mission": {
+    "description": "Đà Lạt đẹp nhất khi người ta chịu chậm lại. Mơ Sương làm ra những đêm để bạn tắt điện thoại, nghe tiếng thông reo và ngủ thật ngon.",
+    "vision": "Giữ rừng thông nguyên vẹn: mỗi khách nghỉ đêm là một cây thông được trồng.",
+    "values": [
+      {
+        "title": "Chậm lại",
+        "description": "Không lịch trình dồn dập, không check-in vội vàng."
+      },
+      {
+        "title": "Ấm áp",
+        "description": "Như về nhà một người bạn ở Đà Lạt."
+      },
+      {
+        "title": "Giữ rừng",
+        "description": "Đã trồng hơn 9.000 cây thông."
+      }
+    ]
+  },
+  "achievements": [
+    {
+      "title": "Trải nghiệm qua đêm được yêu thích",
+      "value": "2025",
+      "description": "Bình chọn của Tạp chí Xê Dịch."
+    },
+    {
+      "title": "Cây thông đã trồng",
+      "value": "9.000+",
+      "description": "Mỗi khách một cây."
+    },
+    {
+      "title": "Điểm đánh giá trung bình",
+      "value": "4,9",
+      "description": "Trên 2.400 đánh giá."
+    }
+  ],
+  "contact": {
+    "address": "Đồi chè Cầu Đất, xã Xuân Trường, Đà Lạt",
+    "email": "chao@mosuong.example",
+    "phone": "0263 3888 999",
+    "workingHours": "7:00 - 23:00 mỗi ngày",
+    "socials": {
+      "facebook": "#",
+      "instagram": "#",
+      "tiktok": "#"
+    }
+  },
+  "assistant": {
+    "keyLabel": "Khóa API Claude (tuỳ chọn)",
+    "keyHelp": "Có khóa: gợi ý do Claude viết. Không có: dùng bộ lọc theo tiêu chí. Khóa chỉ lưu trong trình duyệt này.",
+    "submit": "Xem gợi ý",
+    "loading": "Đang chọn sản phẩm hợp với bạn…",
+    "apply": "Điền sẵn vào form liên hệ",
+    "again": "Chọn lại",
+    "needAll": "Chọn một đáp án cho mỗi câu để nhận gợi ý.",
+    "aiBadge": "Gợi ý bởi Claude",
+    "ruleBadge": "Gợi ý theo tiêu chí",
+    "error": "Không gọi được Claude, đã chuyển sang gợi ý theo tiêu chí.",
+    "alsoLabel": "Cũng hợp với bạn",
+    "notePlaceholder": "Muốn nói thêm điều gì? (không bắt buộc)",
+    "title": "Trợ lý chọn đêm",
+    "text": "Ba câu, trợ lý AI chọn gói và đặt chỗ giúp bạn.",
+    "questions": [
+      {
+        "id": "who",
+        "label": "Bạn đi cùng ai?",
+        "options": [
+          {
+            "label": "Người yêu",
+            "tags": [
+              "couple"
+            ]
+          },
+          {
+            "label": "Nhóm bạn",
+            "tags": [
+              "friends",
+              "group"
+            ]
+          },
+          {
+            "label": "Gia đình có trẻ nhỏ",
+            "tags": [
+              "family"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "style",
+        "label": "Bạn thích ngủ ở đâu?",
+        "options": [
+          {
+            "label": "Lều giữa rừng",
+            "tags": [
+              "camp",
+              "stars"
+            ]
+          },
+          {
+            "label": "Nhà gỗ ấm cúng",
+            "tags": [
+              "cozy"
+            ]
+          },
+          {
+            "label": "Gần mây và hồ",
+            "tags": [
+              "cloud"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "budget",
+        "label": "Ngân sách mỗi người",
+        "options": [
+          {
+            "label": "Dưới 1 triệu",
+            "tags": [
+              "budget"
+            ]
+          },
+          {
+            "label": "1 – 1,5 triệu",
+            "tags": [
+              "mid"
+            ]
+          },
+          {
+            "label": "Trên 1,5 triệu",
+            "tags": [
+              "premium"
+            ]
+          }
+        ]
+      }
+    ],
+    "template": "Tôi muốn đặt gói {item}. Thông tin: {answers}. Nhờ báo giúp những ngày còn trống trong tháng này."
+  }
+}
