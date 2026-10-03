@@ -149,6 +149,13 @@
     "advisor": {
       "title": "Đêm nào hợp với bạn?",
       "text": "Trả lời 3 câu, trợ lý AI chọn gói và đặt chỗ giúp bạn."
+    },
+    "landingFaq": {
+      "title": "Trước chuyến đi"
+    },
+    "landingCta": {
+      "title": "Dã quỳ không chờ ai.",
+      "text": "Mỗi cuối tuần chỉ có 6 căn nhà gỗ."
     }
   },
   "pages": {
@@ -183,6 +190,9 @@
       "title": "Liên hệ",
       "heading": "Nhắn cho Mơ Sương",
       "text": "Trả lời trong 15 phút, từ 7:00 đến 23:00."
+    },
+    "landing": {
+      "title": "Tour mới: Mùa dã quỳ"
     }
   },
   "catalog": {
@@ -632,5 +642,140 @@
       }
     ],
     "template": "Tôi muốn đặt gói {item}. Thông tin: {answers}. Nhờ báo giúp những ngày còn trống trong tháng này."
+  },
+  "landing": {
+    "kind": "Tour mới",
+    "itemId": "san-may",
+    "image": "assets-web-design/img/dalat/features_page.jpg",
+    "badge": "Chuyến đầu 08/11/2026",
+    "title": "Mùa dã quỳ. Một đêm, hai buổi bình minh.",
+    "subtitle": "Tour mới cuối tuần: chiều đạp xe qua đồi dã quỳ, đêm ngủ nhà gỗ, 5 giờ sáng săn mây Cầu Đất. Chỉ mở vào tháng 11.",
+    "deadline": "2026-11-08T14:00:00+07:00",
+    "countdown": {
+      "label": "Chuyến đầu tiên sau",
+      "ended": "Mùa dã quỳ đang nở. Đặt cho cuối tuần tới."
+    },
+    "secondary": "Xem chi tiết chỗ ở",
+    "teaser": {
+      "eyebrow": "Tour mới · tháng 11",
+      "title": "Đồi dã quỳ vàng rực, sáng mai săn mây.",
+      "text": "Tour cuối tuần chỉ mở trong mùa hoa.",
+      "button": "Xem tour mùa dã quỳ"
+    },
+    "highlights": [
+      {
+        "icon": "flower-2",
+        "title": "Đồi dã quỳ",
+        "text": "Đạp xe 8km qua con đường vàng rực."
+      },
+      {
+        "icon": "house",
+        "title": "Ngủ nhà gỗ",
+        "text": "Lò sưởi, cửa kính nhìn ra rừng thông."
+      },
+      {
+        "icon": "cloud-sun",
+        "title": "Săn mây 5 giờ sáng",
+        "text": "Xe đón tận cửa, có áo ấm cho mượn."
+      },
+      {
+        "icon": "coffee",
+        "title": "Cà phê trên đồi chè",
+        "text": "Bữa sáng nhìn xuống thung lũng."
+      }
+    ],
+    "story": {
+      "title": "Dã quỳ chỉ nở ba tuần",
+      "text": "Mỗi năm, đồi Cầu Đất vàng lên từ đầu tháng 11. Chúng tôi chọn cung đường vắng nhất để bạn có ảnh không lẫn người lạ.",
+      "image": "assets-web-design/img/dalat/f4.jpg",
+      "points": [
+        "Xe đạp trợ lực cho người ít vận động",
+        "Nhiếp ảnh gia chụp 30 ảnh cho mỗi nhóm",
+        "Bữa tối nướng bên lửa trại"
+      ]
+    },
+    "agenda": {
+      "title": "Lịch trình một đêm",
+      "text": "Từ 14:00 hôm trước đến 10:00 hôm sau.",
+      "steps": [
+        {
+          "time": "14:00",
+          "title": "Nhận phòng nhà gỗ",
+          "text": "Trà gừng nóng, cất đồ, thay giày."
+        },
+        {
+          "time": "15:30",
+          "title": "Đạp xe đồi dã quỳ",
+          "text": "8km đường đất, dừng chụp ảnh ở 3 điểm."
+        },
+        {
+          "time": "19:00",
+          "title": "Bữa tối nướng, lửa trại",
+          "text": "Nghe guitar, nướng khoai, ngắm sao."
+        },
+        {
+          "time": "05:00",
+          "title": "Săn mây Cầu Đất",
+          "text": "Xe đón tận cửa, cà phê nóng trên đồi chè."
+        }
+      ]
+    },
+    "offer": {
+      "title": "Chọn chỗ ngủ",
+      "text": "Giá theo người, đã gồm xe đạp, bữa tối, bữa sáng và xe săn mây.",
+      "featuredLabel": "Ấm nhất mùa sương",
+      "message": "Tôi muốn đặt {plan} cho {campaign}.",
+      "plans": [
+        {
+          "name": "Lều trên đồi",
+          "price": "990.000đ",
+          "was": "",
+          "note": "/người",
+          "perks": [
+            "Lều đôi, túi ngủ ấm",
+            "Ngắm sao ngay cửa lều"
+          ],
+          "button": "Đặt lều"
+        },
+        {
+          "name": "Nhà gỗ rừng thông",
+          "price": "1.690.000đ",
+          "was": "1.890.000đ",
+          "note": "/người",
+          "perks": [
+            "Lò sưởi riêng",
+            "Cửa kính nhìn ra rừng",
+            "Bộ ảnh 30 tấm"
+          ],
+          "featured": true,
+          "button": "Đặt nhà gỗ"
+        },
+        {
+          "name": "Glamping bên hồ",
+          "price": "2.090.000đ",
+          "was": "",
+          "note": "/người",
+          "perks": [
+            "Giường đôi, phòng tắm riêng",
+            "Chèo thuyền lúc sáng sớm"
+          ],
+          "button": "Đặt glamping"
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "Năm nay dã quỳ nở khi nào?",
+        "a": "Dự kiến từ 05/11 đến 25/11. Nếu hoa nở muộn, bạn được đổi ngày miễn phí."
+      },
+      {
+        "q": "Tôi không biết đạp xe thì sao?",
+        "a": "Bạn có thể đi xe điện cùng hướng dẫn viên, giá không đổi."
+      },
+      {
+        "q": "Có đón ở sân bay Liên Khương không?",
+        "a": "Có, xe đón 250.000đ/lượt cho cả nhóm."
+      }
+    ]
   }
 }

@@ -101,7 +101,8 @@ html.wl-ready body { opacity: 1; transition: opacity .25s; }
 /* Thẻ thành phần là khối */
 wl-header, wl-footer, wl-hero, wl-page-head, wl-partners, wl-features, wl-products,
 wl-process, wl-testimonials, wl-faq, wl-cta-band, wl-mission, wl-stats, wl-achievements,
-wl-contact, wl-product-detail, wl-advisor { display: block; }
+wl-contact, wl-product-detail, wl-advisor, wl-campaign-teaser, wl-landing-hero, wl-landing-highlights,
+wl-landing-story, wl-landing-agenda, wl-landing-offer, wl-countdown { display: block; }
 
 /* Chuyển trang mượt giữa các file HTML (trình duyệt hỗ trợ View Transitions) */
 @view-transition { navigation: auto; }

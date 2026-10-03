@@ -188,6 +188,8 @@ define('wl-brand-switcher', {
 
     async function fill() {
       const all = await Promise.all(brands.map((b) => preview(b.file)));
+      // tải trước ảnh hero để khi chọn, màn hình đầu hiện ngay
+      all.forEach((d) => { if (d && d.hero && d.hero.image) new Image().src = d.hero.image; });
       grid.innerHTML = all.map((d, i) => {
         if (!d) return '';
         const c = d.theme.colors;
@@ -219,12 +221,22 @@ define('wl-brand-switcher', {
     el.querySelector('.switch-fab').addEventListener('click', () => { fill(); dialog.showModal(); });
     el.querySelector('[data-close]').addEventListener('click', () => dialog.close());
     dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
-    grid.addEventListener('click', (e) => {
+    // Đổi nhanh: render ngay từ JSON đã có trong bộ nhớ đệm (không chờ mạng), bọc trong
+    // View Transition để chuyển màu mượt; wd2026.js vẫn được gọi để lưu lựa chọn.
+    grid.addEventListener('click', async (e) => {
       const card = e.target.closest('[data-index]');
       if (!card) return;
+      const i = Number(card.dataset.index);
+      const cached = await preview(brands[i].file);
       dialog.close();
-      window.WebDesign2026.load(Number(card.dataset.index));
-      window.scrollTo({ top: 0 });
+      const swap = () => {
+        if (cached) window.WL.boot(cached);
+        window.scrollTo({ top: 0 });
+      };
+      const motionOk = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (document.startViewTransition && motionOk) document.startViewTransition(swap);
+      else swap();
+      window.WebDesign2026.load(i);
     });
   },
 });

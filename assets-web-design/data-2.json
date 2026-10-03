@@ -149,6 +149,13 @@
     "advisor": {
       "title": "Để trợ lý chọn giúp",
       "text": "Ba câu hỏi để biết chú Meow nào hợp với bạn."
+    },
+    "landingFaq": {
+      "title": "Sinh viên hay hỏi"
+    },
+    "landingCta": {
+      "title": "Năm học mới, một chú Meow mới.",
+      "text": "Giảm 4 triệu đến hết 31/10."
     }
   },
   "pages": {
@@ -183,6 +190,9 @@
       "title": "Liên hệ",
       "heading": "Ghé Meow Store, vuốt ve vài chiếc máy",
       "text": "Hoặc đăng ký dùng thử, máy giao tận nhà."
+    },
+    "landing": {
+      "title": "Meow cho tân sinh viên"
     }
   },
   "catalog": {
@@ -641,5 +651,135 @@
       }
     ],
     "template": "Tôi muốn dùng thử {item}. Nhu cầu: {answers}. Nhờ tư vấn cấu hình RAM và ổ cứng."
+  },
+  "landing": {
+    "kind": "Chiến dịch",
+    "itemId": "air-13",
+    "image": "assets-web-design/img/meow/f1.jpg",
+    "badge": "Đến hết 31/10/2026",
+    "title": "Tân sinh viên, nhận Meow Book Air giảm 4 triệu.",
+    "subtitle": "Xuất trình thẻ sinh viên hoặc giấy báo nhập học. Máy 1,1kg, pin 22 giờ, gõ cả ngày không mỏi tay.",
+    "deadline": "2026-10-31T23:59:00+07:00",
+    "countdown": {
+      "label": "Ưu đãi kết thúc sau",
+      "ended": "Chương trình đã kết thúc. Hẹn bạn năm học sau."
+    },
+    "secondary": "Xem cấu hình",
+    "teaser": {
+      "eyebrow": "Mùa tựu trường",
+      "title": "Meow Book Air cho tân sinh viên, giảm 4 triệu.",
+      "text": "Kèm balo chống sốc và 30 ngày dùng thử.",
+      "button": "Xem ưu đãi sinh viên"
+    },
+    "highlights": [
+      {
+        "icon": "graduation-cap",
+        "title": "Giảm 4 triệu",
+        "text": "Áp dụng cho sinh viên năm nhất và năm hai."
+      },
+      {
+        "icon": "backpack",
+        "title": "Tặng balo chống sốc",
+        "text": "Vừa máy 13 và 15 inch."
+      },
+      {
+        "icon": "battery-charging",
+        "title": "Pin 22 giờ",
+        "text": "Học ba ca liền không cần sạc."
+      },
+      {
+        "icon": "rotate-ccw",
+        "title": "30 ngày dùng thử",
+        "text": "Không hợp thì trả, hoàn tiền đủ."
+      }
+    ],
+    "story": {
+      "title": "Chiếc laptop đi cùng bạn bốn năm",
+      "text": "Meow Book Air không có quạt nên thư viện vẫn yên tĩnh. Bàn phím êm, gõ ghi chú cả buổi giảng mà không làm phiền bạn bên cạnh.",
+      "image": "assets-web-design/img/meow/f3.jpg",
+      "points": [
+        "Bảo hành 4 năm cho sinh viên",
+        "Office bản quyền suốt khoá học",
+        "Sửa nhanh trong 24 giờ tại trường đối tác"
+      ]
+    },
+    "agenda": {
+      "title": "Nhận máy trong 3 bước",
+      "text": "Làm online, nhận máy tại ký túc xá.",
+      "steps": [
+        {
+          "time": "Bước 1",
+          "title": "Đăng ký online",
+          "text": "Để lại thông tin và chọn máy ngay trên trang này."
+        },
+        {
+          "time": "Bước 2",
+          "title": "Xác thực sinh viên",
+          "text": "Gửi ảnh thẻ sinh viên hoặc giấy báo nhập học."
+        },
+        {
+          "time": "Bước 3",
+          "title": "Nhận máy, dùng thử 30 ngày",
+          "text": "Giao miễn phí tới ký túc xá trong 48 giờ."
+        }
+      ]
+    },
+    "offer": {
+      "title": "Giá dành riêng cho sinh viên",
+      "text": "Trả góp 0% qua ví điện tử, không cần thẻ tín dụng.",
+      "featuredLabel": "Sinh viên chọn nhiều nhất",
+      "message": "Tôi là sinh viên, muốn đăng ký {plan} trong chương trình {campaign}.",
+      "plans": [
+        {
+          "name": "Air 13 sinh viên",
+          "price": "15.990.000đ",
+          "was": "19.990.000đ",
+          "note": "8GB · 256GB",
+          "perks": [
+            "Tặng balo chống sốc",
+            "Bảo hành 4 năm"
+          ],
+          "featured": true,
+          "button": "Chọn Air 13"
+        },
+        {
+          "name": "Air 15 sinh viên",
+          "price": "20.990.000đ",
+          "was": "24.990.000đ",
+          "note": "16GB · 512GB",
+          "perks": [
+            "Tặng balo chống sốc",
+            "Bảo hành 4 năm",
+            "Màn hình lớn cho ngành thiết kế"
+          ],
+          "button": "Chọn Air 15"
+        },
+        {
+          "name": "Pro 14 sinh viên",
+          "price": "35.990.000đ",
+          "was": "39.990.000đ",
+          "note": "Cho ngành dựng phim, kiến trúc",
+          "perks": [
+            "Tặng balo chống sốc",
+            "Bảo hành 4 năm"
+          ],
+          "button": "Chọn Pro 14"
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "Sinh viên năm ba có được áp dụng không?",
+        "a": "Chương trình dành cho năm nhất và năm hai. Năm ba trở lên được giảm 2 triệu."
+      },
+      {
+        "q": "Mỗi sinh viên được mua mấy máy?",
+        "a": "Một máy cho mỗi mã số sinh viên."
+      },
+      {
+        "q": "Trả lại trong 30 ngày có mất phí không?",
+        "a": "Không. Meow chịu phí ship hai chiều."
+      }
+    ]
   }
 }

@@ -149,6 +149,13 @@
     "advisor": {
       "title": "Tủ đồ của bạn thiếu gì?",
       "text": "Ba câu, trợ lý AI gợi ý thiết kế và đặt may giúp bạn."
+    },
+    "landingFaq": {
+      "title": "Về bộ sưu tập"
+    },
+    "landingCta": {
+      "title": "200 chiếc. Không làm thêm.",
+      "text": "Đăng ký trước để được mua sớm 2 giờ."
     }
   },
   "pages": {
@@ -183,6 +190,9 @@
       "title": "Liên hệ",
       "heading": "Ghé xưởng hoặc đo tại nhà",
       "text": "Thợ may hướng dẫn bạn tự đo qua video call."
+    },
+    "landing": {
+      "title": "BST Gió Hội An"
     }
   },
   "catalog": {
@@ -649,5 +659,140 @@
       }
     ],
     "template": "Tôi muốn đặt may {item}. Nhu cầu: {answers}. Nhờ thợ may gọi hướng dẫn lấy số đo."
+  },
+  "landing": {
+    "kind": "Bộ sưu tập mới",
+    "itemId": "jacket-reu",
+    "image": "assets-web-design/img/fashion/f2.jpg",
+    "badge": "Mở bán 18/10/2026 · 200 chiếc",
+    "title": "Gió Hội An. Bộ sưu tập thu chỉ có 200 chiếc.",
+    "subtitle": "Kaki rêu, linen nâu đất và lụa tơ tằm nhuộm lá bàng, may tay tại xưởng Hội An. Mỗi chiếc đánh số thứ tự.",
+    "deadline": "2026-10-18T20:00:00+07:00",
+    "countdown": {
+      "label": "Mở bán sau",
+      "ended": "Đang mở bán. Còn hàng đến khi hết số."
+    },
+    "secondary": "Xem áo khoác kaki rêu",
+    "teaser": {
+      "eyebrow": "Drop giới hạn",
+      "title": "Gió Hội An: 200 chiếc, đánh số từng chiếc.",
+      "text": "Đăng ký trước để giữ số thứ tự bạn thích.",
+      "button": "Xem bộ sưu tập"
+    },
+    "highlights": [
+      {
+        "icon": "hash",
+        "title": "Đánh số 1–200",
+        "text": "Nhãn thêu tay số thứ tự trên từng chiếc."
+      },
+      {
+        "icon": "palette",
+        "title": "Nhuộm lá bàng",
+        "text": "Màu tự nhiên, mỗi chiếc đậm nhạt khác nhau."
+      },
+      {
+        "icon": "scissors",
+        "title": "May tay tại Hội An",
+        "text": "12 thợ may, 3 tuần cho cả bộ sưu tập."
+      },
+      {
+        "icon": "ruler",
+        "title": "Chỉnh sửa miễn phí",
+        "text": "Trong 30 ngày, đổi size trong 7 ngày."
+      }
+    ],
+    "story": {
+      "title": "Mùa thu theo gió sông Hoài",
+      "text": "Bảng màu lấy từ tường vàng, mái ngói rêu và lá bàng đỏ. Phom rộng để đi bộ cả ngày phố cổ mà vẫn gọn gàng khi vào quán cà phê.",
+      "image": "assets-web-design/img/fashion/f4.jpg",
+      "points": [
+        "6 thiết kế phối được với nhau",
+        "Linen đã giặt mềm, không co rút",
+        "Hộp đựng bằng giấy tái chế"
+      ]
+    },
+    "agenda": {
+      "title": "Lịch drop",
+      "text": "Đăng ký trước có quyền mua sớm 2 giờ.",
+      "steps": [
+        {
+          "time": "10/10",
+          "title": "Mở đăng ký",
+          "text": "Để lại thông tin và chọn số thứ tự yêu thích."
+        },
+        {
+          "time": "18/10 · 18:00",
+          "title": "Mua sớm",
+          "text": "Dành riêng cho người đã đăng ký."
+        },
+        {
+          "time": "18/10 · 20:00",
+          "title": "Mở bán công khai",
+          "text": "Online và tại xưởng Hội An."
+        },
+        {
+          "time": "Hết hàng",
+          "title": "Đóng bộ sưu tập",
+          "text": "Không sản xuất thêm."
+        }
+      ]
+    },
+    "offer": {
+      "title": "Chọn cách sở hữu",
+      "text": "Giao toàn quốc trong 3 ngày, miễn phí đổi size.",
+      "featuredLabel": "Tiết kiệm nhất",
+      "message": "Tôi muốn đăng ký {plan} trong {campaign}.",
+      "plans": [
+        {
+          "name": "Một món",
+          "price": "Từ 690.000đ",
+          "was": "",
+          "note": "Chọn 1 trong 6 thiết kế",
+          "perks": [
+            "Nhãn đánh số thủ công",
+            "Hộp giấy tái chế"
+          ],
+          "button": "Đăng ký 1 món"
+        },
+        {
+          "name": "Combo phối đồ",
+          "price": "2.090.000đ",
+          "was": "2.280.000đ",
+          "note": "Áo khoác kaki rêu + quần linen ống rộng",
+          "perks": [
+            "Cùng số thứ tự cho 2 món",
+            "Túi vải thêu tên",
+            "Mua sớm 2 giờ"
+          ],
+          "featured": true,
+          "button": "Đăng ký combo"
+        },
+        {
+          "name": "May theo số đo",
+          "price": "Từ 1.290.000đ",
+          "was": "",
+          "note": "Giao trong 7 ngày",
+          "perks": [
+            "Đo online qua video",
+            "Chỉnh sửa miễn phí 30 ngày"
+          ],
+          "button": "Đặt may đo"
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "Hết 200 chiếc có làm thêm không?",
+        "a": "Không. Mỗi bộ sưu tập Nhịp Phố chỉ may một lần."
+      },
+      {
+        "q": "Màu nhuộm lá bàng có phai không?",
+        "a": "Màu nhạt dần rất chậm sau khoảng 30 lần giặt, tạo vẻ cũ tự nhiên. Nên giặt tay nước lạnh."
+      },
+      {
+        "q": "Tôi chọn số thứ tự thế nào?",
+        "a": "Ghi số bạn muốn vào lời nhắn khi đăng ký. Số trùng sẽ ưu tiên người đăng ký trước."
+      }
+    ]
   }
 }

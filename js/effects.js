@@ -9,6 +9,7 @@
  *   data-rail            dãy thẻ trượt ngang khi cuộn dọc (cần GSAP ScrollTrigger)
  *   data-expand          khối CTA nở từ thẻ bo góc ra toàn màn hình
  *   data-steps           đường nối các bước chạy dài theo nhịp cuộn
+ *   data-timeline        đường nối dọc của dòng thời gian (con: [data-line-y]) dài theo nhịp cuộn
  *
  * GSAP + ScrollTrigger (CDN) lo các hiệu ứng gắn với thanh cuộn. Không tải được GSAP
  * thì trang vẫn đầy đủ nội dung, chỉ bớt chuyển động. Tôn trọng prefers-reduced-motion.
@@ -121,6 +122,14 @@ function scrollFx(root) {
     gsap.fromTo(line, { scaleX: 0 }, {
       scaleX: 1, ease: 'none',
       scrollTrigger: { trigger: line.closest('[data-steps]'), start: 'top 75%', end: 'bottom 55%', scrub: true },
+    });
+  });
+
+  // Dòng thời gian landing: đường nối dọc dài dần theo nhịp cuộn
+  root.querySelectorAll('[data-timeline] [data-line-y]').forEach((line) => {
+    gsap.fromTo(line, { scaleY: 0 }, {
+      scaleY: 1, ease: 'none',
+      scrollTrigger: { trigger: line.closest('[data-timeline]'), start: 'top 70%', end: 'bottom 60%', scrub: true },
     });
   });
 

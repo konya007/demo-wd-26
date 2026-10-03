@@ -149,6 +149,13 @@
     "advisor": {
       "title": "Chưa biết chọn bản nào?",
       "text": "Trả lời 3 câu, trợ lý AI chọn giúp bạn và soạn sẵn đơn đặt trước."
+    },
+    "landingFaq": {
+      "title": "Hỏi nhanh về đợt ra mắt"
+    },
+    "landingCta": {
+      "title": "Đêm nay, chụp thử một tấm.",
+      "text": "Giữ máy trước khi mở bán, hoàn cọc nếu đổi ý."
     }
   },
   "pages": {
@@ -183,6 +190,9 @@
       "title": "Liên hệ",
       "heading": "Ghé cửa hàng hoặc đặt online",
       "text": "Đội tư vấn trực từ 8:00 đến 22:00 mỗi ngày."
+    },
+    "landing": {
+      "title": "Ra mắt YPhone 17 Pro Max"
     }
   },
   "catalog": {
@@ -643,5 +653,141 @@
       }
     ],
     "template": "Tôi muốn đặt trước {item}. Nhu cầu của tôi: {answers}. Nhờ tư vấn thêm màu và dung lượng phù hợp."
+  },
+  "landing": {
+    "kind": "Ra mắt sản phẩm",
+    "itemId": "y17-pro-max",
+    "image": "assets-web-design/img/yphone/f2.jpg",
+    "badge": "Mở bán 20/10/2026",
+    "title": "YPhone 17 Pro Max. Đêm là sân khấu của bạn.",
+    "subtitle": "Zoom quang 5x, cảm biến 48MP lớn hơn 60% và pin 48 giờ. Đặt trước trước ngày mở bán để nhận máy sớm 3 ngày cùng bộ quà Sáng tạo.",
+    "deadline": "2026-10-20T09:00:00+07:00",
+    "countdown": {
+      "label": "Mở bán sau",
+      "ended": "Đã mở bán. Giao máy trong 2 giờ."
+    },
+    "secondary": "Xem thông số",
+    "teaser": {
+      "eyebrow": "Sắp ra mắt",
+      "title": "YPhone 17 Pro Max đến tay bạn sớm 3 ngày.",
+      "text": "Đặt trước trong tuần này: tặng ốp MagSafe và sạc nhanh 45W.",
+      "button": "Xem chiến dịch ra mắt"
+    },
+    "highlights": [
+      {
+        "icon": "aperture",
+        "title": "Zoom quang 5x",
+        "text": "Chụp chân dung từ xa vẫn sắc nét, không vỡ ảnh."
+      },
+      {
+        "icon": "moon-star",
+        "title": "Đêm như ngày",
+        "text": "Ghép 9 khung hình trong một lần bấm."
+      },
+      {
+        "icon": "battery-full",
+        "title": "Pin 48 giờ",
+        "text": "Hai ngày mới phải tìm ổ cắm."
+      },
+      {
+        "icon": "shield",
+        "title": "Khung titan",
+        "text": "Nhẹ hơn thép 40%, bền hơn nhôm."
+      }
+    ],
+    "story": {
+      "title": "Một chiếc máy ảnh nằm gọn trong túi áo",
+      "text": "Đội camera của YPhone mất hai năm để làm lại cụm ống kính tele. Kết quả là ảnh phố đêm có màu thật, đèn không loé, da người không bị làm mịn.",
+      "image": "assets-web-design/img/yphone/f1.jpg",
+      "points": [
+        "Chụp RAW 48MP ngay trong ứng dụng Camera",
+        "Quay 4K 120fps chống rung",
+        "Màn hình 6,9 inch sáng 3.000 nit dưới nắng"
+      ]
+    },
+    "agenda": {
+      "title": "Lịch ra mắt",
+      "text": "Bốn mốc bạn cần nhớ.",
+      "steps": [
+        {
+          "time": "06/10",
+          "title": "Mở đặt trước",
+          "text": "Cọc 500.000đ, hoàn lại 100% nếu đổi ý."
+        },
+        {
+          "time": "12/10",
+          "title": "Trải nghiệm tại cửa hàng",
+          "text": "Cầm thử máy thật ở 68 Đồng Khởi, TP. Hồ Chí Minh."
+        },
+        {
+          "time": "17/10",
+          "title": "Giao máy đặt trước",
+          "text": "Khách đặt trước nhận máy sớm 3 ngày."
+        },
+        {
+          "time": "20/10",
+          "title": "Mở bán chính thức",
+          "text": "Ưu đãi đổi cũ lấy mới kéo dài đến 31/10."
+        }
+      ]
+    },
+    "offer": {
+      "title": "Chọn gói đặt trước",
+      "text": "Giá đã gồm VAT. Trả góp 0% trong 12 tháng.",
+      "featuredLabel": "Được chọn nhiều nhất",
+      "message": "Tôi muốn đặt trước {plan} của chiến dịch {campaign}.",
+      "plans": [
+        {
+          "name": "Gói Cơ bản",
+          "price": "34.990.000đ",
+          "was": "",
+          "note": "Máy 256GB",
+          "perks": [
+            "Giao máy sớm 3 ngày",
+            "Bảo hành 12 tháng"
+          ],
+          "button": "Chọn gói Cơ bản"
+        },
+        {
+          "name": "Gói Sáng tạo",
+          "price": "35.990.000đ",
+          "was": "37.480.000đ",
+          "note": "Máy 256GB + quà",
+          "perks": [
+            "Ốp MagSafe chính hãng",
+            "Sạc nhanh 45W",
+            "Giao máy sớm 3 ngày",
+            "1 đổi 1 trong 60 ngày"
+          ],
+          "featured": true,
+          "button": "Chọn gói Sáng tạo"
+        },
+        {
+          "name": "Gói Đổi cũ",
+          "price": "Từ 24.990.000đ",
+          "was": "",
+          "note": "Thu máy cũ, trừ thẳng vào giá",
+          "perks": [
+            "Định giá tại nhà",
+            "Chuyển dữ liệu miễn phí"
+          ],
+          "button": "Chọn gói Đổi cũ"
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "Đặt trước rồi có được đổi màu không?",
+        "a": "Được, bạn đổi màu và dung lượng miễn phí đến ngày 15/10."
+      },
+      {
+        "q": "Quà tặng có giới hạn không?",
+        "a": "Bộ quà Gói Sáng tạo dành cho 2.000 đơn đặt trước đầu tiên."
+      },
+      {
+        "q": "Ở tỉnh có được giao sớm không?",
+        "a": "Có. Đơn ngoài nội thành được giao trước 1 ngày để kịp nhận đúng 17/10."
+      }
+    ]
   }
 }

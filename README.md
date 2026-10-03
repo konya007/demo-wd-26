@@ -22,6 +22,7 @@ Mở bằng **Live Server** (VS Code) hoặc `python3 -m http.server`. Mở bằ
 
 ```
 index.html  features.html  products.html  product.html  about.html  contact.html
+landing-page.html         # landing chiến dịch: ra mắt sản phẩm / tour mới / bộ sưu tập mới
 _template.html            # khung để tạo trang mới
 assets-web-design/
   data-1.json … data-6.json   # bộ dữ liệu cấu hình: nơi DUY NHẤT cần sửa khi đổi thương hiệu
@@ -43,8 +44,10 @@ js/
     product-detail.js     # chi tiết một sản phẩm / tour
     advisor.js            # trợ lý AI chọn sản phẩm
     contact.js            # thông tin liên hệ + biểu mẫu (nhận dữ liệu điền sẵn)
+    landing.js            # teaser chiến dịch, đếm ngược, các khối của landing page
 tools/find-images.py      # tìm ảnh thật CC0 theo chủ đề (Openverse API)
 wd2026.js                 # thư viện chuyển dữ liệu của BTC (không sửa)
+.claude/skills/wl-builder/ # skill cho AI: cách xây thành phần, JSON, CSS, core.js
 ```
 
 ## Mỗi trang chỉ là danh sách thẻ
@@ -98,8 +101,34 @@ Thứ tự khối trên trang chủ là một hành trình: thông điệp và n
 | `<wl-cta-band>` | `copy="…"` | `sections.ctaBand`, `cta` |
 | `<wl-mission>` / `<wl-stats>` / `<wl-achievements>` | — | `mission` / `hero.stats` / `achievements` |
 | `<wl-scroll-progress>`, `<wl-brand-switcher>`, `<wl-back-to-top>`, `<wl-sticky-cta>` | — | `cta`, danh sách thương hiệu |
+| `<wl-campaign-teaser>` | — | `landing.teaser`, `landing.image` |
+| `<wl-countdown>` | `source="landing"`, `size="sm\|lg"` | `deadline`, `countdown` tại `source` |
+| `<wl-landing-hero>` / `-highlights` / `-story` / `-agenda` / `-offer` | — | `landing.*` |
 
-Khối nào có tiêu đề đều đọc `sections.<tên khối>`; thêm `copy="tênKhác"` để dùng bộ chữ khác.
+Khối nào có tiêu đề đều đọc `sections.<tên khối>`; thêm `copy="tênKhác"` để dùng bộ chữ khác. `<wl-faq source="landing.faq">` đọc danh sách câu hỏi từ đường dẫn khác.
+
+## Landing page chiến dịch
+
+Mỗi thương hiệu có một chiến dịch trong khóa `landing` của JSON. Trang chủ hiện thẻ giới thiệu (`<wl-campaign-teaser>`) có đồng hồ đếm ngược, bấm vào mở `landing-page.html`.
+
+| Thương hiệu | Chiến dịch | Loại |
+|---|---|---|
+| YPhone | Ra mắt YPhone 17 Pro Max, mở bán 20/10 | Ra mắt sản phẩm |
+| Meow | Meow Book Air cho tân sinh viên, giảm 4 triệu | Chiến dịch |
+| Đỉnh Gió | Đêm Ngân Hà trên Bạch Mộc Lương Tử | Tour mới |
+| Mơ Sương | Mùa dã quỳ: một đêm, hai buổi bình minh | Tour mới |
+| Mộc Nhan | Tinh chất Nghệ 2.0 | Ra mắt sản phẩm |
+| Nhịp Phố | Bộ sưu tập Gió Hội An, 200 chiếc | Bộ sưu tập mới |
+
+Trang đi theo hành trình: thông điệp + hạn chót → 4 điểm nổi bật → câu chuyện → lịch trình → chọn gói → hỏi đáp → kêu gọi. Bấm chọn gói sẽ mở form liên hệ đã chọn sẵn sản phẩm và điền lời nhắn có tên gói.
+
+## Đổi thương hiệu nhanh
+
+Hộp **Đổi thương hiệu** tải sẵn JSON, font tiêu đề và ảnh hero của cả 6 thương hiệu khi mở. Bấm chọn thì trang render ngay từ bộ nhớ đệm, có hiệu ứng View Transition, không chờ mạng. `wd2026.js` vẫn được gọi để lưu lựa chọn; `WL.boot` bỏ qua lần render trùng vì dữ liệu giống hệt.
+
+## Skill cho AI
+
+`.claude/skills/wl-builder/` hướng dẫn trợ lý AI (Claude Code tự nhận diện; Cursor, Copilot… đọc như tài liệu thường) cách làm việc trong dự án này: `SKILL.md` là điểm vào, `references/` chia theo chủ đề (vòng đời render, API thành phần, xây `core.js`, tổ chức JSON, trình đổi nội dung, biến CSS, đặt tên class, button/avatar/tag, header/sidebar/card, section, landing page, hiệu ứng, danh sách kiểm tra).
 
 ## Trợ lý AI: chọn đáp án → tự điền form liên hệ
 

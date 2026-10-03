@@ -149,6 +149,13 @@
     "advisor": {
       "title": "Da bạn cần gì?",
       "text": "Ba câu hỏi về làn da, trợ lý AI chọn sản phẩm và gửi yêu cầu dùng thử giúp bạn."
+    },
+    "landingFaq": {
+      "title": "Bạn hỏi, Mộc Nhan trả lời"
+    },
+    "landingCta": {
+      "title": "28 ngày cho một làn da đều màu.",
+      "text": "Đặt trước để nhận quà và giao ngay ngày ra mắt."
     }
   },
   "pages": {
@@ -183,6 +190,9 @@
       "title": "Liên hệ",
       "heading": "Hỏi chuyên viên về làn da của bạn",
       "text": "Tư vấn miễn phí qua điện thoại hoặc tại cửa hàng."
+    },
+    "landing": {
+      "title": "Ra mắt Tinh chất Nghệ 2.0"
     }
   },
   "catalog": {
@@ -642,5 +652,139 @@
       }
     ],
     "template": "Tôi muốn nhận bộ dùng thử có {item}. Làn da của tôi: {answers}. Nhờ chuyên viên tư vấn thêm."
+  },
+  "landing": {
+    "kind": "Ra mắt sản phẩm",
+    "itemId": "tinh-chat-nghe",
+    "image": "assets-web-design/img/beauty/features_page.jpg",
+    "badge": "Ra mắt 25/10/2026",
+    "title": "Tinh chất Nghệ 2.0. Đều màu da sau 28 ngày.",
+    "subtitle": "Công thức mới với nghệ vàng chiết xuất lạnh và 5% niacinamide. Dịu nhẹ đến mức dùng được cả buổi sáng.",
+    "deadline": "2026-10-25T10:00:00+07:00",
+    "countdown": {
+      "label": "Ra mắt sau",
+      "ended": "Đã ra mắt. Giao trong 24 giờ."
+    },
+    "secondary": "Xem thành phần",
+    "teaser": {
+      "eyebrow": "Sản phẩm mới",
+      "title": "Tinh chất Nghệ 2.0: mờ thâm, đều màu sau 28 ngày.",
+      "text": "Đặt trước được tặng chai chống nắng bí đao 20ml.",
+      "button": "Xem sản phẩm mới"
+    },
+    "highlights": [
+      {
+        "icon": "leaf",
+        "title": "Nghệ vàng hữu cơ",
+        "text": "Trồng ở Quảng Nam, chiết xuất lạnh."
+      },
+      {
+        "icon": "droplets",
+        "title": "5% niacinamide",
+        "text": "Mờ thâm mà không gây châm chích."
+      },
+      {
+        "icon": "sun",
+        "title": "Dùng được ban ngày",
+        "text": "Không làm da nhạy nắng."
+      },
+      {
+        "icon": "recycle",
+        "title": "Chai thuỷ tinh",
+        "text": "Đổi 5 vỏ chai lấy 1 son dưỡng."
+      }
+    ],
+    "story": {
+      "title": "Hai năm thử nghiệm cùng 300 làn da",
+      "text": "Phiên bản đầu tiên có màu vàng đậm và mùi nghệ khá rõ. Bản 2.0 trong hơn, thấm nhanh hơn và không còn mùi.",
+      "image": "assets-web-design/img/beauty/f2.jpg",
+      "points": [
+        "92% người thử thấy da đều màu hơn sau 28 ngày",
+        "Kiểm nghiệm da liễu, không gây kích ứng",
+        "Không cồn, không hương liệu"
+      ]
+    },
+    "agenda": {
+      "title": "Liệu trình 28 ngày",
+      "text": "Sáng và tối, 3 giọt sau toner.",
+      "steps": [
+        {
+          "time": "Tuần 1",
+          "title": "Da dịu và ẩm hơn",
+          "text": "Nốt mụn mới ít đỏ hơn."
+        },
+        {
+          "time": "Tuần 2",
+          "title": "Vết thâm nhạt dần",
+          "text": "Thâm mụn mới mờ trước."
+        },
+        {
+          "time": "Tuần 3",
+          "title": "Da sáng hơn",
+          "text": "Vùng má và trán đều màu hơn."
+        },
+        {
+          "time": "Tuần 4",
+          "title": "Đều màu rõ rệt",
+          "text": "Chụp lại ảnh và so sánh với ngày đầu."
+        }
+      ]
+    },
+    "offer": {
+      "title": "Đặt trước ngày ra mắt",
+      "text": "Miễn phí giao hàng cho mọi đơn đặt trước.",
+      "featuredLabel": "Đủ cho trọn liệu trình",
+      "message": "Tôi muốn đặt trước {plan} — {campaign}.",
+      "plans": [
+        {
+          "name": "Một chai 30ml",
+          "price": "445.000đ",
+          "was": "",
+          "note": "Dùng khoảng 4 tuần",
+          "perks": [
+            "Tặng chống nắng 20ml"
+          ],
+          "button": "Đặt 1 chai"
+        },
+        {
+          "name": "Combo sáng da",
+          "price": "649.000đ",
+          "was": "744.000đ",
+          "note": "Tinh chất nghệ + chống nắng bí đao 50ml",
+          "perks": [
+            "Tặng túi vải",
+            "Tư vấn da 1-1 qua Zalo",
+            "Giao trong 24 giờ"
+          ],
+          "featured": true,
+          "button": "Đặt combo"
+        },
+        {
+          "name": "Liệu trình 2 chai",
+          "price": "799.000đ",
+          "was": "890.000đ",
+          "note": "Cho 8 tuần",
+          "perks": [
+            "Tặng chống nắng 20ml",
+            "Tư vấn da 1-1 qua Zalo"
+          ],
+          "button": "Đặt liệu trình"
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "Da nhạy cảm có dùng được không?",
+        "a": "Được. Hãy thử ở vùng sau tai trong 2 ngày đầu cho chắc."
+      },
+      {
+        "q": "Có dùng chung với retinol được không?",
+        "a": "Được, nhưng dùng tinh chất nghệ buổi sáng và retinol buổi tối."
+      },
+      {
+        "q": "Bản 2.0 khác bản cũ thế nào?",
+        "a": "Thêm 5% niacinamide, bỏ mùi nghệ, kết cấu lỏng và thấm nhanh hơn."
+      }
+    ]
   }
 }

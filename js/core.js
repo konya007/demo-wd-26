@@ -130,6 +130,7 @@
    * WL.define('wl-hero', {
    *   render(data, el) → chuỗi HTML (đọc tham số qua el.attr('variant', 'split'))
    *   mount(el, data)  → (tuỳ chọn) gắn sự kiện sau khi render
+   *   unmount(el)      → (tuỳ chọn) dọn bộ hẹn giờ / sự kiện trên window trước khi render lại hoặc bị gỡ
    * })
    */
   function define(tag, spec) {
@@ -138,7 +139,14 @@
         registry.add(this);
         if (WL.data) this.update(WL.data);
       }
-      disconnectedCallback() { registry.delete(this); }
+      disconnectedCallback() {
+        registry.delete(this);
+        this.teardown();
+      }
+      teardown() {
+        if (this._mounted && spec.unmount) spec.unmount(this);
+        this._mounted = false;
+      }
       attr(name, fallback) {
         const v = this.getAttribute(name);
         return v == null || v === '' ? fallback : v;
@@ -149,8 +157,10 @@
       }
       update(data) {
         try {
+          this.teardown();
           this.innerHTML = spec.render(data, this);
           if (spec.mount) spec.mount(this, data);
+          this._mounted = true;
         } catch (err) {
           console.error(`[WL] Lỗi khi render <${tag}>:`, err);
           this.innerHTML = '';
@@ -199,10 +209,16 @@
   // ---------- Khởi động ----------
   function boot(data) {
     if (!data) return;
+    // Trình đổi thương hiệu đã render sẵn từ bộ nhớ đệm; wd2026.js tải lại đúng bộ đó thì bỏ qua.
+    const sig = JSON.stringify(data);
+    if (sig === WL._sig) return;
+    WL._sig = sig;
     WL.data = data;
     applyTheme(data.theme);
     applySeo(data);
-    registry.forEach((el) => el.update(data));
+    // Duyệt bản sao: thẻ con sinh ra trong lúc render đã tự render khi gắn vào trang,
+    // thẻ con cũ bị thay thế thì đã rời trang → bỏ qua cả hai, mỗi thẻ render đúng 1 lần.
+    [...registry].forEach((el) => { if (el.isConnected) el.update(data); });
     refreshIcons();
     countUp(document);
     document.documentElement.classList.add('wl-ready');

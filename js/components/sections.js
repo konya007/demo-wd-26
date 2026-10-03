@@ -272,10 +272,12 @@ define('wl-testimonials', {
 });
 
 // ------------------------------------------------------------------ faq
-/** <wl-faq limit="4"> */
+/** <wl-faq limit="4" source="landing.faq" copy="landingFaq"> — source: đường dẫn tới mảng {q, a}, mặc định "faq". */
 define('wl-faq', {
   render(data, el) {
-    const items = (data.faq || []).slice(0, el.num('limit', 99)).map((f, i) => `
+    const list = get(data, el.attr('source', 'faq'), []);
+    if (!list.length) return '';
+    const items = list.slice(0, el.num('limit', 99)).map((f, i) => `
       <details class="faq__item"${i === 0 ? ' open' : ''}>
         <summary>${esc(f.q)}${icon('plus', 'faq__icon')}</summary>
         <p>${esc(f.a)}</p>

@@ -149,6 +149,13 @@
     "advisor": {
       "title": "Cung nào hợp với sức bạn?",
       "text": "Trả lời 3 câu, trợ lý AI gợi ý cung đường và giữ chỗ giúp bạn."
+    },
+    "landingFaq": {
+      "title": "Trước khi lên núi"
+    },
+    "landingCta": {
+      "title": "Trăng non chỉ có một đêm.",
+      "text": "Hai đoàn, 16 chỗ cho cả mùa."
     }
   },
   "pages": {
@@ -183,6 +190,9 @@
       "title": "Liên hệ",
       "heading": "Hỏi gì cũng được, trước khi xách balo",
       "text": "Điều phối viên trực 7:00 – 22:00, kể cả cuối tuần."
+    },
+    "landing": {
+      "title": "Tour mới: Đêm Ngân Hà Bạch Mộc"
     }
   },
   "catalog": {
@@ -633,5 +643,135 @@
       }
     ],
     "template": "Tôi muốn giữ chỗ tour {item}. Thông tin của tôi: {answers}. Nhờ tư vấn ngày khởi hành gần nhất."
+  },
+  "landing": {
+    "kind": "Tour mới",
+    "itemId": "bach-moc",
+    "image": "assets-web-design/img/peak/i5.jpg",
+    "badge": "Khởi hành 13/11/2026",
+    "title": "Đêm Ngân Hà trên Bạch Mộc Lương Tử.",
+    "subtitle": "Tour mới 3 ngày 2 đêm, cắm trại ở 2.800m đúng đêm trăng non, có hướng dẫn chụp ảnh sao. Chỉ 2 đoàn, mỗi đoàn 8 người.",
+    "deadline": "2026-11-13T05:00:00+07:00",
+    "countdown": {
+      "label": "Đoàn đầu khởi hành sau",
+      "ended": "Đoàn đã lên núi. Đăng ký để nhận lịch đoàn sau."
+    },
+    "secondary": "Xem chi tiết cung đường",
+    "teaser": {
+      "eyebrow": "Tour mới",
+      "title": "Ngủ dưới dải Ngân Hà ở độ cao 2.800m.",
+      "text": "Hai đoàn duy nhất trong mùa, mỗi đoàn 8 người.",
+      "button": "Xem lịch trình tour"
+    },
+    "highlights": [
+      {
+        "icon": "sparkles",
+        "title": "Đúng đêm trăng non",
+        "text": "Trời tối nhất trong tháng, thấy rõ dải Ngân Hà."
+      },
+      {
+        "icon": "camera",
+        "title": "Hướng dẫn chụp sao",
+        "text": "Nhiếp ảnh gia đi cùng, có sẵn chân máy."
+      },
+      {
+        "icon": "tent",
+        "title": "Lều 4 mùa",
+        "text": "Chịu gió cấp 7, túi ngủ -5°C."
+      },
+      {
+        "icon": "users",
+        "title": "8 người một đoàn",
+        "text": "2 porter H'Mông, 1 trưởng đoàn có chứng chỉ sơ cứu."
+      }
+    ],
+    "story": {
+      "title": "Vì sao chọn Bạch Mộc cho đêm sao?",
+      "text": "Đỉnh cao thứ tư Việt Nam nằm xa thị trấn, không ô nhiễm ánh sáng. Bãi cắm trại ở 2.800m cao hơn tầng mây, nên đêm quang gần như chắc chắn.",
+      "image": "assets-web-design/img/peak/f2.jpg",
+      "points": [
+        "Độ khó: Khó, cần tập đi bộ 2 tuần trước",
+        "Tổng quãng đường 22km",
+        "Có xe ôm hỗ trợ đoạn đầu nếu mệt"
+      ]
+    },
+    "agenda": {
+      "title": "Lịch trình 3 ngày 2 đêm",
+      "text": "Đi chậm, nghỉ đủ, lên đỉnh lúc bình minh.",
+      "steps": [
+        {
+          "time": "Ngày 1",
+          "title": "Hà Nội → Y Tý → Lán 2.200m",
+          "text": "Xe giường nằm đêm, sáng bắt đầu leo 5 tiếng qua rừng trúc."
+        },
+        {
+          "time": "Ngày 2",
+          "title": "Lán 2.800m · đêm Ngân Hà",
+          "text": "Leo 4 tiếng, dựng trại, học chụp sao từ 20:00."
+        },
+        {
+          "time": "Ngày 3",
+          "title": "Đỉnh 3.046m → xuống núi",
+          "text": "Lên đỉnh đón bình minh, xuống núi, xe về Hà Nội lúc 22:00."
+        }
+      ]
+    },
+    "offer": {
+      "title": "Chọn cách đi",
+      "text": "Giá trọn gói: xe, ăn, lều, porter, bảo hiểm.",
+      "featuredLabel": "Phù hợp nhất cho nhóm bạn",
+      "message": "Tôi muốn giữ chỗ {plan} cho {campaign}.",
+      "plans": [
+        {
+          "name": "Ghép đoàn",
+          "price": "4.590.000đ",
+          "was": "",
+          "note": "/người",
+          "perks": [
+            "Đi cùng 7 bạn mới",
+            "Ảnh sao in khổ A4 làm quà"
+          ],
+          "button": "Giữ 1 chỗ"
+        },
+        {
+          "name": "Nhóm 4 người",
+          "price": "4.190.000đ",
+          "was": "4.590.000đ",
+          "note": "/người, giảm 400.000đ",
+          "perks": [
+            "Lều riêng cho nhóm",
+            "Ảnh sao in khổ A4 làm quà",
+            "Đổi lịch miễn phí trước 7 ngày"
+          ],
+          "featured": true,
+          "button": "Giữ chỗ cho nhóm"
+        },
+        {
+          "name": "Riêng tư",
+          "price": "29.900.000đ",
+          "was": "",
+          "note": "/đoàn tối đa 6 người",
+          "perks": [
+            "Chọn ngày riêng",
+            "Porter và nhiếp ảnh gia riêng"
+          ],
+          "button": "Đặt đoàn riêng"
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "Tôi chưa leo núi bao giờ có đi được không?",
+        "a": "Nên đi Lảo Thẩn trước. Nếu bạn chạy được 5km thì có thể tham gia sau 2 tuần tập."
+      },
+      {
+        "q": "Trời mây thì sao?",
+        "a": "Nếu đêm thứ hai có mây che hơn 70%, bạn được giảm 50% cho chuyến sau."
+      },
+      {
+        "q": "Cần mang máy ảnh không?",
+        "a": "Không bắt buộc. Điện thoại có chế độ chụp đêm là đủ, đoàn có chân máy cho mượn."
+      }
+    ]
   }
 }
