@@ -18,6 +18,11 @@
   /* Màu suy ra, tự đổi theo thương hiệu */
   --c-primary-soft: color-mix(in srgb, var(--c-primary) 12%, var(--c-bg));
   --c-surface-2: color-mix(in srgb, var(--c-text) 4%, var(--c-bg));
+  /* Bản sao cố định của màu gốc, để tham số tone="…" đảo màu mà không tự tham chiếu vòng */
+  --c-brand: var(--c-primary);
+  --c-brand-on: var(--c-on-primary);
+  --c-ink: var(--c-text);
+  --c-paper: var(--c-bg);
 
   /* Font */
   --f-heading: system-ui, sans-serif;
@@ -98,17 +103,15 @@ p { text-wrap: pretty; }
 html:not(.wl-ready) body { opacity: 0; }
 html.wl-ready body { opacity: 1; transition: opacity .25s; }
 
-/* Thẻ thành phần là khối */
-wl-header, wl-footer, wl-hero, wl-page-head, wl-partners, wl-features, wl-products,
-wl-process, wl-testimonials, wl-faq, wl-cta-band, wl-mission, wl-stats, wl-achievements,
-wl-contact, wl-product-detail, wl-advisor, wl-campaign-teaser, wl-landing-hero, wl-landing-highlights,
-wl-landing-story, wl-landing-agenda, wl-landing-offer, wl-countdown { display: block; }
+/* Thẻ thành phần là khối (core.js gắn class .wl-host cho mọi thẻ <wl-*>) */
+.wl-host { display: block; }
 
 /* Chuyển trang mượt giữa các file HTML (trình duyệt hỗ trợ View Transitions) */
 @view-transition { navigation: auto; }
 
 /* ---------- Bố cục ---------- */
 .container { width: 100%; max-width: calc(var(--max) + var(--gutter) * 2); margin-inline: auto; padding-inline: var(--gutter); }
+.container--narrow { max-width: calc(820px + var(--gutter) * 2); }
 .sec { padding-block: var(--sec-y); }
 .sec--tight-top { padding-top: 24px; }
 .sec--surface { background: var(--c-surface-2); }
@@ -118,6 +121,51 @@ wl-landing-story, wl-landing-agenda, wl-landing-offer, wl-countdown { display: b
 .skip:focus { top: 16px; }
 .plain-list { display: grid; gap: 10px; }
 .no-scroll { overflow: hidden; }
+
+/* ---------- Tham số bố cục dùng chung cho mọi thẻ <wl-*> ----------
+   <wl-faq align="center" width="narrow" tone="surface" space="tight">
+   align : start | center | end          căn tiêu đề khối và nội dung chữ
+   width : narrow | wide | full          độ rộng khung .container (mặc định 1200px)
+   tone  : none | surface | primary | inverse   nền + bộ màu của khối
+   space : none | tight | loose          khoảng cách trên dưới của khối
+   Chỉ tác động tới <section> gốc mà thành phần render ra. */
+.wl-host[width="narrow"] .container { --max: 820px; }
+.wl-host[width="wide"] .container { --max: 1440px; }
+.wl-host[width="full"] .container { --max: 100vw; }
+
+.wl-host[space="none"] > section { padding-block: 0; }
+.wl-host[space="tight"] > section { padding-block: calc(var(--sec-y) * .5); }
+.wl-host[space="loose"] > section { padding-block: calc(var(--sec-y) * 1.4); }
+
+.wl-host[tone] > section { background: var(--c-bg); color: var(--c-text); }
+.wl-host[tone="none"] > section { background: transparent; }
+.wl-host[tone="surface"] > section { background: var(--c-surface-2); }
+.wl-host[tone="primary"] > section {
+  --c-bg: var(--c-brand); --c-text: var(--c-brand-on);
+  --c-primary: var(--c-brand-on); --c-on-primary: var(--c-brand);
+  --c-muted: color-mix(in srgb, var(--c-brand-on) 78%, var(--c-brand));
+  --c-border: color-mix(in srgb, var(--c-brand-on) 24%, var(--c-brand));
+  --c-surface: color-mix(in srgb, var(--c-brand-on) 10%, var(--c-brand));
+  --c-surface-2: color-mix(in srgb, var(--c-brand-on) 6%, var(--c-brand));
+  --c-primary-soft: color-mix(in srgb, var(--c-brand-on) 16%, var(--c-brand));
+}
+.wl-host[tone="inverse"] > section {
+  --c-bg: var(--c-ink); --c-text: var(--c-paper);
+  --c-muted: color-mix(in srgb, var(--c-paper) 70%, var(--c-ink));
+  --c-border: color-mix(in srgb, var(--c-paper) 18%, var(--c-ink));
+  --c-surface: color-mix(in srgb, var(--c-paper) 8%, var(--c-ink));
+  --c-surface-2: color-mix(in srgb, var(--c-paper) 5%, var(--c-ink));
+  --c-primary-soft: color-mix(in srgb, var(--c-primary) 22%, var(--c-ink));
+}
+
+.wl-host[align="center"] { text-align: center; }
+.wl-host[align="end"] { text-align: end; }
+.wl-host[align="center"] :is(.sec-head__title, .sec-head__text, .hero__title, .hero__lead, .lp-hero__title, .lp-hero__lead, .page-head__title, .page-head__lead, .cta-band h2, .cta-band p) { margin-inline: auto; }
+.wl-host[align="end"] :is(.sec-head__title, .sec-head__text) { margin-inline-start: auto; }
+.wl-host[align="center"] :is(.hero__actions, .lp-hero__actions, .lp-hero__badge, .crumbs, .chips, .filters, .testi__people) { justify-content: center; }
+.wl-host[align="end"] :is(.hero__actions, .lp-hero__actions, .crumbs) { justify-content: flex-end; }
+/* thẻ, form, bảng bên trong vẫn căn trái cho dễ đọc */
+.wl-host[align] :is(.form, .faq__item, .review, .plan, .pcard, .compare, .tl, .checklist, .facts) { text-align: start; }
 
 /* ---------- Nút & liên kết ---------- */
 .btn {

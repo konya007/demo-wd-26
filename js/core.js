@@ -136,6 +136,8 @@
   function define(tag, spec) {
     class WLElement extends HTMLElement {
       connectedCallback() {
+        // .wl-host: móc CSS cho tham số bố cục dùng chung (align, width, tone, space) – xem base.css
+        this.classList.add('wl-host');
         registry.add(this);
         if (WL.data) this.update(WL.data);
       }

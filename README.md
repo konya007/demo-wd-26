@@ -45,9 +45,14 @@ js/
     advisor.js            # trợ lý AI chọn sản phẩm
     contact.js            # thông tin liên hệ + biểu mẫu (nhận dữ liệu điền sẵn)
     landing.js            # teaser chiến dịch, đếm ngược, các khối của landing page
+    product-detail.js     # trang chi tiết: ảnh + ảnh nhỏ, dịch vụ, tab, nội dung A+, thanh mua dính đáy
+    reviews.js            # đánh giá có chấm sao, biểu đồ phân bố, lọc theo sao
+    blocks.js             # bảng so sánh, thư viện ảnh, đăng ký nhận tin
+    ui.js                 # nguyên tử dạng hàm: sao đánh giá, avatar, định dạng ngày
 tools/find-images.py      # tìm ảnh thật CC0 theo chủ đề (Openverse API)
 wd2026.js                 # thư viện chuyển dữ liệu của BTC (không sửa)
-.claude/skills/wl-builder/ # skill cho AI: cách xây thành phần, JSON, CSS, core.js
+skills/skills/wl-builder/ # skill cho AI (tiếng Anh): cách xây thành phần, JSON, CSS, core.js
+AGENTS.md  CLAUDE.md  GEMINI.md  .github/copilot-instructions.md  .cursor/rules/   # điểm vào cho từng công cụ AI
 ```
 
 ## Mỗi trang chỉ là danh sách thẻ
@@ -103,7 +108,29 @@ Thứ tự khối trên trang chủ là một hành trình: thông điệp và n
 | `<wl-scroll-progress>`, `<wl-brand-switcher>`, `<wl-back-to-top>`, `<wl-sticky-cta>` | — | `cta`, danh sách thương hiệu |
 | `<wl-campaign-teaser>` | — | `landing.teaser`, `landing.image` |
 | `<wl-countdown>` | `source="landing"`, `size="sm\|lg"` | `deadline`, `countdown` tại `source` |
-| `<wl-landing-hero>` / `-highlights` / `-story` / `-agenda` / `-offer` | — | `landing.*` |
+| `<wl-landing-hero>` / `-highlights` / `-story` / `-agenda` / `-offer` | `layout` (highlights: `bento\|grid\|list`) | `landing.*` |
+| `<wl-product-detail>` | `media="gallery\|single"`, `specs="false"`, `layout="split\|stacked"` | `items`, `reviews` |
+| `<wl-pdp-services>` / `<wl-pdp-tabs>` / `<wl-pdp-content>` | `layout` | `pdp.*`, `sections.pdpContent` |
+| `<wl-sticky-buy>` | — | sản phẩm đang xem |
+| `<wl-reviews>` | `item`, `layout="split\|stack\|grid\|rail"`, `limit`, `filter` | `reviews`, `sections.reviews` |
+| `<wl-compare>` | `limit`, `featured`, `ids` | `items[].specs`, `sections.compare` |
+| `<wl-gallery>` | `source`, `layout="masonry\|grid\|strip"`, `limit` | mảng bất kỳ có `image` |
+| `<wl-newsletter>` | `layout="inline\|card\|split"` | `sections.newsletter` |
+
+Một số khối cũ có thêm kiểu bố cục: `<wl-faq layout="split|stack|cards">`, `<wl-cta-band layout="split|center|card">`, `<wl-testimonials layout="spotlight|grid">`, `<wl-process layout="row|list">`.
+
+### Tham số bố cục dùng chung
+
+Mọi thẻ `<wl-*>` nhận thêm 4 tham số, xử lý hoàn toàn bằng CSS trong `base.css`:
+
+| Tham số | Giá trị | Tác dụng |
+|---|---|---|
+| `align` | `start`, `center`, `end` | căn tiêu đề, chữ, hàng nút |
+| `width` | `narrow`, `wide`, `full` | độ rộng khung (mặc định 1200px) |
+| `tone` | `none`, `surface`, `primary`, `inverse` | nền và bộ màu của khối, các thành phần con tự đổi màu theo |
+| `space` | `none`, `tight`, `loose` | khoảng cách trên dưới |
+
+Ví dụ: `<wl-faq layout="stack" align="center" width="narrow" tone="surface">`.
 
 Khối nào có tiêu đề đều đọc `sections.<tên khối>`; thêm `copy="tênKhác"` để dùng bộ chữ khác. `<wl-faq source="landing.faq">` đọc danh sách câu hỏi từ đường dẫn khác.
 
@@ -128,7 +155,17 @@ Hộp **Đổi thương hiệu** tải sẵn JSON, font tiêu đề và ảnh he
 
 ## Skill cho AI
 
-`.claude/skills/wl-builder/` hướng dẫn trợ lý AI (Claude Code tự nhận diện; Cursor, Copilot… đọc như tài liệu thường) cách làm việc trong dự án này: `SKILL.md` là điểm vào, `references/` chia theo chủ đề (vòng đời render, API thành phần, xây `core.js`, tổ chức JSON, trình đổi nội dung, biến CSS, đặt tên class, button/avatar/tag, header/sidebar/card, section, landing page, hiệu ứng, danh sách kiểm tra).
+`skills/skills/wl-builder/` (tiếng Anh) hướng dẫn trợ lý AI cách làm việc trong dự án: `SKILL.md` là điểm vào, `references/` chia theo chủ đề (danh mục thành phần, tham số bố cục, vòng đời render, API thành phần, xây `core.js`, tổ chức JSON, trình đổi nội dung, biến CSS, đặt tên class, nguyên tử, khung trang, section, trang chi tiết + đánh giá, landing page, hiệu ứng, danh sách kiểm tra).
+
+Mỗi công cụ AI có một điểm vào riêng, cùng trỏ về `AGENTS.md`:
+
+| Công cụ | File đọc tự động |
+|---|---|
+| Codex, Cursor, Copilot, Jules, Windsurf… | `AGENTS.md` |
+| Claude Code | `CLAUDE.md` (nhập `@AGENTS.md`) |
+| Gemini CLI | `GEMINI.md` (nhập `@AGENTS.md`) |
+| GitHub Copilot | `.github/copilot-instructions.md` |
+| Cursor | `.cursor/rules/wl-builder.mdc` |
 
 ## Trợ lý AI: chọn đáp án → tự điền form liên hệ
 

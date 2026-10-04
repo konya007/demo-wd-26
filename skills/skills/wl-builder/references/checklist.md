@@ -1,37 +1,39 @@
-# Danh sách kiểm tra trước khi nộp
+# Pre-submit checklist
 
-> Cần hỏi N bộ dữ liệu và chủ đề,... là gì để soạn đủ để Demo
+## Data
+- [ ] New keys exist in **every** `data-N.json`, same structure (run the shape check in `json-data.md`).
+- [ ] No HTML in JSON; dates ISO (deadlines with timezone); every image path points to a real file.
+- [ ] Products referenced by an `id` that exists in `items`.
+- [ ] Lucide icon names exist in v0.460 (no leftover `<i data-lucide>` on the page).
+- [ ] Remove the new key from one file → the page still works and the block hides itself.
 
-## Dữ liệu
-- [ ] Khóa mới có trong **cả N** `data-N.json`, cùng cấu trúc.
-- [ ] Không có HTML trong JSON; ngày giờ ISO có múi giờ; ảnh trỏ đúng file có thật.
-- [ ] Tham chiếu sản phẩm bằng `id` có trong `items`.
-- [ ] Xoá thử khóa mới khỏi một file → trang vẫn chạy, khối tự ẩn.
-
-## Thành phần
-- [ ] Mọi giá trị JSON qua `esc()`; tham số URL qua `encodeURIComponent`.
-- [ ] `render` không gắn sự kiện; `mount` gắn; `unmount` dọn timer / listener ngoài thẻ.
-- [ ] Không chữ cứng ngoài nhãn tiếp cận chung.
-- [ ] Comment đầu `define` ghi thẻ, tham số, dữ liệu đọc.
-- [ ] Thẻ mới có trong danh sách `display: block` (base.css) và được import (app.js).
+## Component
+- [ ] Every JSON value through `esc()`; URL parameters through `encodeURIComponent`.
+- [ ] `render` binds no events; `mount` binds; `unmount` cleans timers / observers / outside listeners.
+- [ ] No hard-coded copy except generic accessibility labels.
+- [ ] Comment above `define` lists tag, attributes, layouts and data read.
+- [ ] Outer element is a `<section>` (so `tone`/`space` work) unless it is chrome (header, bars).
+- [ ] New file imported in `app.js`; tag added to `component-catalog.md`.
 
 ## CSS
-- [ ] Chỉ dùng biến cho màu, font, bo góc, cỡ chữ.
-- [ ] Tên class theo BEM ngắn; JS dùng `data-*`.
-- [ ] Viết mobile trước; không cuộn ngang ở 360px.
-- [ ] Đoạn CSS mới có comment tiêu đề, nằm đúng file.
+- [ ] Only tokens for colour, font, radius, type size.
+- [ ] Short BEM class names; JS uses `data-*`.
+- [ ] Every `layout` preset has its rules scoped with the modifier.
+- [ ] Mobile first; no horizontal page scroll at 360px.
+- [ ] New CSS block has a title comment and sits in the right file.
 
-## Kiểm tra bằng mắt
-- [ ] Ít nhất 2 thương hiệu khác hẳn nhau (ví dụ YPhone bo tròn + Nhịp Phố góc vuông).
-- [ ] Sáng và tối.
-- [ ] 390px và 1440px.
-- [ ] Đổi thương hiệu khi đang ở trang → khối render lại đúng, không nhân đôi sự kiện, không lỗi console.
-- [ ] Bật "giảm chuyển động" → nội dung vẫn hiện đủ.
-- [ ] Dùng bàn phím: Tab tới mọi nút, thấy viền tiêu điểm, Esc đóng hộp thoại.
+## Visual check
+- [ ] At least 2 very different brands (e.g. YPhone rounded + Nhịp Phố square).
+- [ ] Light and dark.
+- [ ] 390px and 1440px.
+- [ ] Each `layout` preset and at least `tone="surface"` / `tone="primary"` / `align="center"`.
+- [ ] Switch brand while on the page → re-renders correctly, no doubled events, no console errors.
+- [ ] Reduced motion on → all content still visible.
+- [ ] Keyboard: Tab reaches every control, visible focus, Esc closes dialogs, arrows move tabs.
 
-## Chạy thử
+## Run locally
 ```bash
-python -m http.server 8000      # hoặc Live Server trong VS Code
-# mở http://localhost:8000/landing-page.html
+python -m http.server 8000      # or Live Server in VS Code
+# open http://localhost:8000/landing-page.html
 ```
-Mở bằng nhấp đúp sẽ không đọc được JSON.
+Opening the file by double-click cannot read the JSON.

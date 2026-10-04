@@ -1,16 +1,16 @@
-# Xây trình render `core.js`
+# Building the `core.js` renderer
 
-`core.js` là lõi khoảng 250 dòng, không framework. Phần này giải thích từng mảnh để đội có thể dựng lại từ đầu, mở rộng hoặc gỡ lỗi.
+`core.js` is a ~250-line, framework-free core. This file explains each piece so a team can rebuild, extend or debug it.
 
-## Yêu cầu của một trình render cho site White Label
+## Requirements for a White Label renderer
 
-1. Nạp **trước** khi trang vẽ để đặt chế độ sáng/tối (không nháy màu).
-2. Nhận một object dữ liệu, áp theme thành biến CSS, đặt SEO.
-3. Vẽ lại **mọi** thành phần trên trang khi dữ liệu đổi, không tải lại trang.
-4. Mỗi thành phần tự khai báo cách vẽ; HTML chỉ đặt thẻ.
-5. Lỗi ở một thành phần không làm chết cả trang.
+1. Load **before** the page paints to set light/dark mode (no colour flash).
+2. Take one data object, turn the theme into CSS variables, set SEO tags.
+3. Re-render **every** component when data changes, without reloading.
+4. Each component declares how it renders; HTML only places tags.
+5. An error in one component never kills the page.
 
-## Mảnh 1: chế độ sáng/tối chạy ngay
+## Piece 1: colour mode, immediately
 
 ```js
 const saved = (() => { try { return localStorage.getItem('wl-color-mode'); } catch (e) { return null; } })();
@@ -18,9 +18,9 @@ const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
 document.documentElement.dataset.theme = saved || (prefersDark ? 'dark' : 'light');
 ```
 
-Script đặt trong `<head>` **không** `defer`. `try/catch` vì `localStorage` có thể bị chặn (chế độ riêng tư).
+The script sits in `<head>` **without** `defer`. `try/catch` because `localStorage` may be blocked (private mode).
 
-## Mảnh 2: tiện ích
+## Piece 2: utilities
 
 ```js
 const esc = (v) => String(v ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;')
@@ -31,9 +31,9 @@ const get = (obj, path, fb) => {
 };
 ```
 
-## Mảnh 3: theme → biến CSS
+## Piece 3: theme → CSS variables
 
-Ánh xạ khóa JSON sang tên biến, ghi vào **một** thẻ `<style id="wl-theme">` (ghi đè giá trị mặc định trong `base.css`):
+Map JSON keys to variable names and write them into **one** `<style id="wl-theme">` (it overrides the defaults in `base.css`):
 
 ```js
 const TOKEN_MAP = { primary: '--c-primary', onPrimary: '--c-on-primary', accent: '--c-accent',
@@ -49,22 +49,22 @@ function applyTheme(t = {}) {
   let s = document.getElementById('wl-theme');
   if (!s) { s = document.createElement('style'); s.id = 'wl-theme'; document.head.appendChild(s); }
   s.textContent = css;
-  // font: một <link id="wl-fonts">, chỉ đổi href khi khác
+  // fonts: one <link id="wl-fonts">, href changed only when different
 }
 ```
 
-Vì sao dùng thẻ `<style>` thay cho `style.setProperty` từng biến: ghi một lần, có cả khối `[data-theme="dark"]`, đổi thương hiệu chỉ thay `textContent`.
+Why one `<style>` instead of `style.setProperty` per variable: a single write, it can hold the `[data-theme="dark"]` block, and switching brand only replaces `textContent`.
 
-Màu suy ra (`--c-primary-soft`, `--c-surface-2`) viết bằng `color-mix()` trong `base.css`, nên tự đổi theo theme mà JS không phải tính.
+Derived colours (`--c-primary-soft`, `--c-surface-2`, `--c-brand`…) are written with `color-mix()` / `var()` in `base.css`, so they follow the theme with no JS.
 
-## Mảnh 4: đăng ký thành phần (Custom Elements)
+## Piece 4: registering components (Custom Elements)
 
 ```js
 const registry = new Set();
 
 function define(tag, spec) {
   customElements.define(tag, class extends HTMLElement {
-    connectedCallback() { registry.add(this); if (WL.data) this.update(WL.data); }
+    connectedCallback() { this.classList.add('wl-host'); registry.add(this); if (WL.data) this.update(WL.data); }
     disconnectedCallback() { registry.delete(this); this.teardown(); }
     teardown() { if (this._mounted && spec.unmount) spec.unmount(this); this._mounted = false; }
     attr(n, fb) { const v = this.getAttribute(n); return v == null || v === '' ? fb : v; }
@@ -76,30 +76,31 @@ function define(tag, spec) {
         if (spec.mount) spec.mount(this, data);
         this._mounted = true;
       } catch (err) {
-        console.error(`[WL] Lỗi khi render <${tag}>:`, err);
-        this.innerHTML = '';            // một khối hỏng, cả trang vẫn sống
+        console.error(`[WL] render error in <${tag}>:`, err);
+        this.innerHTML = '';            // one broken block, the page lives on
       }
     }
   });
 }
 ```
 
-Quyết định thiết kế:
-- **Light DOM, không Shadow DOM**: CSS toàn cục và biến theme áp thẳng vào, effects.js tìm được `[data-reveal]` ở mọi nơi.
-- **Chuỗi template + `innerHTML`**: đơn giản, nhanh với vài chục khối; bù lại phải `esc()` mọi thứ.
-- **Thẻ tự render khi được gắn** (`connectedCallback`): thẻ thêm muộn hoặc lồng nhau vẫn có nội dung.
+Design decisions:
+- **Light DOM, no Shadow DOM**: global CSS and theme variables apply directly; effects.js finds `[data-reveal]` everywhere.
+- **Template strings + `innerHTML`**: simple and fast for a few dozen blocks; the price is escaping everything.
+- **Tags render themselves when attached**: late or nested tags still get content.
+- **`wl-host` class**: one hook for `display:block` and the shared layout attributes (`layout-params.md`).
 
-## Mảnh 5: boot
+## Piece 5: boot
 
 ```js
 function boot(data) {
   if (!data) return;
   const sig = JSON.stringify(data);
-  if (sig === WL._sig) return;          // cùng dữ liệu → không làm lại
+  if (sig === WL._sig) return;          // same data → nothing to do
   WL._sig = sig;
   WL.data = data;
   applyTheme(data.theme);
-  applySeo(data);                        // title theo pages[body.dataset.page], meta, favicon
+  applySeo(data);                        // title from pages[body.dataset.page], meta, favicon
   [...registry].forEach((el) => { if (el.isConnected) el.update(data); });
   refreshIcons();                        // lucide.createIcons()
   document.documentElement.classList.add('wl-ready');
@@ -107,11 +108,11 @@ function boot(data) {
 }
 ```
 
-`[...registry]` (bản sao) + `isConnected`: xem `architecture.md`, mục thẻ lồng nhau.
+`[...registry]` (a copy) + `isConnected`: see `architecture.md`, nested components.
 
-## Mảnh 6: nối với nguồn dữ liệu
+## Piece 6: connecting a data source
 
-Trình render **không biết** dữ liệu từ đâu tới. `app.js` nối:
+The renderer **does not know** where data comes from. `app.js` connects it:
 
 ```js
 document.addEventListener('webdesign2026:datachange', (e) => WL.boot(e.detail));
@@ -120,15 +121,16 @@ WebDesign2026.init({ folder: 'assets-web-design', files: BRANDS.map((b) => b.fil
 setTimeout(WL.failSafe, 4000);
 ```
 
-Muốn lấy dữ liệu từ API thật: chỉ cần `fetch(url).then(r => r.json()).then(WL.boot)`.
+To use a real API instead: `fetch(url).then((r) => r.json()).then(WL.boot)`.
 
-## Mở rộng lõi đúng cách
+## Extending the core correctly
 
-| Muốn thêm | Làm ở đâu |
+| You want | Where |
 |---|---|
-| Token theme mới (ví dụ `success`) | `TOKEN_MAP` + giá trị mặc định trong `base.css` + khóa trong 6 JSON |
-| Hook vòng đời mới | trong `define` → ghi lại trong comment đầu `define` và trong `component-api.md` |
-| Tiện ích dùng chung cho nhiều thành phần | thêm vào object `WL` cuối file |
-| Thứ chỉ một thành phần dùng | **không** đặt vào core; để trong file thành phần |
+| A new theme token (e.g. `success`) | `TOKEN_MAP` + default in `base.css` + key in every JSON |
+| A new lifecycle hook | inside `define` → document it in the comment above `define` and in `component-api.md` |
+| A new shared layout attribute | CSS only, in `base.css` (`layout-params.md`) |
+| A helper used by many components | add to the `WL` object at the end of the file, or to `ui.js` if it returns HTML |
+| Something one component needs | **not** in core; keep it in the component file |
 
-Giữ core nhỏ: mỗi dòng thêm vào core chạy trên mọi trang.
+Keep the core small: every line runs on every page.

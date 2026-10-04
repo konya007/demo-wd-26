@@ -156,6 +156,36 @@
     "landingCta": {
       "title": "Đêm nay, chụp thử một tấm.",
       "text": "Giữ máy trước khi mở bán, hoàn cọc nếu đổi ý."
+    },
+    "reviews": {
+      "title": "Người dùng chấm điểm",
+      "text": "Đánh giá từ khách đã nhận máy.",
+      "basedOn": "Dựa trên {n} đánh giá",
+      "verified": "Đã mua hàng",
+      "all": "Tất cả",
+      "empty": "Chưa có đánh giá cho mục này.",
+      "about": "Về"
+    },
+    "pdpContent": {
+      "title": "Bên trong một chiếc YPhone",
+      "text": "Ba điều chúng tôi làm lại cho thế hệ 17."
+    },
+    "compare": {
+      "title": "So sánh các phiên bản",
+      "text": "Đặt cạnh nhau để chọn nhanh hơn.",
+      "feature": "Tiêu chí"
+    },
+    "gallery": {
+      "title": "Chụp bằng YPhone",
+      "text": "Ảnh do người dùng gửi về."
+    },
+    "newsletter": {
+      "title": "Nhận tin ra mắt sớm nhất",
+      "text": "Một email mỗi tháng: sản phẩm mới, ưu đãi đặt trước, mẹo chụp ảnh.",
+      "placeholder": "Email của bạn",
+      "submit": "Đăng ký",
+      "success": "Đã đăng ký. Kiểm tra hộp thư để xác nhận.",
+      "note": "Huỷ đăng ký bất cứ lúc nào."
     }
   },
   "pages": {
@@ -789,5 +819,122 @@
         "a": "Có. Đơn ngoài nội thành được giao trước 1 ngày để kịp nhận đúng 17/10."
       }
     ]
+  },
+  "reviews": [
+    {
+      "itemId": "y17-pro-max",
+      "name": "Lê Minh Châu",
+      "rating": 5,
+      "date": "2026-09-12",
+      "title": "Zoom 5x đáng tiền",
+      "text": "Chụp chân dung ở buổi hoà nhạc từ hàng ghế thứ 20 mà vẫn rõ mặt ca sĩ.",
+      "verified": true
+    },
+    {
+      "itemId": "y17-pro-max",
+      "name": "Trần Đức Anh",
+      "rating": 4,
+      "date": "2026-09-02",
+      "title": "Hơi nặng nhưng pin trâu",
+      "text": "221g cầm lâu hơi mỏi tay, bù lại hai ngày mới sạc một lần.",
+      "verified": true
+    },
+    {
+      "itemId": "y17-pro",
+      "name": "Phạm Thu Hà",
+      "rating": 5,
+      "date": "2026-08-28",
+      "title": "Vừa tay, camera như bản Max",
+      "text": "Mình tay nhỏ nên chọn bản Pro, ảnh đêm không thua gì bản lớn.",
+      "verified": true
+    },
+    {
+      "itemId": "y17-air",
+      "name": "Nguyễn Gia Huy",
+      "rating": 4,
+      "date": "2026-08-20",
+      "title": "Mỏng thật sự",
+      "text": "Bỏ túi quần jean không cộm. Loa hơi nhỏ khi xem phim.",
+      "verified": true
+    },
+    {
+      "itemId": "y17",
+      "name": "Võ Ngọc Lan",
+      "rating": 5,
+      "date": "2026-08-15",
+      "title": "Bản thường mà có 120Hz",
+      "text": "Lướt mượt, giá dễ chịu hơn nhiều so với bản Pro.",
+      "verified": true
+    },
+    {
+      "itemId": "y17-plus",
+      "name": "Đặng Quốc Việt",
+      "rating": 5,
+      "date": "2026-07-30",
+      "title": "Màn lớn để làm việc",
+      "text": "Duyệt email, sửa slide trên điện thoại thoải mái, pin còn 30% lúc về nhà.",
+      "verified": true
+    },
+    {
+      "itemId": "y-e",
+      "name": "Bùi Khánh Linh",
+      "rating": 4,
+      "date": "2026-07-21",
+      "title": "Chiếc điện thoại đầu tiên của con",
+      "text": "Bền, đủ dùng học online và chụp ảnh lớp.",
+      "verified": false
+    }
+  ],
+  "pdp": {
+    "services": [
+      {
+        "icon": "truck",
+        "title": "Giao 2 giờ",
+        "text": "Nội thành TP. HCM và Hà Nội"
+      },
+      {
+        "icon": "refresh-ccw",
+        "title": "1 đổi 1 trong 30 ngày",
+        "text": "Nếu lỗi phần cứng"
+      },
+      {
+        "icon": "shield-check",
+        "title": "Bảo hành 12 tháng",
+        "text": "Tại 64 trung tâm"
+      },
+      {
+        "icon": "credit-card",
+        "title": "Trả góp 0%",
+        "text": "12 tháng qua thẻ"
+      }
+    ],
+    "blocks": [
+      {
+        "image": "assets-web-design/img/yphone/f1.jpg",
+        "title": "Cụm camera làm lại từ đầu",
+        "text": "Cảm biến lớn hơn 60% gom nhiều ánh sáng hơn, ảnh đêm ít nhiễu và giữ màu thật của đèn đường."
+      },
+      {
+        "image": "assets-web-design/img/yphone/f3.jpg",
+        "title": "Quay như có gimbal",
+        "text": "Chống rung quang học trên cả ba camera, vừa đi vừa quay 4K vẫn mượt."
+      },
+      {
+        "image": "assets-web-design/img/yphone/f4.jpg",
+        "title": "Mát khi chơi game lâu",
+        "text": "Buồng hơi lớn hơn 40% tản nhiệt cho chip Y7, máy không nóng sau hai giờ chơi."
+      }
+    ],
+    "shipping": [
+      "Giao trong 2 giờ ở nội thành, 1–3 ngày ở tỉnh, miễn phí mọi đơn.",
+      "Kiểm tra máy trước khi thanh toán. Không ưng có thể từ chối nhận.",
+      "Đổi trả trong 30 ngày nếu lỗi phần cứng, kể cả khi đã kích hoạt."
+    ],
+    "tabs": {
+      "description": "Mô tả",
+      "specs": "Thông số",
+      "shipping": "Giao hàng & đổi trả"
+    },
+    "buyLabel": "Đặt trước"
   }
 }

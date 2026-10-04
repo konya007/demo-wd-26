@@ -156,6 +156,36 @@
     "landingCta": {
       "title": "28 ngày cho một làn da đều màu.",
       "text": "Đặt trước để nhận quà và giao ngay ngày ra mắt."
+    },
+    "reviews": {
+      "title": "Làn da của họ kể lại",
+      "text": "Đánh giá sau ít nhất 14 ngày dùng.",
+      "basedOn": "Dựa trên {n} đánh giá",
+      "verified": "Đã mua hàng",
+      "all": "Tất cả",
+      "empty": "Chưa có đánh giá cho mục này.",
+      "about": "Về"
+    },
+    "pdpContent": {
+      "title": "Từ cánh đồng tới làn da",
+      "text": "Mỗi chai đi qua ba bước."
+    },
+    "compare": {
+      "title": "So sánh sản phẩm",
+      "text": "Chọn theo vấn đề của da.",
+      "feature": "Tiêu chí"
+    },
+    "gallery": {
+      "title": "Thảo mộc trong từng chai",
+      "text": "Hình ảnh từ vườn và xưởng."
+    },
+    "newsletter": {
+      "title": "Nhận lịch chăm da theo mùa",
+      "text": "Mẹo dưỡng da và ưu đãi dùng thử, mỗi tháng một email.",
+      "placeholder": "Email của bạn",
+      "submit": "Đăng ký",
+      "success": "Đã đăng ký. Quà chào mừng đang tới hộp thư.",
+      "note": "Huỷ bất cứ lúc nào."
     }
   },
   "pages": {
@@ -786,5 +816,122 @@
         "a": "Thêm 5% niacinamide, bỏ mùi nghệ, kết cấu lỏng và thấm nhanh hơn."
       }
     ]
+  },
+  "reviews": [
+    {
+      "itemId": "serum-rau-ma",
+      "name": "Nguyễn Diệu Linh",
+      "rating": 5,
+      "date": "2026-09-05",
+      "title": "Mụn dịu sau một tuần",
+      "text": "Da mình nhạy cảm, dùng không châm chích. Nốt mụn mới xẹp nhanh hơn hẳn.",
+      "verified": true
+    },
+    {
+      "itemId": "kem-tra-xanh",
+      "name": "Lê Hoài An",
+      "rating": 4,
+      "date": "2026-08-27",
+      "title": "Ẩm mà không bết",
+      "text": "Hợp da hỗn hợp. Mùi trà xanh rất nhẹ, mong có size lớn hơn.",
+      "verified": true
+    },
+    {
+      "itemId": "son-duong",
+      "name": "Trần Bích Ngọc",
+      "rating": 5,
+      "date": "2026-08-19",
+      "title": "Môi mềm cả ngày",
+      "text": "Màu hồng nhẹ tự nhiên, đi làm không cần son màu.",
+      "verified": true
+    },
+    {
+      "itemId": "tinh-chat-nghe",
+      "name": "Phạm Minh Thư",
+      "rating": 5,
+      "date": "2026-08-08",
+      "title": "Thâm mờ thấy rõ",
+      "text": "Sau 4 tuần vết thâm mụn trên má nhạt hơn nhiều.",
+      "verified": true
+    },
+    {
+      "itemId": "mat-na-ngu",
+      "name": "Võ Thanh Hương",
+      "rating": 4,
+      "date": "2026-07-29",
+      "title": "Sáng dậy da căng",
+      "text": "Kết cấu gel dễ chịu. Hộp hơi khó lấy khi gần hết.",
+      "verified": true
+    },
+    {
+      "itemId": "chong-nang",
+      "name": "Đặng Thuỳ Dương",
+      "rating": 5,
+      "date": "2026-07-16",
+      "title": "Không vệt trắng",
+      "text": "Dùng dưới lớp trang điểm rất ổn, không bết khi ra mồ hôi.",
+      "verified": true
+    },
+    {
+      "itemId": "serum-rau-ma",
+      "name": "Hà Kiều Oanh",
+      "rating": 5,
+      "date": "2026-07-02",
+      "title": "Mua lần thứ ba",
+      "text": "Chai thuỷ tinh đẹp, đổi vỏ được quà. Sẽ tiếp tục dùng.",
+      "verified": false
+    }
+  ],
+  "pdp": {
+    "services": [
+      {
+        "icon": "truck",
+        "title": "Giao 24 giờ",
+        "text": "Nội thành 5 thành phố"
+      },
+      {
+        "icon": "flask-conical",
+        "title": "Kiểm nghiệm da liễu",
+        "text": "Không cồn, không hương liệu"
+      },
+      {
+        "icon": "recycle",
+        "title": "Đổi vỏ lấy quà",
+        "text": "5 vỏ chai = 1 son dưỡng"
+      },
+      {
+        "icon": "message-circle",
+        "title": "Tư vấn da 1-1",
+        "text": "Qua Zalo, miễn phí"
+      }
+    ],
+    "blocks": [
+      {
+        "image": "assets-web-design/img/beauty/f1.jpg",
+        "title": "Thảo mộc trồng hữu cơ",
+        "text": "Rau má Hội An, trà xanh Thái Nguyên, nghệ vàng Quảng Nam."
+      },
+      {
+        "image": "assets-web-design/img/beauty/f2.jpg",
+        "title": "Chiết xuất lạnh",
+        "text": "Không đun nóng nên giữ trọn hoạt chất, màu và mùi tự nhiên."
+      },
+      {
+        "image": "assets-web-design/img/beauty/f4.jpg",
+        "title": "Chai thuỷ tinh tối màu",
+        "text": "Bảo vệ hoạt chất khỏi ánh sáng, tái chế được 100%."
+      }
+    ],
+    "shipping": [
+      "Giao trong 24 giờ ở nội thành, 2–4 ngày ở tỉnh. Miễn phí đơn từ 300.000đ.",
+      "Đổi trả trong 7 ngày nếu sản phẩm còn nguyên seal.",
+      "Gửi lại 5 vỏ chai thuỷ tinh để nhận một son dưỡng."
+    ],
+    "tabs": {
+      "description": "Công dụng",
+      "specs": "Thông tin",
+      "shipping": "Giao hàng & đổi trả"
+    },
+    "buyLabel": "Đặt mua"
   }
 }

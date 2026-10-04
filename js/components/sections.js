@@ -4,6 +4,7 @@
  * Thuộc tính data-reveal / data-tilt / data-parallax được effects.js gắn chuyển động.
  */
 import { ctaButton } from './layout.js';
+import { avatar } from './ui.js';
 
 const { esc, get, icon, define } = window.WL;
 
@@ -210,7 +211,11 @@ define('wl-products', {
 });
 
 // ------------------------------------------------------------------ process
-/** <wl-process> — các bước, đánh số vì đây là một trình tự thật. Đường nối chạy theo nhịp cuộn. */
+/**
+ * <wl-process layout="row|list"> — các bước, đánh số vì đây là một trình tự thật.
+ *   row : các bước nằm ngang, đường nối chạy theo nhịp cuộn (mặc định)
+ *   list: tiêu đề trái, các bước xếp dọc bên phải
+ */
 define('wl-process', {
   render(data, el) {
     const steps = (data.process || []).map((s, i) => `
@@ -223,18 +228,30 @@ define('wl-process', {
       <section class="sec sec--surface">
         <div class="container">
           ${sectionHead(data, el, 'process')}
-          <ol class="steps" data-steps><span class="steps__line" aria-hidden="true"><span data-line></span></span>${steps}</ol>
+          <ol class="steps steps--${esc(el.attr('layout', 'row'))}" data-steps><span class="steps__line" aria-hidden="true"><span data-line></span></span>${steps}</ol>
         </div>
       </section>`;
   },
 });
 
 // ------------------------------------------------------------------ testimonials
-/** <wl-testimonials> — một lời chứng thực lớn, chọn người bằng các nút bên dưới. */
+/**
+ * <wl-testimonials layout="spotlight|grid">
+ *   spotlight: một lời chứng thực lớn, chọn người bằng các nút bên dưới (mặc định)
+ *   grid     : mọi lời chứng thực thành thẻ, có avatar
+ */
 define('wl-testimonials', {
   render(data, el) {
     const list = data.testimonials || [];
     if (!list.length) return '';
+    if (el.attr('layout') === 'grid') {
+      const cards = list.map((t, i) => `
+        <li class="tcard" data-reveal style="--d:${i * 0.08}s">
+          <p class="tcard__quote">${esc(t.quote)}</p>
+          <div class="tcard__who">${avatar(t.name)}<span><strong>${esc(t.name)}</strong><small>${esc(t.role)}</small></span></div>
+        </li>`).join('');
+      return `<section class="sec"><div class="container">${sectionHead(data, el, 'testimonials')}<ul class="tgrid">${cards}</ul></div></section>`;
+    }
     const quotes = list.map((t, i) => `
       <blockquote class="quote" ${i ? 'hidden' : ''} data-quote="${i}">
         <p>${esc(t.quote)}</p>
@@ -255,6 +272,7 @@ define('wl-testimonials', {
   },
   mount(el) {
     const people = [...el.querySelectorAll('[data-person]')];
+    if (!people.length) return;
     const quotes = [...el.querySelectorAll('[data-quote]')];
     let i = 0;
     const show = (n) => {
@@ -272,19 +290,25 @@ define('wl-testimonials', {
 });
 
 // ------------------------------------------------------------------ faq
-/** <wl-faq limit="4" source="landing.faq" copy="landingFaq"> — source: đường dẫn tới mảng {q, a}, mặc định "faq". */
+/**
+ * <wl-faq limit="4" source="landing.faq" copy="landingFaq" layout="split|stack|cards">
+ *   source: đường dẫn tới mảng {q, a}, mặc định "faq"
+ *   split : tiêu đề trái, câu hỏi phải (mặc định)   stack: tiêu đề trên, danh sách hẹp
+ *   cards : các câu hỏi thành thẻ 2 cột, mở sẵn tất cả
+ */
 define('wl-faq', {
   render(data, el) {
     const list = get(data, el.attr('source', 'faq'), []);
     if (!list.length) return '';
+    const layout = el.attr('layout', 'split');
     const items = list.slice(0, el.num('limit', 99)).map((f, i) => `
-      <details class="faq__item"${i === 0 ? ' open' : ''}>
+      <details class="faq__item"${i === 0 || layout === 'cards' ? ' open' : ''}>
         <summary>${esc(f.q)}${icon('plus', 'faq__icon')}</summary>
         <p>${esc(f.a)}</p>
       </details>`).join('');
     return `
       <section class="sec">
-        <div class="container faq">
+        <div class="container faq faq--${esc(layout)}">
           ${sectionHead(data, el, 'faq')}
           <div class="faq__list" data-reveal>${items}</div>
         </div>
@@ -293,12 +317,18 @@ define('wl-faq', {
 });
 
 // ------------------------------------------------------------------ cta band
-/** <wl-cta-band> — khối kêu gọi cuối trang; khi cuộn tới nó nở từ thẻ bo góc ra toàn màn hình. */
+/**
+ * <wl-cta-band copy="ctaBand" layout="split|center|card">
+ *   split : tiêu đề lớn trái, chữ + nút phải; nở từ thẻ bo góc ra toàn màn hình khi cuộn (mặc định)
+ *   center: mọi thứ căn giữa, nở như split
+ *   card  : thẻ bo góc nằm trong khung, không nở
+ */
 define('wl-cta-band', {
   render(data, el) {
     const s = get(data, `sections.${el.attr('copy', 'ctaBand')}`, {});
-    return `
-      <section class="cta-band" data-expand>
+    const layout = el.attr('layout', 'split');
+    const band = `
+      <section class="cta-band cta-band--${esc(layout)}"${layout === 'card' ? '' : ' data-expand'}>
         <div class="cta-band__bg" aria-hidden="true"><span></span><span></span></div>
         <div class="container cta-band__inner">
           <h2>${esc(s.title)}</h2>
@@ -308,5 +338,6 @@ define('wl-cta-band', {
           </div>
         </div>
       </section>`;
+    return layout === 'card' ? `<section class="sec"><div class="container">${band}</div></section>` : band;
   },
 });

@@ -156,6 +156,36 @@
     "landingCta": {
       "title": "Năm học mới, một chú Meow mới.",
       "text": "Giảm 4 triệu đến hết 31/10."
+    },
+    "reviews": {
+      "title": "Chủ nhân của Meow nói gì",
+      "text": "Đánh giá sau ít nhất 2 tuần sử dụng.",
+      "basedOn": "Dựa trên {n} đánh giá",
+      "verified": "Đã mua hàng",
+      "all": "Tất cả",
+      "empty": "Chưa có đánh giá cho mục này.",
+      "about": "Về"
+    },
+    "pdpContent": {
+      "title": "Vì sao Meow êm như vậy",
+      "text": "Ba chi tiết khiến bạn quên mình đang dùng máy tính."
+    },
+    "compare": {
+      "title": "So sánh các dòng Meow",
+      "text": "Air nhẹ, Pro mạnh, Studio gọn, Play để chơi.",
+      "feature": "Tiêu chí"
+    },
+    "gallery": {
+      "title": "Góc làm việc với Meow",
+      "text": "Ảnh từ cộng đồng người dùng."
+    },
+    "newsletter": {
+      "title": "Nhận mẹo dùng Meow",
+      "text": "Phím tắt, ưu đãi sinh viên và lịch sự kiện mỗi tháng một lần.",
+      "placeholder": "Email của bạn",
+      "submit": "Đăng ký",
+      "success": "Đã đăng ký. Hẹn gặp trong hộp thư.",
+      "note": "Không spam, huỷ bất cứ lúc nào."
     }
   },
   "pages": {
@@ -781,5 +811,122 @@
         "a": "Không. Meow chịu phí ship hai chiều."
       }
     ]
+  },
+  "reviews": [
+    {
+      "itemId": "air-13",
+      "name": "Hoàng Mai Anh",
+      "rating": 5,
+      "date": "2026-09-10",
+      "title": "Nhẹ, êm, pin lâu",
+      "text": "Mang lên giảng đường cả ngày không cần sạc, gõ phím êm không làm phiền ai.",
+      "verified": true
+    },
+    {
+      "itemId": "air-13",
+      "name": "Ngô Tuấn Kiệt",
+      "rating": 4,
+      "date": "2026-08-30",
+      "title": "Ổn cho sinh viên",
+      "text": "Đủ mạnh cho code và Office. Chỉ có 2 cổng nên phải mua thêm hub.",
+      "verified": true
+    },
+    {
+      "itemId": "air-15",
+      "name": "Lý Thanh Trúc",
+      "rating": 5,
+      "date": "2026-08-25",
+      "title": "Màn lớn mà vẫn mỏng",
+      "text": "Làm thiết kế slide và xem phim đều đã mắt, màu rất chuẩn.",
+      "verified": true
+    },
+    {
+      "itemId": "pro-14",
+      "name": "Phan Hữu Nghĩa",
+      "rating": 5,
+      "date": "2026-08-18",
+      "title": "Dựng phim 4K mượt",
+      "text": "Xuất video 10 phút 4K chưa tới 4 phút, máy vẫn im lặng.",
+      "verified": true
+    },
+    {
+      "itemId": "pro-16",
+      "name": "Trịnh Bảo Ngọc",
+      "rating": 4,
+      "date": "2026-08-02",
+      "title": "Mạnh nhưng hơi nặng",
+      "text": "Hiệu năng tuyệt vời, chỉ là 2,1kg không hợp mang đi hằng ngày.",
+      "verified": true
+    },
+    {
+      "itemId": "studio",
+      "name": "Đỗ Minh Quân",
+      "rating": 5,
+      "date": "2026-07-25",
+      "title": "Nhỏ bằng hộp bánh thật",
+      "text": "Đặt sau màn hình, bàn làm việc gọn hẳn.",
+      "verified": true
+    },
+    {
+      "itemId": "play-15",
+      "name": "Vũ Khánh Duy",
+      "rating": 4,
+      "date": "2026-07-14",
+      "title": "Chơi game không ồn",
+      "text": "Quạt êm hơn hẳn máy cũ, FPS ổn định. Sạc hơi to.",
+      "verified": false
+    }
+  ],
+  "pdp": {
+    "services": [
+      {
+        "icon": "truck",
+        "title": "Giao miễn phí",
+        "text": "Toàn quốc trong 48 giờ"
+      },
+      {
+        "icon": "rotate-ccw",
+        "title": "Dùng thử 30 ngày",
+        "text": "Không ưng, hoàn tiền đủ"
+      },
+      {
+        "icon": "shield-check",
+        "title": "Bảo hành 2 năm",
+        "text": "Sửa tận nơi"
+      },
+      {
+        "icon": "graduation-cap",
+        "title": "Giá sinh viên",
+        "text": "Giảm đến 4 triệu"
+      }
+    ],
+    "blocks": [
+      {
+        "image": "assets-web-design/img/meow/f1.jpg",
+        "title": "Không quạt, không ồn",
+        "text": "Tản nhiệt thụ động bằng khung nhôm nguyên khối, thư viện vẫn yên tĩnh."
+      },
+      {
+        "image": "assets-web-design/img/meow/f3.jpg",
+        "title": "Bàn phím êm như đệm thịt",
+        "text": "Hành trình phím 1,2mm, tiếng gõ nhỏ hơn 30% so với thế hệ trước."
+      },
+      {
+        "image": "assets-web-design/img/meow/f4.jpg",
+        "title": "Chế độ Ngủ Mèo",
+        "text": "Gập máy một tuần, mở ra vẫn còn 90% pin và đúng cửa sổ đang làm."
+      }
+    ],
+    "shipping": [
+      "Giao miễn phí toàn quốc trong 48 giờ.",
+      "Dùng thử 30 ngày, trả lại không cần lý do, Meow chịu phí ship hai chiều.",
+      "Bảo hành 2 năm, sửa tận nơi ở 12 thành phố."
+    ],
+    "tabs": {
+      "description": "Mô tả",
+      "specs": "Cấu hình",
+      "shipping": "Giao hàng & dùng thử"
+    },
+    "buyLabel": "Dùng thử"
   }
 }

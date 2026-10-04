@@ -156,6 +156,36 @@
     "landingCta": {
       "title": "Dã quỳ không chờ ai.",
       "text": "Mỗi cuối tuần chỉ có 6 căn nhà gỗ."
+    },
+    "reviews": {
+      "title": "Khách đã ngủ một đêm ở Đà Lạt",
+      "text": "Đánh giá sau khi trả phòng.",
+      "basedOn": "Dựa trên {n} đánh giá",
+      "verified": "Đã mua hàng",
+      "all": "Tất cả",
+      "empty": "Chưa có đánh giá cho mục này.",
+      "about": "Về"
+    },
+    "pdpContent": {
+      "title": "Một đêm ở Mơ Sương",
+      "text": "Những điều có trong mọi gói."
+    },
+    "compare": {
+      "title": "So sánh các kiểu nghỉ",
+      "text": "Từ lều trên đồi tới glamping bên hồ.",
+      "feature": "Tiêu chí"
+    },
+    "gallery": {
+      "title": "Đà Lạt qua ống kính khách",
+      "text": "Ảnh khách gửi sau chuyến đi."
+    },
+    "newsletter": {
+      "title": "Nhận tin mùa sương",
+      "text": "Báo khi dã quỳ nở, khi mây đẹp và khi còn phòng cuối tuần.",
+      "placeholder": "Email của bạn",
+      "submit": "Đăng ký",
+      "success": "Đã đăng ký. Hẹn bạn ở Đà Lạt.",
+      "note": "Mỗi tháng một email."
     }
   },
   "pages": {
@@ -777,5 +807,113 @@
         "a": "Có, xe đón 250.000đ/lượt cho cả nhóm."
       }
     ]
+  },
+  "reviews": [
+    {
+      "itemId": "san-may",
+      "name": "Trương Ngọc Hân",
+      "rating": 5,
+      "date": "2026-02-14",
+      "title": "Biển mây ngay dưới chân",
+      "text": "Xe đón đúng 4:30, lên tới đồi thì mây vừa tràn qua thung lũng.",
+      "verified": true
+    },
+    {
+      "itemId": "cam-trai-doi",
+      "name": "Lâm Gia Bảo",
+      "rating": 4,
+      "date": "2026-01-30",
+      "title": "Lều ấm hơn mình tưởng",
+      "text": "Đêm 9 độ nhưng túi ngủ rất ấm. Nhà vệ sinh hơi xa lều.",
+      "verified": true
+    },
+    {
+      "itemId": "nha-go",
+      "name": "Đoàn Mỹ Linh",
+      "rating": 5,
+      "date": "2026-01-12",
+      "title": "Lò sưởi và rừng thông",
+      "text": "Ngồi bên cửa kính nhìn sương phủ rừng, không muốn về.",
+      "verified": true
+    },
+    {
+      "itemId": "lua-trai",
+      "name": "Cao Minh Nhật",
+      "rating": 5,
+      "date": "2025-12-28",
+      "title": "Cồng chiêng nghe nổi da gà",
+      "text": "Rượu cần, khoai nướng và tiếng chiêng giữa đồi, một đêm rất khác.",
+      "verified": true
+    },
+    {
+      "itemId": "glamping",
+      "name": "Phùng Thanh Tâm",
+      "rating": 4,
+      "date": "2025-12-15",
+      "title": "Tiện như khách sạn",
+      "text": "Giường êm, có máy sưởi. Bữa sáng nên thêm món nước.",
+      "verified": true
+    },
+    {
+      "itemId": "ho-suong",
+      "name": "Huỳnh Kim Ngân",
+      "rating": 5,
+      "date": "2025-11-30",
+      "title": "Chèo thuyền trong sương",
+      "text": "Mặt hồ phẳng lặng như gương, ảnh chụp ra như tranh.",
+      "verified": true
+    }
+  ],
+  "pdp": {
+    "services": [
+      {
+        "icon": "wallet",
+        "title": "Trả khi nhận phòng",
+        "text": "Không cần cọc"
+      },
+      {
+        "icon": "calendar-x",
+        "title": "Huỷ miễn phí",
+        "text": "Trước 48 giờ"
+      },
+      {
+        "icon": "bus",
+        "title": "Xe săn mây",
+        "text": "Đón tận cửa 4:30"
+      },
+      {
+        "icon": "shirt",
+        "title": "Áo ấm cho mượn",
+        "text": "Đủ size cho cả nhà"
+      }
+    ],
+    "blocks": [
+      {
+        "image": "assets-web-design/img/dalat/f1.jpg",
+        "title": "Lửa trại mỗi tối",
+        "text": "Củi thông khô, ghế gỗ quanh lửa và một ấm trà gừng nóng."
+      },
+      {
+        "image": "assets-web-design/img/dalat/f2.jpg",
+        "title": "Bữa tối nướng",
+        "text": "Rau Đà Lạt hái trong ngày, thịt nướng than hoa, bắp nướng mỡ hành."
+      },
+      {
+        "image": "assets-web-design/img/dalat/f4.jpg",
+        "title": "Ngắm sao ở 1.650m",
+        "text": "Không đèn đường, không khói bụi. Có kính thiên văn cho mượn."
+      }
+    ],
+    "shipping": [
+      "Thanh toán khi nhận phòng, không cần đặt cọc.",
+      "Huỷ miễn phí trước 48 giờ. Mưa lớn được đổi ngày miễn phí.",
+      "Nhận phòng từ 14:00, trả phòng trước 11:00."
+    ],
+    "tabs": {
+      "description": "Giới thiệu",
+      "specs": "Thông tin nhanh",
+      "shipping": "Đặt chỗ & huỷ"
+    },
+    "buyLabel": "Đặt chỗ"
   }
 }

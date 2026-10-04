@@ -1,62 +1,64 @@
 ---
 name: wl-builder
-description: Cách xây thành phần, khối, trang và landing page cho website White Label (HTML/CSS/JS thuần, web component <wl-*>, dữ liệu JSON đổi thương hiệu). Dùng khi cần tạo hoặc sửa button, avatar, tag, header, sidebar, footer, card, section, hero, landing page chiến dịch; khi thêm khóa mới vào data-N.json; khi đặt tên class, tổ chức biến CSS; khi sửa core.js (trình render) hoặc trình đổi thương hiệu / đổi nội dung nhanh.
+description: How to build components, sections, pages and campaign landing pages for the White Label website (vanilla HTML/CSS/JS, <wl-*> web components, one JSON file per brand). Use when creating or changing a button, avatar, tag, rating, header, sidebar, footer, card, section, hero, product detail (PDP) block, reviews, landing page; when adding keys to data-N.json; when naming classes or organising CSS variables; when adding layout options (align, width, tone, space, layout); when editing core.js (the renderer) or the fast brand/content switcher.
 ---
 
-# WL Builder: xây giao diện cho website White Label
+# WL Builder: building UI for the White Label site
 
-Dự án chạy **nhiều thương hiệu trên một mã nguồn**. Đọc file này trước, sau đó chỉ mở file tham khảo hợp với việc đang làm.
+The project runs **several brands from one codebase**. Read this file first, then open only the reference file that matches the task.
 
-## Bản đồ dự án
+## Project map
 
 ```
-*.html                    trang = danh sách thẻ <wl-*>, KHÔNG chứa nội dung
-assets-web-design/data-N.json   toàn bộ nội dung + theme của thương hiệu N
-css/base.css              token (biến), reset, chữ, nút, tiện ích
-css/components.css        kiểu từng thành phần (chia khối theo comment)
-css/effects.css           chuyển động
-js/core.js                trình render: WL.define, WL.boot, theme, SEO
-js/app.js                 nạp thành phần, danh sách BRANDS, khởi động wd2026.js
-js/effects.js             hiệu ứng theo data-* (reveal, tilt, parallax, GSAP)
-js/components/*.js        mỗi file một nhóm thành phần
-wd2026.js                 thư viện BTC, KHÔNG sửa
+*.html                         a page = a list of <wl-*> tags, NO content
+assets-web-design/data-N.json  all content + theme for brand N (Vietnamese copy)
+css/base.css                   tokens, reset, type, buttons, utilities, shared layout params
+css/components.css             styles per component (one commented block each)
+css/effects.css                motion
+js/core.js                     renderer: WL.define, WL.boot, theme, SEO
+js/app.js                      imports components, BRANDS list, starts wd2026.js
+js/effects.js                  effects driven by data-* (reveal, tilt, parallax, GSAP)
+js/components/*.js             one file per group of components
+wd2026.js                      organiser's library, DO NOT EDIT
 ```
 
-## 7 luật vàng
+## Seven golden rules
 
-1. **Nội dung ở JSON, bố cục ở HTML, cách vẽ ở JS, giao diện ở CSS.** Không viết chữ cứng vào HTML/JS (trừ nhãn hỗ trợ tiếp cận chung như "Đóng", "Mở menu").
-2. **Mọi giá trị từ JSON đi qua `esc()`** trước khi ghép vào HTML. URL trong query dùng `encodeURIComponent`.
-3. **Màu, font, bo góc, cỡ chữ chỉ dùng biến CSS** (`var(--c-primary)`, `var(--r-md)`, `var(--t-xl)`…). Không mã màu cứng, trừ chữ trắng trên ảnh tối.
-4. **Thiếu dữ liệu thì `render` trả `''`**, trang không được vỡ khi một thương hiệu thiếu khóa.
-5. **Render lại phải an toàn:** `render` là hàm thuần (data → chuỗi HTML). Sự kiện gắn trong `mount`. Bộ hẹn giờ và sự kiện trên `window`/`document` phải dọn trong `unmount` (hoặc dùng `WL.onScroll`).
-6. **Class theo BEM ngắn**: `block`, `block__element`, `block--modifier`, trạng thái `is-*`, móc JS bằng `data-*`. Không dùng class để JS tìm phần tử.
-7. **Hiệu ứng tắt được**: tôn trọng `prefers-reduced-motion`; không có GSAP thì trang vẫn đủ nội dung.
+1. **Content lives in JSON, structure in HTML, rendering in JS, looks in CSS.** No hard-coded copy in HTML/JS (except generic accessibility labels).
+2. **Every JSON value goes through `esc()`** before it is put into HTML. Values in a URL query go through `encodeURIComponent`.
+3. **Colour, font, radius and type size come only from CSS variables** (`var(--c-primary)`, `var(--r-md)`, `var(--t-xl)`). No hex codes, except white text on photos.
+4. **Missing data → `render` returns `''`.** A brand without a key must not break the page.
+5. **Re-rendering must be safe.** `render` is pure (data → HTML string). Events are bound in `mount`. Timers, observers and listeners on `window`/`document` are cleaned up in `unmount` (or use `WL.onScroll`).
+6. **Short BEM class names**: `block`, `block__element`, `block--modifier`, state `is-*`, JS hooks `data-*`. JS never finds elements by class.
+7. **Motion is optional**: respect `prefers-reduced-motion`; without GSAP the page still shows all content.
 
-## Quy trình khi được yêu cầu "làm thành phần X"
+## Workflow for "build component X"
 
-1. Xác định cấp: **nguyên tử** (button, avatar, tag, countdown) → **cụm** (card, header, sidebar) → **khối** (section) → **trang**.
-2. Tìm thành phần có sẵn để tái dùng: `grep "define('wl-" js/components`. Có class tiện ích sẵn: `.btn`, `.icon-btn`, `.link-under`, `.tag`, `.chip`, `.checklist`, `.sec-head`, `.container`, `.sec`.
-3. Thiết kế dữ liệu trước (xem `references/json-data.md`): khóa ở đâu, tên gì, có bắt buộc không. Thêm vào **cả 6** file JSON.
-4. Viết thành phần bằng `WL.define` (xem `references/component-api.md`).
-5. Viết CSS dưới một comment khối mới trong `components.css` (xem `references/css-tokens.md`, `references/naming.md`).
-6. Khai báo thẻ là `display: block` trong `base.css` nếu là khối.
-7. Đặt thẻ vào trang HTML. Kiểm tra với ít nhất 2 thương hiệu khác nhau, sáng + tối, rộng 390px và 1440px.
-8. Chạy danh sách kiểm tra `references/checklist.md`.
+1. Pick the level: **atom** (button, avatar, tag, stars, countdown) → **molecule** (card, header, sidebar) → **section** → **page**.
+2. Look for something to reuse: `grep "define('wl-" js/components`, and `references/component-catalog.md`.
+3. Design the data first (`references/json-data.md`): where the key lives, its name, whether it is optional. Add it to **every** `data-N.json`.
+4. Write the component with `WL.define` (`references/component-api.md`). Offer a `layout` attribute when there is more than one sensible arrangement (`references/layout-params.md`).
+5. Add CSS under a new commented block in `components.css` (`references/css-tokens.md`, `references/naming.md`).
+6. Put the tag on a page. Check at least 2 very different brands, light + dark, 390px and 1440px.
+7. Run `references/checklist.md`.
 
-## Mở file tham khảo nào?
+## Which reference to open
 
-| Việc cần làm | File |
+| Task | File |
 |---|---|
-| Hiểu luồng chạy, vòng đời render → mount → unmount | `references/architecture.md` |
-| Viết thành phần mới, API `WL.define`, thẻ lồng nhau | `references/component-api.md` |
-| Xây hoặc sửa trình render `core.js` từ đầu | `references/core-renderer.md` |
-| Thêm/tổ chức khóa JSON, đặt tên dữ liệu | `references/json-data.md` |
-| Đổi thương hiệu / đổi nội dung nhanh, bộ nhớ đệm, View Transition | `references/content-switcher.md` |
-| Biến CSS, theme sáng/tối, tổ chức file CSS | `references/css-tokens.md` |
-| Đặt tên class, `data-*`, thẻ, thuộc tính | `references/naming.md` |
-| Button, icon button, avatar, tag, chip, ô nhập, đếm ngược | `references/atoms.md` |
-| Header, footer, sidebar, card, hộp thoại | `references/layout-components.md` |
-| Section lớn: hero, lưới thẻ, timeline, bảng giá, FAQ, CTA | `references/sections.md` |
-| Tạo landing page chiến dịch / sản phẩm mới / tour mới | `references/landing-page.md` |
-| Hiệu ứng cuộn, 3D, tiếp cận, hiệu năng | `references/effects-a11y.md` |
-| Kiểm tra trước khi nộp | `references/checklist.md` |
+| Every existing tag and its attributes | `references/component-catalog.md` |
+| Shared layout attributes (`align`, `width`, `tone`, `space`) and `layout` presets | `references/layout-params.md` |
+| Render flow, render → mount → unmount lifecycle | `references/architecture.md` |
+| Writing a new component, `WL.define` API, nested components | `references/component-api.md` |
+| Building or changing the `core.js` renderer | `references/core-renderer.md` |
+| Adding or organising JSON keys | `references/json-data.md` |
+| Fast brand/content switching, caching, View Transitions | `references/content-switcher.md` |
+| CSS variables, light/dark theme, CSS file layout | `references/css-tokens.md` |
+| Class, `data-*`, tag and attribute naming | `references/naming.md` |
+| Button, icon button, avatar, stars, tag, chip, field, countdown | `references/atoms.md` |
+| Header, footer, sidebar, card, tabs, dialog | `references/layout-components.md` |
+| Large sections: hero, grids, timeline, pricing, FAQ, CTA, page composition | `references/sections.md` |
+| Product detail page and reviews | `references/pdp-reviews.md` |
+| Campaign / product launch / new tour landing page | `references/landing-page.md` |
+| Scroll effects, accessibility, performance | `references/effects-a11y.md` |
+| Pre-submit checks | `references/checklist.md` |

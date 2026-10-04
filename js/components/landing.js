@@ -128,9 +128,12 @@ define('wl-landing-hero', {
 });
 
 // ------------------------------------------------------------------ highlights
-/** <wl-landing-highlights> — lưới bento: ô đầu to, nền màu thương hiệu. */
+/**
+ * <wl-landing-highlights layout="bento|grid|list">
+ *   bento: ô đầu to, nền màu thương hiệu (mặc định)   grid: các ô bằng nhau   list: hàng ngang icon + chữ
+ */
 define('wl-landing-highlights', {
-  render(data) {
+  render(data, el) {
     const list = get(data, 'landing.highlights', []);
     if (!list.length) return '';
     const cards = list.map((h, i) => `
@@ -139,7 +142,7 @@ define('wl-landing-highlights', {
         <h3 class="hl__title">${esc(h.title)}</h3>
         <p class="hl__text">${esc(h.text)}</p>
       </li>`).join('');
-    return `<section class="sec"><div class="container"><ul class="hl-grid">${cards}</ul></div></section>`;
+    return `<section class="sec"><div class="container"><ul class="hl-grid hl-grid--${esc(el.attr('layout', 'bento'))}">${cards}</ul></div></section>`;
   },
 });
 

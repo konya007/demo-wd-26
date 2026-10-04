@@ -1,0 +1,9 @@
+---
+description: White Label site conventions — components, JSON data, CSS tokens, layout attributes
+globs: ["**/*.html", "js/**/*.js", "css/**/*.css", "assets-web-design/*.json"]
+alwaysApply: true
+---
+
+Follow `AGENTS.md` at the repository root.
+
+Before building or changing a `<wl-*>` component, a JSON key, a CSS token or a layout option, read `skills/skills/wl-builder/SKILL.md` and the matching reference in `skills/skills/wl-builder/references/`.

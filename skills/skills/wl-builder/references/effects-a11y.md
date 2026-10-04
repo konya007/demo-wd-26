@@ -1,56 +1,60 @@
-# Hiệu ứng, tiếp cận, hiệu năng
+# Effects, accessibility, performance
 
-## Hiệu ứng: khai báo bằng `data-*`, thực thi ở `effects.js`
+## Effects: declared with `data-*`, executed in `effects.js`
 
-Thành phần **không** tự viết code chuyển động; nó chỉ gắn thuộc tính. `runEffects(document)` chạy sau mỗi `wl:rendered`.
+Components do **not** write motion code; they only add attributes. `runEffects(document)` runs after every `wl:rendered`.
 
-| Muốn | Gắn |
+| Want | Add |
 |---|---|
-| Hiện dần khi cuộn tới | `data-reveal` (+ `style="--d:.1s"` để so le) |
-| Ảnh mở như rèm | `data-reveal="clip"` trên khung ảnh có `overflow:hidden` |
-| Ảnh trôi lệch tốc độ | `data-parallax="-0.08"` trên `<img>` cao hơn khung (~120%) |
-| Thẻ nghiêng 3D + vệt sáng | `data-tilt` (CSS đọc `--rx --ry --gx --gy`) |
-| Khung ảnh nghiêng, lớp con lệch sâu | `data-tilt-stage` (CSS đọc `--px --py`) |
-| Đường nối dài theo cuộn | `data-steps` + `data-line` (ngang), `data-timeline` + `data-line-y` (dọc) |
-| CTA nở ra toàn màn hình | `data-expand` |
-| Số đếm lên | `data-count="48MP"` |
-| Chữ tiêu đề trồi lên | `splitWords(text)` trong `h1` có `aria-label` |
+| Fade/rise on scroll | `data-reveal` (+ `style="--d:.1s"` to stagger) |
+| Image opens like a curtain | `data-reveal="clip"` on an `overflow:hidden` frame |
+| Image drifts at a different speed | `data-parallax="-0.08"` on an `<img>` taller than its frame (~115–120%) |
+| 3D card tilt + glare | `data-tilt` (CSS reads `--rx --ry --gx --gy`) |
+| Image stage tilt with layered depth | `data-tilt-stage` (CSS reads `--px --py`) |
+| Connector grows with scroll | `data-steps` + `data-line` (horizontal), `data-timeline` + `data-line-y` (vertical) |
+| CTA expands to full width | `data-expand` |
+| Number counts up | `data-count="48MP"` |
+| Title words rise | `splitWords(text)` inside an `h1` with `aria-label` |
 
-### Thêm một hiệu ứng mới
+### Adding an effect
 
 ```js
-// effects.js, trong scrollFx(root) (cần GSAP) hoặc thành hàm riêng gọi từ runEffects (không cần GSAP)
+// effects.js, inside scrollFx(root) (needs GSAP) or as its own function called from runEffects (no GSAP)
 root.querySelectorAll('[data-spin]').forEach((el) => {
   gsap.to(el, { rotate: 360, ease: 'none',
     scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true } });
 });
 ```
-Rồi ghi thuộc tính mới vào comment đầu `effects.js` và bảng trên.
+Then document the attribute in the comment at the top of `effects.js` and in the table above.
 
-Luật chuyển động:
-- Chỉ động `transform`, `opacity`, `clip-path` (rẻ, không gây tính lại bố cục).
-- CSS animation đặt trong `@media (prefers-reduced-motion: no-preference)`.
-- JS kiểm tra `reduce` trước khi chạy; `effects.js` đã kết thúc sớm khi người dùng bật giảm chuyển động.
-- Không GSAP (mất mạng) → nội dung vẫn hiện đủ: trạng thái "đã hiện" không được phụ thuộc GSAP.
-- Nhịp: vào trang 0.6–1.2s, phản hồi rê chuột 0.15–0.3s.
+Motion rules:
+- Animate only `transform`, `opacity`, `clip-path` (cheap, no layout).
+- CSS animations live inside `@media (prefers-reduced-motion: no-preference)`.
+- JS checks `reduce` first; `effects.js` already exits early when reduced motion is on.
+- Without GSAP (offline) content is still fully visible: the "shown" state must never depend on GSAP.
+- Timing: entrances 0.6–1.2s, hover feedback 0.15–0.3s.
+- Element-level CSS `transform` conflicts with `[data-reveal].is-in { transform: none }`. Use the individual `translate`/`scale` properties for static offsets (see `.plan--featured { translate: 0 -12px }`).
 
-## Tiếp cận (a11y)
+## Accessibility (a11y)
 
-- Một `h1` mỗi trang, `h2` mỗi section, `h3` mỗi thẻ; không nhảy cấp.
-- Ảnh trang trí `alt=""`; ảnh mang thông tin (ảnh sản phẩm ở trang chi tiết) `alt` = tên.
-- Nút không chữ có `aria-label`. Icon có `aria-hidden="true"`.
-- Trạng thái bằng thuộc tính ARIA, CSS đọc theo: `aria-pressed`, `aria-expanded`, `aria-current="page"`.
-- Vùng chạm ≥ 44px. Tiêu điểm thấy rõ (`:focus-visible` trong base.css), không `outline: none` mà không thay thế.
-- Độ tương phản chữ ≥ 4.5:1; kiểm tra cả 6 thương hiệu × sáng/tối khi thêm màu nền mới.
-- Thông báo động dùng `role="status"` (form gửi thành công), đếm ngược `role="timer"`.
-- Có link "Bỏ qua menu" (`.skip`) và `<main id="main">`.
-- Form: `<label for>` thật, `autocomplete`, câu lỗi chỉ cách sửa.
+- One `h1` per page, `h2` per section, `h3` per card; no skipped levels.
+- Decorative images `alt=""`; informative images (main product photo) `alt` = name.
+- Icon-only buttons have `aria-label`. Icons are `aria-hidden="true"`.
+- State through ARIA that CSS reads: `aria-pressed`, `aria-expanded`, `aria-selected`, `aria-current="page"`.
+- Hidden-but-present UI (sticky buy bar off screen) is `aria-hidden="true"` with `tabindex="-1"` links.
+- Touch targets ≥ 44px. Visible focus (`:focus-visible` in base.css); never `outline: none` without a replacement.
+- Text contrast ≥ 4.5:1; check every brand × light/dark × every `tone` when adding a background.
+- Live messages `role="status"` (form success), countdown `role="timer"`, rating `role="img"` with `aria-label`.
+- Scrollable regions (comparison table) are focusable: `tabindex="0" role="region" aria-label`.
+- "Skip to content" link (`.skip`) and `<main id="main">`.
+- Forms: real `<label for>`, `autocomplete`, error messages that explain the fix.
 
-## Hiệu năng
+## Performance
 
-- Ảnh hero: `fetchpriority="high"`; còn lại `loading="lazy"`.
-- Ảnh có tỉ lệ cố định (`aspect-ratio`) → không nhảy bố cục khi tải.
-- Script ngoài `defer`; app là `type="module"`.
-- Sự kiện cuộn `{ passive: true }` (đã có trong `WL.onScroll`).
-- IntersectionObserver thay cho đo vị trí trong sự kiện cuộn.
-- Render lại toàn trang mỗi lần đổi thương hiệu: giữ `render` rẻ (không vòng lặp lồng lớn, không đo DOM).
+- Hero image `fetchpriority="high"`; everything else `loading="lazy"`.
+- Fixed image ratios (`aspect-ratio`) → no layout shift while loading.
+- External scripts `defer`; the app is `type="module"`.
+- Scroll listeners `{ passive: true }` (built into `WL.onScroll`).
+- IntersectionObserver instead of measuring positions in scroll handlers.
+- The whole page re-renders on brand switch: keep `render` cheap (no big nested loops, no DOM measuring).
+- In-place updates (gallery thumbnails, review filter, countdown) change attributes or `textContent`, not `innerHTML`.

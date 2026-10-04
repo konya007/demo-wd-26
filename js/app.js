@@ -10,6 +10,8 @@ import './components/contact.js';
 import './components/product-detail.js';
 import './components/advisor.js';
 import './components/landing.js';
+import './components/reviews.js';
+import './components/blocks.js';
 import { runEffects } from './effects.js';
 
 // Danh sách thương hiệu. Thêm thương hiệu mới = thêm 1 file JSON + 1 dòng ở đây.

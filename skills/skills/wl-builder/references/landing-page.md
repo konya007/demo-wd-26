@@ -1,52 +1,77 @@
-# Landing page chiến dịch
+# Campaign landing page
 
-Mỗi thương hiệu có **một** chiến dịch nổi bật: ra mắt sản phẩm, tour mới, bộ sưu tập mới, ưu đãi theo mùa. Trang chủ có thẻ `<wl-campaign-teaser>` dẫn tới `landing-page.html`. Cùng một file HTML phục vụ cả 6 thương hiệu; nội dung nằm ở `data.landing`.
+Each brand has **one** featured campaign: product launch, new tour, new collection, seasonal offer. The home page shows `<wl-campaign-teaser>`, which links to `landing-page.html`. The same HTML file serves every brand; content lives in `data.landing`.
 
-## Các mảnh đã có
+## Building blocks
 
-| Thẻ | Dữ liệu | Việc |
+| Tag | Data | Job |
 |---|---|---|
-| `<wl-campaign-teaser>` (index.html) | `landing.teaser`, `image`, `kind`, `deadline` | thẻ lớn ảnh + tiêu đề + đếm ngược nhỏ |
-| `<wl-landing-hero>` | `kind`, `badge`, `title`, `subtitle`, `image`, `secondary`, `itemId` | ảnh phủ màn hình, nút chính sang form (mang `?item=`), link phụ sang chi tiết |
-| `<wl-countdown source size>` | `deadline`, `countdown.{label, ended, units?}` | đếm ngược; hết giờ hiện câu `ended` |
-| `<wl-landing-highlights>` | `highlights[]` | bento 4 ô |
-| `<wl-landing-story>` | `story` | ảnh mở như rèm + đoạn văn + danh sách tích |
-| `<wl-landing-agenda>` | `agenda.steps[]` | dòng thời gian: lịch ra mắt, lịch trình tour, liệu trình |
-| `<wl-landing-offer>` | `offer.plans[]`, `offer.message` | bảng gói; bấm → `sendPrefill` điền sẵn form liên hệ |
-| `<wl-faq source="landing.faq" copy="landingFaq">` | `landing.faq`, `sections.landingFaq` | hỏi đáp riêng của chiến dịch |
-| `<wl-cta-band copy="landingCta">` | `sections.landingCta` | lời kêu gọi cuối |
+| `<wl-campaign-teaser>` (index.html) | `landing.teaser`, `image`, `kind`, `deadline` | big card: image + title + small countdown |
+| `<wl-landing-hero>` | `kind`, `badge`, `title`, `subtitle`, `image`, `secondary`, `itemId` | full-screen image, primary button to the form (with `?item=`), secondary link to the product page |
+| `<wl-countdown source size>` | `deadline`, `countdown.{label, ended, units?}` | countdown; shows `ended` when time is up |
+| `<wl-landing-highlights layout>` | `highlights[]` | 4 reasons (`bento`, `grid`, `list`) |
+| `<wl-landing-story>` | `story` | curtain-reveal image + paragraph + checklist |
+| `<wl-landing-agenda>` | `agenda.steps[]` | timeline: launch dates, tour itinerary, treatment weeks |
+| `<wl-landing-offer>` | `offer.plans[]`, `offer.message` | plans; click → `sendPrefill` fills the contact form |
+| `<wl-reviews item="landing" layout="grid" limit="3">` | `reviews` of the campaign product | proof |
+| `<wl-faq source="landing.faq" copy="landingFaq">` | `landing.faq`, `sections.landingFaq` | campaign-specific FAQ |
+| `<wl-cta-band copy="landingCta">` | `sections.landingCta` | final call to action |
 
-## Hành trình của trang
+## Page journey
 
 ```
-1. Hero        Cái gì mới? Khi nào? (hạn chót tạo lý do hành động ngay)
-2. Highlights  Vì sao đáng quan tâm? (4 lý do, quét trong 5 giây)
-3. Story       Tin được không? (câu chuyện + bằng chứng cụ thể)
-4. Agenda      Diễn ra thế nào? (mốc thời gian / lịch trình)
-5. Offer       Tôi chọn gói nào, giá bao nhiêu?
-6. FAQ         Gỡ nỗi lo cuối cùng
-7. CTA         Nhắc lại hành động
+1. Hero        What is new? When? (the deadline gives a reason to act now)
+2. Highlights  Why care? (4 reasons, scannable in 5 seconds)
+3. Story       Can I believe it? (story + concrete evidence)
+4. Agenda      How does it unfold? (dates / itinerary)
+5. Offer       Which plan, what price?
+6. Reviews     What did buyers say?
+7. FAQ         Remove the last worries
+8. CTA         Repeat the action
 ```
 
-## Viết chiến dịch mới cho một thương hiệu
+## Data shape
 
-1. Chọn **một** sản phẩm/tour trong `items` làm trung tâm → `itemId`.
-2. Đặt `kind` theo loại: "Ra mắt sản phẩm", "Tour mới", "Bộ sưu tập mới", "Chiến dịch".
-3. Hạn chót thật trong tương lai, ISO có múi giờ (`+07:00`). `countdown.label` nói rõ đếm tới việc gì ("Mở bán sau", "Đoàn đầu khởi hành sau").
-4. Tiêu đề hero ≤ 10 từ, có tên sản phẩm hoặc lợi ích cụ thể. Phụ đề 1–2 câu, có con số.
-5. `highlights`: đúng 4 mục (bento được thiết kế cho 4), tiêu đề ≤ 4 từ, icon Lucide khác nhau.
-6. `agenda.steps`: 3–4 mốc. Ra mắt sản phẩm → ngày; tour → "Ngày 1/2/3" hoặc giờ; mỹ phẩm → "Tuần 1…4".
-7. `offer.plans`: 3 gói, gói giữa `featured: true`. `was` để `""` nếu không giảm giá. `message` có `{plan}` và `{campaign}`.
-8. `faq`: 3 câu về nỗi lo **riêng** của chiến dịch (đổi ý, thời tiết, giới hạn số lượng).
-9. Thêm `sections.landingFaq.title`, `sections.landingCta.{title, text}`, `pages.landing.title` (tiêu đề tab).
-10. Ảnh: dùng ảnh có sẵn của thương hiệu; ảnh hero nên khác ảnh hero trang chủ.
+```json
+"landing": {
+  "kind": "Tour mới",
+  "itemId": "bach-moc",
+  "image": "assets-web-design/img/peak/i5.jpg",
+  "badge": "Khởi hành 13/11/2026",
+  "title": "…", "subtitle": "…",
+  "deadline": "2026-11-13T05:00:00+07:00",
+  "countdown": { "label": "Đoàn đầu khởi hành sau", "ended": "…" },
+  "secondary": "Xem chi tiết cung đường",
+  "teaser":     { "eyebrow": "…", "title": "…", "text": "…", "button": "…" },
+  "highlights": [ { "icon": "sparkles", "title": "…", "text": "…" } ],
+  "story":      { "title": "…", "text": "…", "image": "…", "points": ["…"] },
+  "agenda":     { "title": "…", "text": "…", "steps": [ { "time": "Ngày 1", "title": "…", "text": "…" } ] },
+  "offer":      { "title": "…", "text": "…", "featuredLabel": "…", "message": "… {plan} … {campaign}",
+                  "plans": [ { "name": "…", "price": "…", "was": "", "note": "…", "perks": ["…"], "featured": true, "button": "…" } ] },
+  "faq":        [ { "q": "…", "a": "…" } ]
+}
+```
+Plus `sections.landingFaq`, `sections.landingCta`, `pages.landing` (tab title).
 
-## Thêm khối mới cho landing
+## Writing a new campaign for a brand
 
-Ví dụ khối "Số lượng còn lại" (`landing.stock = { total: 200, left: 46, label: "Còn lại" }`):
+1. Choose **one** item from `items` as the centre → `itemId`.
+2. `kind`: "Ra mắt sản phẩm", "Tour mới", "Bộ sưu tập mới", "Chiến dịch".
+3. A real future deadline, ISO with timezone (`+07:00`). `countdown.label` says what is counted ("Mở bán sau", "Đoàn đầu khởi hành sau").
+4. Hero title ≤ 10 words with the product name or a concrete benefit. Subtitle 1–2 sentences with numbers.
+5. `highlights`: exactly 4 (the bento layout is designed for 4), titles ≤ 4 words, different Lucide icons.
+6. `agenda.steps`: 3–4 milestones. Launch → dates; tour → "Ngày 1/2/3" or hours; skincare → "Tuần 1…4".
+7. `offer.plans`: 3 plans, the middle one `featured: true`. `was: ""` when there is no discount. `message` contains `{plan}` and `{campaign}`.
+8. `faq`: 3 questions about worries **specific** to this campaign (changing your mind, weather, limited stock).
+9. Add `sections.landingFaq.title`, `sections.landingCta.{title, text}`, `pages.landing.title`.
+10. Images: reuse the brand's images; the landing hero should differ from the home hero.
+
+## Adding a new landing block
+
+Example: "units left" bar (`landing.stock = { total: 200, left: 46, label: "Còn lại" }`):
 
 ```js
-/** <wl-landing-stock> — thanh tiến độ số lượng còn lại. */
+/** <wl-landing-stock> — progress bar of remaining units. */
 define('wl-landing-stock', {
   render(data) {
     const s = get(data, 'landing.stock');
@@ -64,13 +89,13 @@ define('wl-landing-stock', {
   },
 });
 ```
-Rồi: CSS `.stock…` trong components.css (đoạn Landing), `wl-landing-stock` vào danh sách `display:block`, đặt thẻ vào `landing-page.html`, thêm `landing.stock` vào JSON (thương hiệu nào không có thì khối tự ẩn).
+Then: `.stock…` CSS in the Landing block of components.css, place the tag in `landing-page.html`, add `landing.stock` to the JSON (brands without it simply hide the block).
 
-## Nhiều chiến dịch cho một thương hiệu
+## Several campaigns per brand
 
-Đổi `landing` thành mảng `campaigns[]` có `id`, và cho các thẻ đọc chiến dịch theo `?c=<id>`:
+Turn `landing` into an array `campaigns[]` with an `id`, and read the campaign from `?c=<id>`:
 ```js
 const id = WL.params.get('c');
 const l = (data.campaigns || []).find((c) => c.id === id) || (data.campaigns || [])[0];
 ```
-Teaser trên trang chủ khi đó lặp qua `campaigns` và trỏ `landing-page.html?c=<id>`.
+The home teaser then loops over `campaigns` and links to `landing-page.html?c=<id>`.

@@ -156,6 +156,36 @@
     "landingCta": {
       "title": "200 chiếc. Không làm thêm.",
       "text": "Đăng ký trước để được mua sớm 2 giờ."
+    },
+    "reviews": {
+      "title": "Người mặc nói gì",
+      "text": "Đánh giá từ khách đã nhận hàng.",
+      "basedOn": "Dựa trên {n} đánh giá",
+      "verified": "Đã mua hàng",
+      "all": "Tất cả",
+      "empty": "Chưa có đánh giá cho mục này.",
+      "about": "Về"
+    },
+    "pdpContent": {
+      "title": "Cách một chiếc áo Nhịp Phố ra đời",
+      "text": "Từ làng dệt tới tay bạn."
+    },
+    "compare": {
+      "title": "So sánh nhanh",
+      "text": "Chất liệu, phom và giá đặt cạnh nhau.",
+      "feature": "Tiêu chí"
+    },
+    "gallery": {
+      "title": "Nhịp Phố trên phố",
+      "text": "Khách mặc và gửi ảnh về."
+    },
+    "newsletter": {
+      "title": "Nhận tin bộ sưu tập mới",
+      "text": "Biết trước ngày drop và giữ số thứ tự yêu thích.",
+      "placeholder": "Email của bạn",
+      "submit": "Đăng ký",
+      "success": "Đã đăng ký. Hẹn bạn ở lần drop tới.",
+      "note": "Mỗi mùa vài email."
     }
   },
   "pages": {
@@ -794,5 +824,122 @@
         "a": "Ghi số bạn muốn vào lời nhắn khi đăng ký. Số trùng sẽ ưu tiên người đăng ký trước."
       }
     ]
+  },
+  "reviews": [
+    {
+      "itemId": "vay-hoa",
+      "name": "Nguyễn Hồng Nhung",
+      "rating": 5,
+      "date": "2026-09-08",
+      "title": "Bay nhẹ, mặc mát",
+      "text": "Lụa mềm, đi biển gió thổi rất đẹp. Form chuẩn size.",
+      "verified": true
+    },
+    {
+      "itemId": "jacket-reu",
+      "name": "Trần Văn Khang",
+      "rating": 5,
+      "date": "2026-08-31",
+      "title": "Màu rêu đẹp hơn ảnh",
+      "text": "Kaki dày vừa phải, khoác buổi sáng Đà Lạt là vừa.",
+      "verified": true
+    },
+    {
+      "itemId": "so-mi-linen",
+      "name": "Lê Thị Mai",
+      "rating": 4,
+      "date": "2026-08-22",
+      "title": "Cơ bản nhưng chất",
+      "text": "Linen nhăn nhẹ là đặc tính, giặt vài lần thì mềm hẳn.",
+      "verified": true
+    },
+    {
+      "itemId": "blazer",
+      "name": "Phạm Quốc Huy",
+      "rating": 5,
+      "date": "2026-08-11",
+      "title": "Đi làm vẫn mát",
+      "text": "Mặc cả ngày ở văn phòng không bí. Chỉnh tay áo miễn phí rất nhanh.",
+      "verified": true
+    },
+    {
+      "itemId": "ao-thun-ke",
+      "name": "Vũ Thanh Hằng",
+      "rating": 4,
+      "date": "2026-07-27",
+      "title": "Thoải mái",
+      "text": "Vải dày dặn, không bai cổ sau nhiều lần giặt.",
+      "verified": true
+    },
+    {
+      "itemId": "quan-ong-rong",
+      "name": "Đỗ Phương Anh",
+      "rating": 5,
+      "date": "2026-07-12",
+      "title": "Đi bộ cả ngày không vướng",
+      "text": "Ống rộng vừa, lưng chun mặt sau nên rất thoải mái.",
+      "verified": true
+    },
+    {
+      "itemId": "jacket-reu",
+      "name": "Ngô Bảo Long",
+      "rating": 4,
+      "date": "2026-07-03",
+      "title": "Đáng tiền",
+      "text": "Đường may kỹ. Mong có thêm size XXL.",
+      "verified": false
+    }
+  ],
+  "pdp": {
+    "services": [
+      {
+        "icon": "truck",
+        "title": "Giao 3 ngày",
+        "text": "Toàn quốc, miễn phí đơn từ 500.000đ"
+      },
+      {
+        "icon": "ruler",
+        "title": "Chỉnh sửa miễn phí",
+        "text": "Trong 30 ngày"
+      },
+      {
+        "icon": "repeat",
+        "title": "Đổi size 7 ngày",
+        "text": "Miễn phí một lần"
+      },
+      {
+        "icon": "scissors",
+        "title": "May tay tại Hội An",
+        "text": "Mỗi chiếc có nhãn thợ may"
+      }
+    ],
+    "blocks": [
+      {
+        "image": "assets-web-design/img/fashion/f2.jpg",
+        "title": "Vải chọn từ làng dệt",
+        "text": "Linen và lụa tơ tằm từ làng dệt Mã Châu, giặt mềm trước khi cắt."
+      },
+      {
+        "image": "assets-web-design/img/fashion/f4.jpg",
+        "title": "Phom để đi bộ cả ngày",
+        "text": "Rộng vừa đủ để thoáng, đủ gọn để vào văn phòng."
+      },
+      {
+        "image": "assets-web-design/img/fashion/f1.jpg",
+        "title": "Thiết kế để phối với nhau",
+        "text": "Cả bộ sưu tập dùng chung một bảng màu, món nào cũng hợp món nào."
+      }
+    ],
+    "shipping": [
+      "Giao toàn quốc trong 3 ngày, miễn phí đơn từ 500.000đ.",
+      "Đổi size miễn phí một lần trong 7 ngày.",
+      "Chỉnh sửa miễn phí trong 30 ngày tại xưởng hoặc gửi bưu điện."
+    ],
+    "tabs": {
+      "description": "Mô tả",
+      "specs": "Chất liệu & size",
+      "shipping": "Giao hàng & đổi size"
+    },
+    "buyLabel": "Đặt may"
   }
 }

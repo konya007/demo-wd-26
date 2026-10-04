@@ -1,65 +1,80 @@
-# Section lớn và cách ghép trang
+# Large sections and page composition
 
-## Giải phẫu chuẩn của một section
+## Anatomy of a section
 
 ```html
-<section class="sec [sec--surface]">           ← khoảng dọc var(--sec-y), nền xen kẽ
-  <div class="container [ten-khoi]">           ← khung giữa; lưới 2 cột đặt ở đây
-    <div class="sec-head" data-reveal>         ← sectionHead(data, el, 'tenKhoi')
+<section class="sec [sec--surface]">           ← vertical padding var(--sec-y); tone/space act here
+  <div class="container [my-block my-block--layout]">   ← centred frame; 2-column grid goes here
+    <div class="sec-head" data-reveal>         ← sectionHead(data, el, 'myBlock')
       <h2 class="sec-head__title">…</h2>
       <p class="sec-head__text">…</p>
     </div>
-    <ul class="ten-khoi__list">…</ul>          ← nội dung chính
+    <ul class="my-block__list">…</ul>          ← main content
   </div>
 </section>
 ```
-- Mỗi section có **một** `h2`. Trang có **một** `h1` (hero hoặc page-head).
-- Xen kẽ nền: không để hai `.sec--surface` liền nhau; khối "nặng" (CTA) dùng `--c-primary`.
-- Section rộng tràn màn hình (hero, rail, CTA): bỏ `.container` ở lớp ngoài, đặt nó ở lớp trong.
+- One `h2` per section. One `h1` per page (hero, page head, or product title).
+- Alternate backgrounds: never two `--surface` sections in a row; heavy blocks (CTA) use `--c-primary`. Set this from HTML with `tone` rather than hard-coding `.sec--surface` in new components.
+- Full-bleed sections (hero, rail, CTA): no `.container` on the outer level, put it inside.
 
-## Bố cục hay dùng
+## Common layouts
 
-| Bố cục | CSS | Ở đâu trong dự án |
+| Layout | CSS | Used by |
 |---|---|---|
-| Tiêu đề trái, nội dung phải | `grid-template-columns: 5fr 7fr; gap: 72px` (≥ 960px) | FAQ, sứ mệnh, giải thưởng, agenda |
-| Ảnh + chữ, xen kẽ trái phải | `1.1fr .9fr`, `.x--flip .x__media { order: 2 }` | `feat-row`, `lp-story` |
-| Lưới thẻ tự co | `repeat(auto-fill, minmax(min(100%, 300px), 1fr))` | `pgrid`, `plans` |
-| Bento (ô đầu lớn) | `1.4fr 1fr 1fr`, ô đầu `grid-row: span 2` | `hl-grid` |
-| Ảnh dính + chữ cuộn | `position: sticky` + IntersectionObserver | `story` (features) |
-| Dãy ngang | `overflow-x: auto; scroll-snap-type: x mandatory` (+ GSAP pin trên máy tính) | `rail` |
-| Dòng thời gian | cột thời gian / chấm / nội dung, đường nối `::before` hoặc `<span>` | `tl` |
+| Title left, content right | `grid-template-columns: 5fr 7fr; gap: 72px` (≥ 960px) | FAQ split, mission, awards, agenda, reviews split, process list |
+| Image + text, alternating | `1.1fr .9fr`, `.x--flip .x__media { order: 2 }` | `feat-row`, `lp-story`, `rich--alternate` |
+| Self-sizing card grid | `repeat(auto-fill, minmax(min(100%, 300px), 1fr))` | `pgrid`, `plans`, `tgrid`, `reviews--grid` |
+| Bento (big first tile) | `1.4fr 1fr 1fr`, first tile `grid-row: span 2` | `hl-grid--bento` |
+| Masonry | `grid-auto-rows` + `grid-auto-flow: dense` + some `span 2` | `gal--masonry` |
+| Sticky image + scrolling text | `position: sticky` + IntersectionObserver | `story` (features) |
+| Horizontal strip | `overflow-x: auto; scroll-snap-type: x mandatory` (+ GSAP pin on desktop for products) | `rail`, `reviews--rail`, `gal--strip` |
+| Timeline | time / dot / content columns, connector `<span>` | `tl` |
+| Comparison table | `<table>` in a scroll box, first column `position: sticky; left: 0` | `compare` |
 
-## Mẫu nhanh cho từng loại khối
+## Quick recipes per block type
 
-**Hero** (`<wl-hero>`, `<wl-landing-hero>`): eyebrow/badge → `h1` dùng `splitWords()` (chữ trồi lên từng từ, có `aria-label` chứa câu đầy đủ) → lead → nút chính + link phụ → ghi chú nhỏ. Ảnh: `fetchpriority="high"`, **không** `loading="lazy"`.
+**Hero** (`<wl-hero>`, `<wl-landing-hero>`): eyebrow/badge → `h1` with `splitWords()` (word-by-word rise, `aria-label` holds the full sentence) → lead → primary button + secondary link → small note. Image `fetchpriority="high"`, **not** lazy.
 
-**Lưới tính năng / điểm nổi bật**: 3–4 mục, mỗi mục icon + tiêu đề ≤ 6 từ + một câu. Độ trễ hiện dần so le `style="--d:${i * 0.08}s"`.
+**Feature / highlight grid**: 3–4 items, each icon + title ≤ 6 words + one sentence. Staggered reveal `style="--d:${i * 0.08}s"`.
 
-**Danh sách sản phẩm**: dùng lại `<wl-products layout="grid|rail" limit featured filter related>`; đừng viết lại thẻ, gọi `productCard(p)`.
+**Product lists**: reuse `<wl-products layout="grid|rail" limit featured filter related>`; never rewrite the card, call `productCard(p)`.
 
-**Quy trình / timeline**: dùng `<ol>` vì thứ tự có nghĩa. Đánh số hoặc ghi thời gian.
+**Process / timeline**: `<ol>` because order matters. Numbers or times.
 
-**Bảng giá** (`<wl-landing-offer>`): 2–4 gói, một gói `featured` (viền màu chính, cờ nhãn, nút đặc; gói khác nút `btn--ghost`). Giá cũ bằng `<s>`. Nút đều đáy nhờ `flex-direction: column` + danh sách quyền lợi `flex: 1`.
+**Pricing** (`<wl-landing-offer>`): 2–4 plans, one `featured` (primary border, flag, solid button; others `btn--ghost`). Old price in `<s>`. Buttons aligned at the bottom with `flex-direction: column` + perks `flex: 1`.
 
-**FAQ**: `<details>/<summary>` gốc, không cần JS. Câu đầu mở sẵn. `<wl-faq source="…" copy="…" limit>`.
+**FAQ**: native `<details>/<summary>`, no JS. First item open (all open in `cards`). `<wl-faq source copy limit layout>`.
 
-**Lời chứng thực**: một câu lớn + nút chọn người (`aria-pressed`), tự chuyển 7 giây, dừng khi người xem bấm.
+**Testimonials**: `spotlight` = one large quote + person buttons (`aria-pressed`), auto-advance 7s, stops on click; `grid` = cards with avatar.
 
-**CTA cuối trang**: `<wl-cta-band copy="…">` một câu ngắn + một nút. Luôn là khối cuối của `<main>`.
+**Reviews**: see `pdp-reviews.md`.
 
-## Ghép trang = kể một hành trình
+**Comparison table** (`<wl-compare>`): rows are the union of spec labels across the chosen items; missing values show "—". Wrap the table in a focusable scroll region (`tabindex="0" role="region" aria-label`).
 
-Trang chủ hiện tại:
+**Gallery** (`<wl-gallery source>`): any array with `image` and optional `title` caption.
+
+**Newsletter** (`<wl-newsletter>`): one email field + button, inline validation, success via `role="status"`.
+
+**Final CTA**: `<wl-cta-band copy layout>` one short sentence + one button. Always the last block of `<main>`.
+
+## Composing a page = telling a journey
+
+Home page today:
 ```
-hero (thông điệp + hành động) → partners (ai đã tin) → campaign-teaser (có gì mới)
-→ features (vì sao chọn) → products (chọn gì) → process (làm sao để có)
-→ testimonials (người khác nói gì) → advisor (chưa chắc thì hỏi) → faq → cta-band
+hero (message + action) → partners (who trusts us) → campaign-teaser (what is new)
+→ features (why us) → products (which one) → process (how to get it)
+→ testimonials + reviews rail (what others say) → advisor (still unsure? ask) → faq → cta-band
 ```
-Câu hỏi khi thêm một section: người xem đang nghĩ gì ở điểm này, và section này trả lời câu đó? Không trả lời được thì bỏ.
+Product page:
+```
+product-detail (gallery, price, buy) → pdp-services (risk reducers) → pdp-tabs (details)
+→ pdp-content (story with images) → reviews (proof) → related products → cta-band card → sticky-buy
+```
+Question for every section: what is the visitor thinking at this point, and does this section answer it? If not, drop it.
 
-## Thêm trang mới
+## Adding a page
 
-1. Sao chép `_template.html`, đổi `<body data-page="ten-trang">`.
-2. Thêm `pages.tenTrang: { title, heading, text, image? }` vào 6 JSON.
-3. Xếp các thẻ `<wl-*>` trong `<main>`.
-4. Cần trên menu → thêm vào `nav` của JSON.
+1. Copy `_template.html`, change `<body data-page="page-name">`.
+2. Add `pages.pageName: { title, heading, text, image? }` to every JSON.
+3. Place `<wl-*>` tags in `<main>`, using `layout`/`tone`/`align` to vary rhythm.
+4. Needs a menu entry → add it to `nav` in the JSON.

@@ -1,65 +1,67 @@
-# Kiến trúc và vòng đời render
+# Architecture and render lifecycle
 
-## Ba lớp tách biệt
+## Three separate layers
 
-| Lớp | Ở đâu | Chứa gì | Ai sửa khi đổi thương hiệu |
+| Layer | Where | Contains | Edited when switching brand |
 |---|---|---|---|
-| Dữ liệu | `data-N.json` | chữ, ảnh, giá, màu, font, menu | **chỉ lớp này** |
-| Bố cục | `*.html` | thứ tự thẻ `<wl-*>` + tham số (`layout="grid"`, `limit="4"`) | không |
-| Trình bày | `js/components/*.js` + `css/*.css` | cách biến dữ liệu thành HTML, cách nó trông | không |
+| Data | `data-N.json` | copy, images, prices, colours, fonts, menu | **only this one** |
+| Structure | `*.html` | order of `<wl-*>` tags + layout attributes (`layout="grid"`, `limit="4"`, `tone="surface"`) | no |
+| Presentation | `js/components/*.js` + `css/*.css` | how data becomes HTML and how it looks | no |
 
-Một trang chỉ là danh sách thẻ:
+A page is only a list of tags:
 
 ```html
 <body data-page="landing">
   <wl-header></wl-header>
   <main id="main">
     <wl-landing-hero></wl-landing-hero>
-    <wl-faq source="landing.faq" copy="landingFaq"></wl-faq>
+    <wl-faq source="landing.faq" copy="landingFaq" layout="stack" align="center"></wl-faq>
   </main>
   <wl-footer></wl-footer>
 </body>
 ```
 
-`data-page` trên `<body>` là khóa để `core.js` đọc `pages.<page>.title` làm tiêu đề tab.
+`data-page` on `<body>` is the key `core.js` uses to read `pages.<page>.title` for the tab title.
 
-## Thứ tự chạy khi mở trang
+## Boot order
 
 ```
-<head>  core.js (không defer)  → đặt data-theme sáng/tối ngay, tránh nháy màu
+<head>  core.js (not deferred)  → sets data-theme light/dark immediately, no colour flash
         lucide, gsap, wd2026.js (defer)
-        app.js (module)        → import các file component → customElements.define
+        app.js (module)         → imports component files → customElements.define
                                 → WebDesign2026.init({...})
-wd2026.js  fetch data-N.json   → phát 'webdesign2026:datachange' (detail = data)
-app.js     nghe sự kiện        → WL.boot(data)
-WL.boot    applyTheme → applySeo → render mọi thẻ đã đăng ký → lucide icons → countUp
-           → html.wl-ready (hiện trang) → phát 'wl:rendered'
-app.js     nghe 'wl:rendered'  → runEffects(document) (reveal, tilt, GSAP)
+wd2026.js  fetch data-N.json    → fires 'webdesign2026:datachange' (detail = data)
+app.js     listens              → WL.boot(data)
+WL.boot    applyTheme → applySeo → render every registered tag → lucide icons → countUp
+           → html.wl-ready (page becomes visible) → fires 'wl:rendered'
+app.js     on 'wl:rendered'     → runEffects(document) (reveal, tilt, GSAP)
 ```
 
-Không đọc được JSON sau 4 giây (mở bằng nhấp đúp) → `WL.failSafe()` hiện hướng dẫn chạy server.
+If the JSON cannot be read within 4 seconds (page opened by double-click), `WL.failSafe()` shows how to run a local server.
 
-## Vòng đời một thẻ `<wl-*>`
+## Lifecycle of one `<wl-*>` tag
 
 ```
-connectedCallback  → thêm vào registry; nếu WL.data đã có thì update ngay
-update(data)       → teardown() → innerHTML = render(data, el) → mount(el, data)
-teardown()         → gọi unmount(el) nếu lần trước đã mount
-disconnectedCallback → bỏ khỏi registry, teardown()
+connectedCallback    → add class wl-host, add to registry; if WL.data exists, update now
+update(data)         → teardown() → innerHTML = render(data, el) → mount(el, data)
+teardown()           → calls unmount(el) if the previous render was mounted
+disconnectedCallback → remove from registry, teardown()
 ```
 
-- `render` chạy **mỗi lần đổi thương hiệu**, nên phải là hàm thuần, không gắn sự kiện.
-- `mount` chạy sau mỗi `render`. Phần tử con là mới tinh nên sự kiện gắn trên chúng tự mất khi render lại; chỉ cần dọn những gì gắn **ngoài** thẻ (window, document, setInterval).
-- `WL.boot` duyệt **bản sao** của registry và bỏ thẻ đã rời trang. Nhờ vậy thẻ lồng (ví dụ `<wl-countdown>` trong `<wl-landing-hero>`) render đúng 1 lần: thẻ con mới tự render khi được gắn, thẻ con cũ đã bị thay thì bị bỏ qua.
-- `WL.boot` bỏ qua khi dữ liệu y hệt lần trước (so `JSON.stringify`). Trình đổi thương hiệu tận dụng điều này để render trước từ bộ nhớ đệm (xem `content-switcher.md`).
+- `render` runs **on every brand switch**, so it must be pure and must not bind events.
+- `mount` runs after every `render`. Child elements are brand new, so their listeners disappear with them; only things attached **outside** the tag (window, document, intervals, observers) need cleaning.
+- `WL.boot` iterates over a **copy** of the registry and skips tags that left the page. Nested tags (e.g. `<wl-countdown>` inside `<wl-landing-hero>`) therefore render exactly once: the new child renders itself when attached, the replaced child is skipped.
+- `WL.boot` returns early when the data is identical to the previous call (compared with `JSON.stringify`). The brand switcher relies on this (see `content-switcher.md`).
+- Render order equals DOM order. A component that reads another component's DOM (e.g. `<wl-sticky-buy>` observes `[data-buy-anchor]` inside `<wl-product-detail>`) must come **after** it in the HTML.
 
-## Giao tiếp giữa các thành phần
+## How components talk to each other
 
-| Cách | Khi nào | Ví dụ |
+| Mechanism | Use for | Example |
 |---|---|---|
-| Hàm export dùng chung | Mẩu HTML lặp lại | `sectionHead`, `productCard` (sections.js), `ctaButton`, `brandMark` (layout.js), `splitWords` (hero.js) |
-| Tham số URL | Chuyển trang mang theo ngữ cảnh | `product.html?id=…`, `contact.html?item=…` (`WL.params`) |
-| `sessionStorage` + CustomEvent | Gửi dữ liệu sang thành phần ở trang khác/cùng trang | `sendPrefill({itemId, message})` → `<wl-contact>` |
-| Sự kiện `document` | Báo trạng thái chung | `wl:rendered`, `wl:prefill` |
+| Exported helper | repeated HTML fragments | `sectionHead`, `productCard`, `ctaButton`, `splitWords`, `stars`, `avatar` |
+| URL parameter | carrying context to another page | `product.html?id=…`, `contact.html?item=…` (`WL.params`) |
+| `sessionStorage` + CustomEvent | sending data to a component on this or another page | `sendPrefill({itemId, message})` → `<wl-contact>` |
+| `document` event | global state | `wl:rendered`, `wl:prefill` |
+| `data-*` anchor | one component observing a known point in another | `[data-buy-anchor]` |
 
-Không để thành phần A truy cập thẳng DOM bên trong thành phần B.
+Component A never reaches into component B's markup by class name.

@@ -1,31 +1,31 @@
-# API thành phần: `WL.define`
+# Component API: `WL.define`
 
-## Khung chuẩn
+## Standard skeleton
 
 ```js
 /**
- * <wl-ten-khoi layout="a|b" limit="4">  ← ghi tham số và ý nghĩa ngay trên define
+ * <wl-my-block layout="a|b" limit="4">   ← document every attribute right above define
  *   a: …
  *   b: …
  */
-import { sectionHead } from './sections.js';        // tái dùng tiêu đề khối
+import { sectionHead } from './sections.js';          // reuse the section title
 
 const { esc, get, icon, define } = window.WL;
 
-define('wl-ten-khoi', {
+define('wl-my-block', {
   render(data, el) {
-    const list = get(data, 'tenKhoi', []);          // luôn có giá trị dự phòng
-    if (!list.length) return '';                      // thiếu dữ liệu → không vẽ gì
-    const layout = el.attr('layout', 'a');            // tham số chuỗi
-    const items = list.slice(0, el.num('limit', 99)); // tham số số
+    const list = get(data, 'myBlock', []);             // always give a fallback
+    if (!list.length) return '';                        // no data → render nothing
+    const layout = el.attr('layout', 'a');              // string attribute
+    const items = list.slice(0, el.num('limit', 99));   // number attribute
 
     return `
       <section class="sec">
         <div class="container">
-          ${sectionHead(data, el, 'tenKhoi')}
-          <ul class="ten-khoi ten-khoi--${esc(layout)}">
+          ${sectionHead(data, el, 'myBlock')}
+          <ul class="my-block my-block--${esc(layout)}">
             ${items.map((it, i) => `
-              <li class="ten-khoi__item" data-reveal style="--d:${i * 0.08}s">
+              <li class="my-block__item" data-reveal style="--d:${i * 0.08}s">
                 ${icon(it.icon)}
                 <h3>${esc(it.title)}</h3>
               </li>`).join('')}
@@ -33,56 +33,59 @@ define('wl-ten-khoi', {
         </div>
       </section>`;
   },
-  mount(el, data) {        // tuỳ chọn: gắn sự kiện
+  mount(el, data) {        // optional: bind events
     el.querySelectorAll('[data-toggle]').forEach((b) => b.addEventListener('click', () => { /* … */ }));
   },
-  unmount(el) {            // tuỳ chọn: dọn thứ gắn ngoài thẻ
+  unmount(el) {            // optional: clean up what lives outside the tag
     clearInterval(el._timer);
   },
 });
 ```
 
-Sau đó:
-1. `import './components/ten-file.js';` trong `js/app.js` (nếu là file mới).
-2. Thêm `wl-ten-khoi` vào danh sách `display: block` trong `css/base.css`.
+Then import the file in `js/app.js` if it is new. Every tag is `display: block` automatically (class `.wl-host`).
 
-## Công cụ có sẵn trên `window.WL`
+Render a `<section>` as the outer element so the shared `tone` and `space` attributes work.
 
-| Hàm | Dùng để |
+## Tools on `window.WL`
+
+| Function | Use |
 |---|---|
-| `esc(v)` | Thoát ký tự HTML. **Bắt buộc** cho mọi giá trị từ JSON. |
-| `get(obj, 'a.b.0.c', fallback)` | Đọc đường dẫn sâu an toàn. |
-| `icon(name, cls)` | Thẻ icon Lucide `<i data-lucide>`; `WL.boot` tự vẽ SVG. Icon thêm sau khi boot (ví dụ trong mount) → gọi `WL.refreshIcons()`. |
-| `el.attr(name, fallback)` / `el.num(name, fallback)` | Đọc tham số thẻ. Cờ boolean dùng `el.hasAttribute('more')`. |
-| `WL.onScroll(el, fn)` | Gắn hàm cuộn trang, render lại không cộng dồn. |
-| `WL.params` | `URLSearchParams` của trang. |
-| `WL.data` | Dữ liệu đang hiển thị. |
-| `WL.setMode('dark'|'light')` | Đổi chế độ sáng/tối. |
+| `esc(v)` | HTML-escape. **Required** for every JSON value. |
+| `get(obj, 'a.b.0.c', fallback)` | Safe deep read. |
+| `icon(name, cls)` | Lucide icon placeholder `<i data-lucide>`; `WL.boot` turns it into SVG. Icons added after boot (inside `mount`) → call `WL.refreshIcons()`. |
+| `el.attr(name, fallback)` / `el.num(name, fallback)` | Read attributes. Boolean flags: `el.hasAttribute('more')`. |
+| `WL.onScroll(el, fn)` | Window scroll handler that is replaced, not stacked, on re-render. |
+| `WL.params` | `URLSearchParams` of the page. |
+| `WL.data` | Data currently shown. |
+| `WL.setMode('dark'\|'light')` | Switch colour mode. |
 
-## Quy ước tham số thẻ
+## Attribute conventions
 
-- Tham số là **bố cục**, không phải nội dung: `layout`, `variant`, `limit`, `size`, cờ `more`, `filter`, `featured`.
-- `copy="khoaKhac"`: lấy tiêu đề khối từ `sections.khoaKhac` thay cho mặc định → một thành phần, nhiều bộ chữ.
-- `source="landing.faq"`: lấy mảng dữ liệu từ đường dẫn khác → `<wl-faq>` dùng cho cả FAQ chung lẫn FAQ chiến dịch.
-- Giá trị mặc định phải là trường hợp dùng nhiều nhất.
+- Attributes describe **arrangement**, never content: `layout`, `variant`, `limit`, `size`, `media`, flags `more`, `filter`, `featured`.
+- `copy="otherKey"`: take the section title from `sections.otherKey` → one component, several copy sets.
+- `source="landing.faq"`: read the data array from another path → `<wl-faq>` serves the general FAQ and the campaign FAQ; `<wl-gallery>` works on any array with `image`.
+- `item`: which product a component is about (`""` = current `?id`, `"landing"`, or an explicit id).
+- Defaults are the most common use.
+- Shared attributes (`align`, `width`, `tone`, `space`) are handled by CSS; do not re-implement them in a component.
 
-## Thành phần lồng nhau
+## Nested components
 
-Được phép đặt thẻ `<wl-*>` trong chuỗi `render` của thẻ khác:
+A `<wl-*>` tag may appear inside another component's template:
 
 ```js
 return `<div class="lp-hero__timer"><wl-countdown size="lg"></wl-countdown></div>`;
 ```
 
-Thẻ con tự render khi được gắn vào DOM và có vòng đời riêng (`unmount` của nó dọn bộ hẹn giờ khi cha render lại). Dùng cách này cho nguyên tử có logic riêng (đếm ngược, trình phát video, carousel). Mẩu HTML tĩnh thì dùng hàm export (`productCard(p)`), nhẹ hơn.
+The child renders when attached and has its own lifecycle (its `unmount` clears the timer when the parent re-renders). Use this for atoms with their own logic (countdown, player, carousel). For static fragments use an exported function (`productCard(p)`, `stars(4.5)`); it is lighter.
 
-## Lỗi hay gặp
+## Common mistakes
 
-| Lỗi | Hậu quả | Sửa |
+| Mistake | Result | Fix |
 |---|---|---|
-| `${it.title}` không `esc` | Dữ liệu có `<` làm vỡ trang / XSS | `${esc(it.title)}` |
-| `window.addEventListener` trong `mount` không dọn | Mỗi lần đổi thương hiệu cộng thêm 1 listener | `WL.onScroll` hoặc gỡ trong `unmount` |
-| `setInterval` không dọn | Bộ hẹn giờ chạy trên phần tử đã mất | `unmount(el) { clearInterval(el._timer) }` |
-| Đọc `data.x.y` trực tiếp | Lỗi khi thương hiệu thiếu `x` | `get(data, 'x.y', fallback)` |
-| Viết chữ tiếng Việt cứng trong template | Không đổi được theo thương hiệu | Đưa vào `sections.*` / khóa của khối |
-| Tìm phần tử bằng class (`.ten-khoi__btn`) trong JS | Đổi tên class làm hỏng JS | Dùng `data-*` |
+| `${it.title}` without `esc` | `<` in data breaks the page / XSS | `${esc(it.title)}` |
+| `window.addEventListener` in `mount`, never removed | one extra listener per brand switch | `WL.onScroll` or remove in `unmount` |
+| `setInterval` / `IntersectionObserver` not cleaned | runs on detached elements | `unmount(el) { clearInterval(el._timer); el._io?.disconnect(); }` |
+| Reading `data.x.y` directly | crash when a brand lacks `x` | `get(data, 'x.y', fallback)` |
+| Vietnamese text hard-coded in a template | cannot change per brand | move it to `sections.*` or the block's own key |
+| Finding elements by class (`.my-block__btn`) in JS | renaming a class breaks JS | use `data-*` |
+| Root element is a `<div>` | `tone`/`space` have no effect | wrap in `<section>` |

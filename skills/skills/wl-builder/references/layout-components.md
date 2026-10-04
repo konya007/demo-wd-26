@@ -1,36 +1,35 @@
-# Thành phần khung: header, footer, sidebar, card, hộp thoại
+# Frame components: header, footer, sidebar, card, tabs, dialog
 
 ## Header (`<wl-header>`, layout.js)
 
-Cấu trúc:
 ```
-.site-header (fixed, cao var(--header-h), nền mờ)
+.site-header (fixed, height var(--header-h), blurred background)
   .container.site-header__bar
-    .brand                  logo / chữ cái đầu + tên ngắn → index.html
-    nav.site-nav#site-nav   menu từ data.nav; trên di động thành panel toàn màn hình
-    .site-header__tools     nút sáng/tối, CTA (ẩn < 640px), nút menu (ẩn ≥ 960px)
+    .brand                  logo / initial + short name → index.html
+    nav.site-nav#site-nav   menu from data.nav; full-screen panel on mobile
+    .site-header__tools     light/dark toggle, CTA (hidden < 640px), menu button (hidden ≥ 960px)
 ```
-Điểm quan trọng:
-- Mục đang xem: `aria-current="page"` (CSS tạo kiểu theo thuộc tính này).
-- Nút menu: `aria-controls="site-nav"`, `aria-expanded` cập nhật khi mở; mở menu thì khoá cuộn `body.no-scroll`.
-- Đổ bóng/viền khi cuộn: `WL.onScroll(el, () => header.classList.toggle('is-scrolled', scrollY > 8))`.
-- `wl-header { height: var(--header-h) }` giữ chỗ để nội dung không nhảy.
+Key points:
+- Current item: `aria-current="page"` (CSS styles the attribute).
+- Menu button: `aria-controls="site-nav"`, `aria-expanded` updated; opening the menu locks scroll with `body.no-scroll`.
+- Border on scroll: `WL.onScroll(el, () => header.classList.toggle('is-scrolled', scrollY > 8))`.
+- `wl-header { height: var(--header-h) }` reserves space so content does not jump.
 
-Thêm mục menu: sửa `nav` trong JSON, không sửa JS.
+Adding a menu item: edit `nav` in the JSON, not the JS.
 
 ## Footer (`<wl-footer>`)
 
-Lưới 4 cột ≥ 768px: thương hiệu + câu khẩu hiệu + CTA | menu | liên hệ | mạng xã hội. Mọi thứ từ `organization`, `nav`, `contact`. Liên kết ngoài: `target="_blank" rel="noopener"`.
+4-column grid ≥ 768px: brand + tagline + CTA | menu | contact | socials. Everything from `organization`, `nav`, `contact`. External links: `target="_blank" rel="noopener"`.
 
-## Sidebar (mẫu chuẩn, dùng khi cần)
+## Sidebar (reference pattern)
 
-Dự án chưa có sidebar. Khi cần (bộ lọc sản phẩm, mục lục trang dài, menu tài khoản), làm theo mẫu: **dính bên trái trên máy tính, ngăn kéo trượt ra trên di động**.
+The project has no sidebar yet. When one is needed (product filters, table of contents, account menu), use this pattern: **sticky column on desktop, slide-in drawer on mobile**.
 
 ```js
 /**
- * <wl-sidebar source="catalogNav" title-copy="sidebar">
- * Danh sách liên kết lấy từ data[source] = [{ label, href, icon }].
- * ≥ 960px: cột dính bên trái. < 960px: nút mở ngăn kéo (dialog).
+ * <wl-sidebar source="nav" title-copy="sidebar">
+ * Links from data[source] = [{ label, href, icon }].
+ * ≥ 960px: sticky left column. < 960px: button opens a drawer (<dialog>).
  */
 define('wl-sidebar', {
   render(data, el) {
@@ -52,16 +51,15 @@ define('wl-sidebar', {
   },
   mount(el) {
     const dlg = el.querySelector('[data-side]');
-    const desktop = matchMedia('(min-width: 960px)');
-    const sync = () => { if (desktop.matches) { dlg.close(); dlg.setAttribute('open', ''); } else dlg.removeAttribute('open'); };
-    el._mq = sync;
-    desktop.addEventListener('change', sync);
-    sync();
+    el._mq = matchMedia('(min-width: 960px)');
+    el._sync = () => { if (el._mq.matches) { dlg.close(); dlg.setAttribute('open', ''); } else dlg.removeAttribute('open'); };
+    el._mq.addEventListener('change', el._sync);
+    el._sync();
     el.querySelector('[data-side-open]').addEventListener('click', () => dlg.showModal());
     el.querySelector('[data-side-close]').addEventListener('click', () => dlg.close());
-    dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });   // bấm nền để đóng
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });   // click backdrop to close
   },
-  unmount(el) { matchMedia('(min-width: 960px)').removeEventListener('change', el._mq); },
+  unmount(el) { el._mq.removeEventListener('change', el._sync); },
 });
 ```
 
@@ -84,24 +82,33 @@ define('wl-sidebar', {
 /* effects.css */
 @keyframes side-in { from { transform: translateX(-100%); } }
 ```
-Bố cục trang có sidebar: `.container` chứa lưới `grid-template-columns: 260px 1fr` ở ≥ 960px, `<wl-sidebar>` ở cột trái. Dùng `<dialog>` vì nó có sẵn bẫy tiêu điểm, phím Esc và lớp nền.
+Page with a sidebar: a `.container` holding a grid `grid-template-columns: 260px 1fr` at ≥ 960px, `<wl-sidebar>` in the left column. `<dialog>` gives focus trapping, Esc and a backdrop for free.
 
 ## Card
 
-Mẫu tham khảo: `productCard(p)` trong sections.js (`.pcard`). Cấu trúc chuẩn:
+Reference: `productCard(p)` in sections.js (`.pcard`). Standard structure:
 
 ```
-article.card                 (data-tilt nếu muốn nghiêng 3D)
-  a.card__link               CẢ thẻ là một liên kết, chỉ một <a>
-    .card__media > img       tỉ lệ cố định bằng aspect-ratio, object-fit: cover
+article.card                 (data-tilt for 3D tilt)
+  a.card__link               the WHOLE card is one link, only one <a>
+    .card__media > img       fixed ratio via aspect-ratio, object-fit: cover
     .card__body
-      p.card__cat            nhãn nhóm
+      p.card__cat            group label
       h3.card__title
       p.card__text
-      p.card__price          margin-top:auto → luôn dính đáy, các thẻ thẳng hàng
+      p.card__price          margin-top:auto → always at the bottom, cards align
 ```
-Thẻ trong lưới: `.pgrid` dùng `grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr))`, không cần media query.
+Card grid: `repeat(auto-fill, minmax(min(100%, 300px), 1fr))`, no media query needed. Other cards in the project: `.review`, `.plan`, `.tcard`, `.hl`, `.rich--cards .rich__item`.
 
-## Hộp thoại
+## Tabs (`<wl-pdp-tabs>`)
 
-Dùng `<dialog>` gốc + `showModal()` như `<wl-brand-switcher>`: có `aria-labelledby` trỏ tới tiêu đề, nút đóng có `aria-label`, bấm nền để đóng, `::backdrop` làm mờ nền.
+WAI-ARIA tabs pattern, copy it for any tab UI:
+- `role="tablist"` container; each tab `role="tab"`, `aria-selected`, `aria-controls="panel-x"`, `tabindex` 0 for the selected one and -1 for others.
+- Each panel `role="tabpanel"`, `aria-labelledby="tab-x"`, `tabindex="0"`, `hidden` when inactive.
+- Keys: ← → move between tabs, Home/End jump to first/last; selecting also moves focus.
+- Style from ARIA: `.tabs__tab[aria-selected="true"]`.
+- Tabs whose content is empty are not rendered.
+
+## Dialog
+
+Native `<dialog>` + `showModal()` as in `<wl-brand-switcher>`: `aria-labelledby` pointing at its heading, a close button with `aria-label`, click on the backdrop closes, `::backdrop` dims the page.

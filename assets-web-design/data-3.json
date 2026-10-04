@@ -156,6 +156,36 @@
     "landingCta": {
       "title": "Trăng non chỉ có một đêm.",
       "text": "Hai đoàn, 16 chỗ cho cả mùa."
+    },
+    "reviews": {
+      "title": "Người đã lên đỉnh kể lại",
+      "text": "Đánh giá sau mỗi chuyến đi.",
+      "basedOn": "Dựa trên {n} đánh giá",
+      "verified": "Đã mua hàng",
+      "all": "Tất cả",
+      "empty": "Chưa có đánh giá cho mục này.",
+      "about": "Về"
+    },
+    "pdpContent": {
+      "title": "Một chuyến đi cùng Đỉnh Gió",
+      "text": "Điều gì khác với tự đi hoặc đi đoàn đông."
+    },
+    "compare": {
+      "title": "So sánh các cung đường",
+      "text": "Chọn theo độ khó và thời gian bạn có.",
+      "feature": "Tiêu chí"
+    },
+    "gallery": {
+      "title": "Khoảnh khắc trên núi",
+      "text": "Ảnh do các đoàn chụp."
+    },
+    "newsletter": {
+      "title": "Nhận lịch khởi hành mới",
+      "text": "Thông báo khi mở đoàn và mùa mây đẹp nhất.",
+      "placeholder": "Email của bạn",
+      "submit": "Đăng ký",
+      "success": "Đã đăng ký. Lịch tháng tới sẽ tới hộp thư của bạn.",
+      "note": "Mỗi tháng tối đa 2 email."
     }
   },
   "pages": {
@@ -773,5 +803,122 @@
         "a": "Không bắt buộc. Điện thoại có chế độ chụp đêm là đủ, đoàn có chân máy cho mượn."
       }
     ]
+  },
+  "reviews": [
+    {
+      "itemId": "lao-than",
+      "name": "Nguyễn Hải Yến",
+      "rating": 5,
+      "date": "2026-03-12",
+      "title": "Đỉnh đầu tiên trong đời",
+      "text": "Porter đi chậm cùng mình suốt đoạn dốc cuối, lên tới nơi thì mây trải kín thung lũng.",
+      "verified": true
+    },
+    {
+      "itemId": "ta-xua",
+      "name": "Trần Quang Minh",
+      "rating": 5,
+      "date": "2026-02-26",
+      "title": "Sống lưng khủng long đẹp điên rồ",
+      "text": "Đi giữa hai biển mây, trưởng đoàn chọn giờ rất chuẩn.",
+      "verified": true
+    },
+    {
+      "itemId": "nhiu-co-san",
+      "name": "Lê Thảo Vy",
+      "rating": 4,
+      "date": "2026-02-10",
+      "title": "Rừng đỗ quyên tuyệt đẹp",
+      "text": "Đường hơi trơn sau mưa, may có gậy của đoàn cho mượn.",
+      "verified": true
+    },
+    {
+      "itemId": "bach-moc",
+      "name": "Phạm Đăng Khoa",
+      "rating": 5,
+      "date": "2026-01-18",
+      "title": "Ngân Hà rõ bằng mắt thường",
+      "text": "Đêm thứ hai trời quang, cả đoàn nằm ngắm sao tới 1 giờ sáng.",
+      "verified": true
+    },
+    {
+      "itemId": "fansipan",
+      "name": "Đinh Thu Trang",
+      "rating": 4,
+      "date": "2025-12-20",
+      "title": "Mệt nhưng đáng",
+      "text": "Đường Trạm Tôn dài hơn mình nghĩ, nên tập chạy trước 3 tuần.",
+      "verified": true
+    },
+    {
+      "itemId": "pu-ta-leng",
+      "name": "Hồ Anh Tú",
+      "rating": 5,
+      "date": "2025-11-28",
+      "title": "Cung đường cho dân quen núi",
+      "text": "Khó thật sự, đổi lại cảnh hoang sơ và gần như không gặp đoàn nào khác.",
+      "verified": true
+    },
+    {
+      "itemId": "lao-than",
+      "name": "Mai Phương",
+      "rating": 5,
+      "date": "2025-11-09",
+      "title": "Đồ ăn nóng giữa núi",
+      "text": "Không nghĩ ở 2.800m vẫn được ăn lẩu nóng. Lều sạch, túi ngủ ấm.",
+      "verified": true
+    }
+  ],
+  "pdp": {
+    "services": [
+      {
+        "icon": "users",
+        "title": "Tối đa 8 người",
+        "text": "Mỗi đoàn có 2 porter"
+      },
+      {
+        "icon": "shield-check",
+        "title": "Bảo hiểm 24/7",
+        "text": "Cứu hộ trên núi"
+      },
+      {
+        "icon": "calendar-check",
+        "title": "Đổi lịch miễn phí",
+        "text": "Trước 7 ngày"
+      },
+      {
+        "icon": "tent",
+        "title": "Trọn gói đồ cắm trại",
+        "text": "Lều, túi ngủ, bữa ăn"
+      }
+    ],
+    "blocks": [
+      {
+        "image": "assets-web-design/img/peak/f1.jpg",
+        "title": "Đi chậm để đi được xa",
+        "text": "Nhịp đi do người chậm nhất quyết định. Không ai bị bỏ lại phía sau."
+      },
+      {
+        "image": "assets-web-design/img/peak/f2.jpg",
+        "title": "Trại dựng sẵn khi bạn tới",
+        "text": "Porter lên trước dựng lều, đun nước. Bạn chỉ việc thay đồ khô và ăn tối."
+      },
+      {
+        "image": "assets-web-design/img/peak/f4.jpg",
+        "title": "Người bản địa dẫn đường",
+        "text": "Porter người H'Mông đã lên đỉnh hàng trăm lần, thuộc từng con suối."
+      }
+    ],
+    "shipping": [
+      "Cọc 20% để giữ chỗ, thanh toán phần còn lại trước 3 ngày.",
+      "Đổi lịch miễn phí trước 7 ngày. Huỷ do thời tiết xấu được hoàn 100%.",
+      "Danh sách đồ cần mang được gửi qua email sau khi đặt."
+    ],
+    "tabs": {
+      "description": "Giới thiệu tour",
+      "specs": "Thông tin nhanh",
+      "shipping": "Đặt chỗ & huỷ"
+    },
+    "buyLabel": "Giữ chỗ"
   }
 }
